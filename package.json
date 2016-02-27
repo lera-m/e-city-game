@@ -44,6 +44,7 @@
     "grunt-webpack": "~1.0.7",
     "hot-reload": "~1.4.3-beta",
     "load-grunt-config": "^0.9.2",
+    "node-libs-browser": "^1.0.0",
     "optimist": "~0.6.1",
     "tinycolor": "0.0.1",
     "webpack": "1.9.11",
