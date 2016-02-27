@@ -7,9 +7,14 @@ module.exports = React.createClass({
 
     getInitialState: function () {
         return {
-            result: 0,
-            operator: '=',
             display: 0
+        };
+    },
+
+    componentWillMount: function () {
+        this.calculator = {
+            inputValue: 0,
+            inputChain: []
         };
     },
 
@@ -74,44 +79,108 @@ module.exports = React.createClass({
     },
 
     handleClickResult: function () {
-        this.handleOperator('=');
+        this.handleResult('=');
     },
 
     handleNumber: function (number) {
+        this.calculator.inputValue = parseInt(this.calculator.inputValue + number);
+
         this.setState({
-            display: parseInt(this.state.display + number)
+            display: this.calculator.inputValue
         });
     },
 
     handleOperator: function (operator) {
-        var result;
+        this.calculator.inputChain.push(this.calculator.inputValue);
+        this.calculator.inputChain.push(operator);
 
-        if (this.state.operator === '+') {
-            result = this.state.result + this.state.display;
-        } else if (this.state.operator === '-') {
-            result = this.state.result - this.state.display;
-        } else if (this.state.operator === '*') {
-            result = this.state.result * this.state.display;
-        } else if (this.state.operator === '/') {
-            result = this.state.result / this.state.display;
-        } else if (this.state.operator === '=' && operator !== '=') {
-            result = this.state.display;
-        } else {
-            result = this.state.result;
-        }
+        this.calculator.inputValue = 0;
+
+        console.log(this.calculator.inputChain);
+    },
+
+    handleResult: function () {
+        this.calculator.inputChain.push(this.calculator.inputValue);
+        this.calculator.inputValue = 0;
+
+        console.log(this.calculator.inputChain);
+
+        var result = this.recursiveResult(this.calculator.inputChain);
 
         this.setState({
-            result: result,
-            operator: operator,
-            display: 0
+            display: result[0]
         });
+
+        console.log(this.calculator.inputChain);
+    },
+
+    recursiveResult: function (chain) {
+        var indexMultiply = chain.indexOf('*'),
+            indexDivide = chain.indexOf('/'),
+            indexPlus = chain.indexOf('+'),
+            indexMinus = chain.indexOf('-'),
+            multiplyResult,
+            divideResult,
+            plusResult,
+            minusResult;
+
+        // Multiply or divide
+        if (indexMultiply > -1 || indexDivide > -1) {
+
+            if (indexMultiply > -1 && indexDivide > -1) {
+                // multiply and divide exists
+
+                if (indexMultiply < indexDivide) {
+                    // multiply
+                    multiplyResult = chain[indexMultiply - 1] * chain[indexMultiply + 1];
+                    chain.splice(indexMultiply - 1, 3, multiplyResult);
+                } else {
+                    // divide
+                    divideResult = chain[indexDivide - 1] / chain[indexDivide + 1];
+                    chain.splice(indexDivide - 1, 3, divideResult);
+                }
+            } else if (indexMultiply > -1) {
+                // multiply
+                multiplyResult = chain[indexMultiply - 1] * chain[indexMultiply + 1];
+                chain.splice(indexMultiply - 1, 3, multiplyResult);
+
+            } else if (indexDivide > -1) {
+                // divide
+                divideResult = chain[indexDivide - 1] / chain[indexDivide + 1];
+                chain.splice(indexDivide - 1, 3, divideResult);
+            }
+
+            // Continue recursive
+            return this.recursiveResult(chain);
+        }
+
+        // Plus
+        if (indexPlus > -1){
+            // Plus
+            plusResult = chain[indexPlus - 1] + chain[indexPlus + 1];
+            chain.splice(indexPlus - 1, 3, plusResult);
+
+            // Continue recursive
+            return this.recursiveResult(chain);
+        }
+
+        if (indexMinus > -1){
+            // Minus
+            minusResult = chain[indexMinus - 1] + chain[indexMinus + 1];
+            chain.splice(indexMinus - 1, 3, minusResult);
+
+            // Continue recursive
+            return this.recursiveResult(chain);
+        }
+
+        return chain;
     },
 
     render: function () {
         return (
             <div>
                 <div>
-                    {this.state.display || this.state.result}
+                    {this.state.display}
                 </div>
                 <div>
                     <button onClick={this.handleClick0}>0</button>
