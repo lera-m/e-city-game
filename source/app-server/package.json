@@ -1,0 +1,10 @@
+{
+  "name": "app-server",
+  "title": "app-server",
+  "description": "app-server",
+  "version": "0.0.0",
+  "main": "./server.js",
+  "browser": {
+      "./server.js": "./public/js/main.js"
+  }
+}
