@@ -7,12 +7,16 @@
   "latedef"   : true,   // Prohibits the use of a variable before it was defined
   "newcap"    : false,  // Requires to capitalize names of constructor functions
   "noarg"     : true,   // Prohibits the use of arguments.caller and arguments.callee
-  "strict"    : true,   // Requires all functions to run in ECMAScript 5's strict mode
+  "strict"    : false,  // Requires all functions to run in ECMAScript 5's strict mode
   "undef"     : true,   // Require non-global variables to be declared (prevents global leaks)
   "expr"      : true,   // if ExpressionStatement should be allowed as Programs
 
   "esnext"    : true,   // Latest ecma script features
 
-  "node"      : true,   // Environment Node.js
-  "browser"   : true    // Environment Browser
+  "node"      : false,  // Environment Node.js
+  "browser"   : true,   // Environment Browser,
+
+  "predef"    : [       // Custom globals.
+    "define"
+  ]
 }

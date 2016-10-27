@@ -9,6 +9,11 @@ module.exports = {
         }
     },
     source: {
+        options: {
+            globals: {
+                define: true
+            }
+        },
         files: {
             src: [
                 'source/**/*.json'

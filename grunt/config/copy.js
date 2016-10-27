@@ -4,13 +4,11 @@ module.exports = {
         files: [{
             expand: true,
             cwd: 'source',
-            src: ['**/*'],
-            dest: './build/node_modules'
-        }, {
-            expand: true,
-            cwd: './',
-            src: ['server.js'],
-            dest: './build/'
+            src: [
+                '**/*',
+                '!**/*.js'
+            ],
+            dest: './build'
         }]
     }
 };

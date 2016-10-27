@@ -10,11 +10,11 @@ module.exports = {
     build: {
         files: [{
             expand: true,
-            cwd: './build/node_modules',
+            cwd: './source',
             src: [
                 '**/*.js'
             ],
-            dest: './build/node_modules'
+            dest: './build'
         }]
     }
 };

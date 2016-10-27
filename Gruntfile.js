@@ -10,13 +10,7 @@ module.exports = function (grunt) {
     require('load-grunt-config')(grunt, {
         configPath: path.join(process.cwd(), 'grunt/config'),
         config: {
-            pkg: grunt.file.readJSON('package.json'),
-            srcPath: './app',
-            nls: {
-                options: {
-                    dest: './build/app/public/nls'
-                }
-            }
+            pkg: grunt.file.readJSON('package.json')
         }
     });
 
@@ -24,19 +18,18 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', 'Run tests and lint on dev sources', [
         'jsonlint:source',
-        'jshint-jsx:source',
-        'jscs:source'
+        'jshint-jsx:source'
+        //'jscs:source'
     ]);
 
     grunt.registerTask('build', 'Build', [
-        'copy:build'
+        'copy:build',
+        'babel:build'
     ]);
 
-    grunt.registerTask('server', 'Run the server for development', [
+    grunt.registerTask('run', 'Dev', [
         'clean:build',
-        'test',
         'build',
-        'shell:server-build'
+        'watch:source'
     ]);
-
 };
