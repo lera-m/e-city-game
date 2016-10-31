@@ -1,7 +1,24 @@
-define(['react', 'react-dom', './components/test'], function (React, ReactDom, Test) {
+define(['react', 'react-dom', 'react-router', './pages/login'], function (React, ReactDom, ReactRouter, Login) {
 
-    Test = React.createFactory(Test);
+    var Router = ReactRouter.Router;
+    var Route = ReactRouter.Route;
+    var hashHistory = ReactRouter.hashHistory;
 
-    ReactDom.render(new Test(), document.getElementById('page'));
+    var Page = React.createClass({
 
+        displayName: 'Page',
+
+        render: function () {
+            return (
+                <Router history={hashHistory}>
+                    <Route path="/" component={Login}/>
+                    <Route path="/login" component={Login}/>
+                </Router>
+            );
+        }
+    });
+
+    Page = React.createFactory(Page);
+
+    ReactDom.render(new Page(), document.getElementById('page'));
 });
