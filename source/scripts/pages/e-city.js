@@ -1,13 +1,15 @@
+var console;
 define(['react'], function (React) {
 
     return React.createClass({
 
-        displayName: 'Login',
+        displayName: 'E-City',
 
         render: function () {
+            console.log(this.props);
             return (
                 <div>
-                    <a href="#/e-city">E-City</a>
+                    E-City Start the Game
                 </div>
             );
         }
