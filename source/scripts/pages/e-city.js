@@ -1,5 +1,5 @@
 var console;
-define(['react'], function (React) {
+define(['react', '../components/side-bar'], function (React, SideBar) {
 
     return React.createClass({
 
@@ -10,6 +10,7 @@ define(['react'], function (React) {
             return (
                 <div>
                     E-City Start the Game
+                    <SideBar/>
                 </div>
             );
         }
