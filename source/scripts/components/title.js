@@ -6,7 +6,7 @@ define(['react'], function (React) {
 
         render: function () {
             return (
-                <p style={{fontSize: '24px', fontWeight: 'bold'}}>{this.props.text}</p>
+                <p style={{fontSize: '24px', fontWeight: 'bold', color: 'white'}}>{this.props.text}</p>
             );
         }
     });
