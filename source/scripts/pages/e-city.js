@@ -9,7 +9,6 @@ define(['react', '../components/side-bar'], function (React, SideBar) {
             console.log(this.props);
             return (
                 <div>
-                    E-City Start the Game
                     <SideBar/>
                 </div>
             );

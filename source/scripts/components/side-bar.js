@@ -6,7 +6,25 @@ define(['react'], function (React) {
         
         render: function () {
             return (
-                <div className="side-bar">Side-Bar</div>
+                <div className="side-bar">
+                    <div className="logo">
+                        E-City
+                    </div>
+                    <div>
+                        <a href="#">New Game</a>
+                    </div>
+                    <div>
+                        <a href="#">Continue</a>
+                    </div>
+                    <div>
+                        <a href="#/rules">Rules</a>
+                    </div>
+                    <div>
+                        <a href="#">Library</a>
+                    </div>
+                    <div>
+                    </div>
+                </div>
             );
         }
         

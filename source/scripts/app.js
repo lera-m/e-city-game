@@ -1,4 +1,4 @@
-define(['react', 'react-dom', 'react-router', './pages/login', './pages/e-city'], function (React, ReactDom, ReactRouter, Login, Ecity) {
+define(['react', 'react-dom', 'react-router', './pages/login', './pages/e-city', './pages/rules'], function (React, ReactDom, ReactRouter, Login, Ecity, Rules) {
 
     var Router = ReactRouter.Router;
     var Route = ReactRouter.Route;
@@ -15,6 +15,7 @@ define(['react', 'react-dom', 'react-router', './pages/login', './pages/e-city']
                     <Route path="/login" component={Login}/>
                     <Route path="/e-city" component={Ecity}/>
                     <Route path="/e-city/:name" component={Ecity}/>
+                    <Route path="/rules" component={Rules}/>
                 </Router>
             );
         }

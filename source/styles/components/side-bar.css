@@ -1,3 +1,28 @@
 .side-bar {
-    background-color: #88d5f1;
+    float: left;
+    width: 18%;
+    font-size: 35px;
+    
+    background-color: #0404bd;
+    text-align: center;
+}
+.side-bar div {
+    padding: 20px 5px;
+}
+.side-bar div:last-child {
+    height: 400px;
+}
+.side-bar a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.side-bar a:hover {
+    color: #8cbcd1;
+}
+
+.side-bar .logo {
+    border-bottom: 2px solid white;
+    color: white;
 }
