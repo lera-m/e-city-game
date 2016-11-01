@@ -1,14 +1,14 @@
-define(['react', '../components/side-bar', '../components/game-rules', '../components/city-list',], function (React, SideBar, GameRules, CityList) {
+define(['react', '../components/side-bar', '../components/city-library', '../components/city-list',], function (React, SideBar, CityLibrary, CityList) {
 
     return React.createClass({
 
-        displayName: 'Rules',
+        displayName: 'Library',
 
         render: function () {
             return (
                 <div>
                     <SideBar/>
-                    <GameRules/>
+                    <CityLibrary/>
                     <CityList/>
                 </div>
             );

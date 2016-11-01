@@ -20,7 +20,7 @@ define(['react'], function (React) {
                         <a href="#/rules">Rules</a>
                     </div>
                     <div>
-                        <a href="#">Library</a>
+                        <a href="#/library">Library</a>
                     </div>
                     <div>
                     </div>

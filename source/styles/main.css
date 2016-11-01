@@ -1,7 +1,9 @@
 @import url("./components/side-bar.css");
 @import url("./components/login.css");
 @import url("./components/game-rules.css");
-@import url("./components/town-list.css");
+@import url("./components/city-list.css");
+@import url("./components/city-library.css");
+
 /*
 
 #page {

@@ -1,0 +1,21 @@
+.city-library {
+    width: 59%;
+    padding: 30px 20px;
+    float: left;
+}
+
+/*
+.game-rules h1{
+    text-align: center;
+}
+
+.game-rules p{
+    font-size: 20px;
+    font-weight: bold;
+    text-indent: 30px; 
+}
+.game-rules p::first-letter {
+    font-size: 30px;
+    color: blue;
+}
+*/

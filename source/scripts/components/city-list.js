@@ -2,11 +2,11 @@ define(['react'], function (React) {
     
     return React.createClass ({
         
-        displayName: 'Town-List',
+        displayName: 'City-List',
         
         render: function () {
             return (
-                <div className="town-list">
+                <div className="city-list">
                     <p>Названные города</p>
                 </div>
             );
