@@ -1,4 +1,3 @@
-var console;
 define(['react', '../components/side-bar'], function (React, SideBar) {
 
     return React.createClass({
