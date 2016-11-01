@@ -17,6 +17,7 @@
   "browser"   : true,   // Environment Browser,
 
   "predef"    : [       // Custom globals.
-    "define"
+    "define",
+    "console"
   ]
 }
