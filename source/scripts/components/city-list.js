@@ -2,7 +2,7 @@ define(['react'], function (React) {
     
     return React.createClass ({
         
-        displayName: 'City-List',
+        displayName: 'CityList',
         
         render: function () {
             return (

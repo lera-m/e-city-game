@@ -2,7 +2,7 @@ define(['react'], function (React) {
     
     return React.createClass ({
         
-        displayName: 'Game-Rules',
+        displayName: 'GameRules',
         
         render: function () {
             return (

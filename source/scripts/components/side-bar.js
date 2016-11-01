@@ -2,7 +2,7 @@ define(['react'], function (React) {
     
     return React.createClass ({
         
-        displayName: 'Side-Bar',
+        displayName: 'SideBar',
         
         render: function () {
             return (

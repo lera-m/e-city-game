@@ -5,7 +5,6 @@ define(['react', '../components/side-bar'], function (React, SideBar) {
         displayName: 'E-City',
 
         render: function () {
-            console.log(this.props);
             return (
                 <div>
                     <SideBar/>
