@@ -41,6 +41,9 @@
     padding: 0 35px;
     text-align: left;
 }  
+.login .checkbox input {
+    width: 20px;
+}
 .login input[type="submit"] {
     height: 30px;
     width: 80px;

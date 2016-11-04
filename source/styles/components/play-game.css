@@ -1,15 +1,16 @@
 .play-game {
     width: 59%;
-    padding: 30px 20px;
+    
     float: left;
 }
 
 .play-game div {
+    margin: 200px 270px;
     display: inline-flex;
     border: 1px solid black;
-}
+    }
 
-input {
+.play-game input {
     height: 30px;
     width: 200px;
     font-size: 20px;
@@ -17,18 +18,18 @@ input {
     border: none;
 }
 
-button {
+.play-game button {
     height: 35px;
     font-size: 20px;
     border: none;
 }
 
-button:hover {
+.play-game button:hover {
     cursor: pointer;
     background-color: #0404bd;
     color: white;
 }
 
-input:focus {
+.play-game input:focus {
     outline: none;
 }

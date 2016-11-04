@@ -17,7 +17,8 @@ define(['react'], function (React) {
                         <input type="password" placeholder="Password"/>
                     </div>
                     <div className="checkbox">
-                        <input type="checkbox"/>Remember me
+                        <input type="checkbox"/>
+                        Remember me
                     </div>
                     <div>
                         <input type="submit" value="Submit"/>
