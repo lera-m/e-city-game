@@ -11,7 +11,7 @@ define(['react'], function (React) {
                         E-City
                     </div>
                     <div>
-                        <a href="#">New Game</a>
+                        <a href="#/e-city">New Game</a>
                     </div>
                     <div>
                         <a href="#">Continue</a>

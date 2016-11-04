@@ -1,0 +1,34 @@
+.play-game {
+    width: 59%;
+    padding: 30px 20px;
+    float: left;
+}
+
+.play-game div {
+    display: inline-flex;
+    border: 1px solid black;
+}
+
+input {
+    height: 30px;
+    width: 200px;
+    font-size: 20px;
+    padding-left: 10px; 
+    border: none;
+}
+
+button {
+    height: 35px;
+    font-size: 20px;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #0404bd;
+    color: white;
+}
+
+input:focus {
+    outline: none;
+}

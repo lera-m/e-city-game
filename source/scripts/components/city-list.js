@@ -8,6 +8,7 @@ define(['react'], function (React) {
             return (
                 <div className="city-list">
                     <p>Названные города</p>
+                    <ul className='ul-city'/>
                 </div>
             );
         }

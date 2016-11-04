@@ -3,9 +3,14 @@
     height: 830px;
     float: left;
     border: 3px solid #0404bd;
-    text-align: center;
+    
 }
 .city-list p {
     font-size: 20px;
     font-weight: bold;
+    text-align: center;
+}
+
+.city-list ul li {
+    list-style: none;
 }
