@@ -17,17 +17,13 @@ define(['react', 'superagent',], function (React, Superagent) {
                 .query({
                     name: this.state.city
                 })
-                .end(function(error, response){
+                .end((error, response) => /* arrow function */{
                     var name = JSON.parse(response.text)[0].name;
                     var letter = name[name.length - 1].toUpperCase();
-                    document.querySelector(".city-list ul").innerHTML += '<li>' + name + '</li>';
-                    console.log("letter = " + letter.toUpperCase());
-/*
                     this.setState({
                         city: letter
                     });
-*/
-                    document.querySelector("input").defaultValue = letter;
+                    this.props.onAddCity(name);
                 });
         },
         
@@ -41,7 +37,7 @@ define(['react', 'superagent',], function (React, Superagent) {
             return (
                 <div className="play-game">
                     <div>
-                        <input type="text" placeholder={'city'} defaultValue={this.state.city} onChange={this.onInputChange}/>
+                        <input type="text" placeholder={'city'} value={this.state.city} onChange={this.onInputChange}/>
                         <button onClick={this.onButtonClick}>Send</button>
                     </div>
                 </div>

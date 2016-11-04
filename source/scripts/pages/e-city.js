@@ -3,13 +3,26 @@ define(['react', '../components/side-bar', '../components/city-list', '../compon
     return React.createClass({
 
         displayName: 'E-City',
+        
+          getInitialState: function () {
+            return {
+                cities: []
+            };
+        },
+        
+        onAddCity: function(city){
+            this.setState({
+                cities: this.state.cities.concat([city])
+            });
+        },
                 
         render: function () {
+            console.log(this.state.cities);
             return (
                 <div>
                     <SideBar/>
-                    <PlayGame/>
-                    <CityList/>
+                    <PlayGame onAddCity={this.onAddCity}/>
+                    <CityList cities={this.state.cities}/>
                 </div>
             );
         }

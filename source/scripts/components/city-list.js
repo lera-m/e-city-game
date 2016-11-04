@@ -8,7 +8,15 @@ define(['react'], function (React) {
             return (
                 <div className="city-list">
                     <p>Названные города</p>
-                    <ul className='ul-city'/>
+                    <ul className='ul-city'>
+                        {this.props.cities.map(function(city, i){
+                            return (
+                                <li key={city + i}>{city}</li>
+                            );
+                        })}
+                        
+                    
+                    </ul>
                 </div>
             );
         }
