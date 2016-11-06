@@ -6,7 +6,8 @@ define(['react', 'superagent',], function (React, Superagent) {
         
         getInitialState: function () {
             return {
-                city: ''
+                city: '',
+                inputLetter: ''
             };
         },
         
@@ -15,13 +16,14 @@ define(['react', 'superagent',], function (React, Superagent) {
                 .get(' http://ecity.org.ua:8080/city')
                 .set('Accept', 'application/json')
                 .query({
-                    name: this.state.city
+                    name: this.state.inputLetter + this.state.city
                 })
                 .end((error, response) => /* arrow function */{
                     var name = JSON.parse(response.text)[0].name;
                     var letter = name[name.length - 1].toUpperCase();
                     this.setState({
-                        city: letter
+                        city: '',
+                        inputLetter: letter
                     });
                     this.props.onAddCity(name);
                 });
@@ -37,7 +39,8 @@ define(['react', 'superagent',], function (React, Superagent) {
             return (
                 <div className="play-game">
                     <div>
-                        <input type="text" placeholder={'city'} value={this.state.city} onChange={this.onInputChange}/>
+                        <input className='letter' type="text" value={this.state.inputLetter} /* style={this.state.display} */ readOnly/>
+                        <input className='city' type="text" value={this.state.city} onChange={this.onInputChange}/>
                         <button onClick={this.onButtonClick}>Send</button>
                     </div>
                 </div>
