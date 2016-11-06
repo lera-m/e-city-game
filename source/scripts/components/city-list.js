@@ -9,7 +9,7 @@ define(['react'], function (React) {
                 <div className="city-list">
                     <p>Названные города</p>
                     <ul className='ul-city'>
-                        {this.props.cities.map(function(city, i){
+                        {this.props.cities && this.props.cities.map(function(city, i){
                             return (
                                 <li key={city + i}>{city}</li>
                             );
