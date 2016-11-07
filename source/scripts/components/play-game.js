@@ -18,14 +18,17 @@ define(['react', 'superagent',], function (React, Superagent) {
                 .query({
                     name: this.state.city
                 })
+                .auth('user', 'password', {type:'auto'})
                 .end((error, response) => /* arrow function */{
-                    var name = JSON.parse(response.text)[0].name;
-                    var letter = name[name.length - 1].toUpperCase();
-                    this.setState({
-                        city: letter,
-                        inputLetter: letter
-                    });
-                    this.props.onAddCity(name);
+                    if (response.body && response.body.length > 0){
+                        var name = response.body[0].name;
+                        var letter = name[name.length - 1].toUpperCase();
+                        this.setState({
+                            city: letter,
+                            inputLetter: letter
+                        });
+                        this.props.onAddCity(response.body[0]);
+                    }
                 });
         },
         
