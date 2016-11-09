@@ -1,8 +1,23 @@
-define(['react'], function (React) {
+define(['react', 'superagent', '../settings'], function (React, Superagent, Settings) {
     
     return React.createClass ({
         
         displayName: 'BeforeStart',
+        
+        getInitialState: function () {
+            return {
+                id: 0
+            };
+        },
+        
+        onButtonClick: function (event) {
+            Superagent
+                .get(Settings.host + Settings.api + '/game/new')
+                //.set('Accept', 'application/json')
+                .end((error, response) => /* arrow function */{
+                    console.log(error, response);
+                });
+        },
         
         render: function () {
             return (
@@ -11,7 +26,7 @@ define(['react'], function (React) {
                         E-City
                     </div>
                     <div>
-                        <a href="#/e-city">New Game</a>
+                        <a href="#/e-city" onClick={this.onButtonClick}>New Game</a>
                     </div>
                     <div>
                         <a href="#">Continue</a>

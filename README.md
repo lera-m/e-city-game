@@ -12,8 +12,18 @@ npm install grunt-cli -g
 npm install
 ```
 
+add to your hosts file
+
+```
+127.0.0.1   dev.ecity.org.ua
+```
+
 ## start
 
 ```bash
 grunt run
+```
+
+```bash
+node server.js
 ```

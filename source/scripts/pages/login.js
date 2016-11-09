@@ -1,8 +1,19 @@
-define(['react'], function (React) {
+define(['react', 'superagent', '../settings'], function (React, Superagent, Settings) {
 
     return React.createClass({
 
         displayName: 'Login',
+        
+        onButtonClick: function (event) {
+            Superagent
+                //.get('http://ecity.org.ua:8080/user/hello')
+                .get(Settings.host + Settings.api + '/user/hello')
+                .set('Accept', 'application/json')
+                .auth('user', 'password', {type:'auto'})
+                .end((error, response) => /* arrow function */{
+                    console.log(error, response);
+                });
+        },
 
         render: function () {
             return (
@@ -21,7 +32,7 @@ define(['react'], function (React) {
                         Remember me
                     </div>
                     <div>
-                        <input type="submit" value="Submit"/>
+                        <input type="submit" onClick={this.onButtonClick} value="Submit"/>
                     </div>
                     <div>
                         <a href="#">New Player</a>

@@ -38,5 +38,9 @@
   },
   "keywords": [
     "learn"
-  ]
+  ],
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-http-proxy": "^0.10.1"
+  }
 }
