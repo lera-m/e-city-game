@@ -19,7 +19,9 @@
 .login input {
     border-radius: 10px;
 }
-.login input[type="text"], [type="password"]:focus {
+.login input[type="text"], 
+            [type="password"],
+            [type="submit"]:focus {
     outline: none;
 }
 .login input[type="text"], [type="password"] {
