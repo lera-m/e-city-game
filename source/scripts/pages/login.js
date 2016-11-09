@@ -27,7 +27,7 @@ define(['react'], function (React) {
                         <a href="#">New Player</a>
                     </div>
                     <div>
-                        <a href="#/e-city">Start</a>
+                        <a href="#/before-start">Start</a>
                     </div>
                 </div>
 

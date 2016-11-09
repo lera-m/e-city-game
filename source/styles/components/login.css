@@ -19,7 +19,9 @@
 .login input {
     border-radius: 10px;
 }
-
+.login input[type="text"], [type="password"]:focus {
+    outline: none;
+}
 .login input[type="text"], [type="password"] {
     height: 30px;
     width: 200px;

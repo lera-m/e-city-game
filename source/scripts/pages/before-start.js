@@ -2,11 +2,11 @@ define(['react'], function (React) {
     
     return React.createClass ({
         
-        displayName: 'SideBar',
+        displayName: 'BeforeStart',
         
         render: function () {
             return (
-                <div className="side-bar">
+                <div className="before-start">
                     <div className="logo">
                         E-City
                     </div>
@@ -23,9 +23,7 @@ define(['react'], function (React) {
                         <a href="#/library">Library</a>
                     </div>
                     <div>
-                        <a href="#/before-start">Exit</a>
-                    </div>
-                    <div>
+                        <a href="#/login">Exit</a>
                     </div>
                 </div>
             );
