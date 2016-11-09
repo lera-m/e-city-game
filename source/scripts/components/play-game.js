@@ -1,4 +1,4 @@
-define(['react', 'superagent',], function (React, Superagent) {
+define(['react', 'superagent'], function (React, Superagent) {
     
     return React.createClass ({
         
@@ -13,7 +13,7 @@ define(['react', 'superagent',], function (React, Superagent) {
         
         onButtonClick: function (event) {
             Superagent
-                .get(' http://ecity.org.ua:8080/city')
+                .get('http://ecity.org.ua:8080/city')
                 .set('Accept', 'application/json')
                 .query({
                     name: this.state.city
@@ -22,7 +22,18 @@ define(['react', 'superagent',], function (React, Superagent) {
                 .end((error, response) => /* arrow function */{
                     if (response.body && response.body.length > 0){
                         var name = response.body[0].name;
-                        var letter = name[name.length - 1].toUpperCase();
+                        var letter = name[name.length - 1];
+                        
+                        if(letter === 'й' || letter === 'ы' || letter === 'ь' || letter === 'ъ' || letter === 'ц'){
+                            letter = name[name.length - 2];
+                            if (letter === 'ц'){
+                                letter = name[name.length - 3];
+                            }
+                            letter = letter.toUpperCase();
+                        } else {
+                            letter = letter.toUpperCase();
+                        }
+                        
                         this.setState({
                             city: letter,
                             inputLetter: letter
