@@ -19,13 +19,13 @@ define(['react'], function (React) {
         render: function () {
             return (
                 <div className="city-list">
-                    <p>Названные города</p>
+                    <h2>Названные города</h2>
                     <ul className='ul-city'>
                         {this.props.cities && this.props.cities.map((city, i) => {
                             
                             return (
                                 <li key={city.id} onClick={this.onClickButton.bind(this, city)}>
-                                    {city.name}
+                                    <p>{city.name}</p>
                                     {this.state.expanded === city.id ? (
                                         <div>{city.url}</div>
                                     ) : null}
