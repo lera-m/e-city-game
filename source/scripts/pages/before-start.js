@@ -13,9 +13,9 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         onButtonClick: function (event) {
             Superagent
                 .get(Settings.host + Settings.api + '/game/new')
-                //.set('Accept', 'application/json')
+                .set('Accept', 'application/json')
                 .end((error, response) => /* arrow function */{
-                    console.log(error, response);
+                    window.id = JSON.parse(response.text).id;
                 });
         },
         
