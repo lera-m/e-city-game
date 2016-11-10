@@ -8,7 +8,8 @@ define(['react', 'superagent'], function (React, Superagent) {
         
         getInitialState: function () {
             return {
-                library: []
+                library: [],
+                expanded: null
             };
         },
         
@@ -25,6 +26,12 @@ define(['react', 'superagent'], function (React, Superagent) {
                             library: response.body
                     });
                 });
+        },
+        
+        onClickButton: function(letter, event){
+            this.setState ({
+                expanded: this.state.expanded === letter ? null : letter
+            });
         },
         
         citySort: function(){
@@ -44,12 +51,50 @@ define(['react', 'superagent'], function (React, Superagent) {
             var sort = this.citySort();
             return (
                 <div className="city-library">
+                    <ul className='letters'>
+                        {alphabet.map((letter, i) => {
+                            var cities = sort[letter];
+                            if (cities){
+                                return (
+                                    <li key={i}>
+                                        <h2 onClick={this.onClickButton.bind(this, letter)}>
+                                            {letter.toUpperCase()}
+                                        </h2>
+                                        {this.state.expanded === letter ? (
+                                            <div key={letter}>
+                                                <ul>
+                                                    {cities.map((city, i) => {
+                                                        return (
+                                                            <li key={city.id}>
+                                                                <p>{city.name}</p>
+                                                            </li>
+                                                        );
+                                                    })}
+                                                </ul>
+                                            </div>
+                                        ) : null}
+                                    </li>
+                                );
+                            }
+                        })}
+                    </ul>
+                </div>
+            );
+        }
+        
+    });
+    
+});
+
+/*
+
+                <div className="city-library">
                     {alphabet.map((letter, i) => {
                         var cities = sort[letter];
                         if (cities){
                             return (
                                 <div key={i}>
-                                    <h2>{letter}</h2>
+                                    <h2>{letter.toUpperCase()}</h2>
                                     <ul>
                                         {cities.map((city, i) => {
                                             return (
@@ -64,22 +109,4 @@ define(['react', 'superagent'], function (React, Superagent) {
                         }
                     })}
                 </div>
-            );
-        }
-        
-    });
-    
-});
-
-
-/*
-                    <ul>
-                        {this.state.library && this.state.library.map((city, i) => {
-                            return (
-                                <li key={city.id}>
-                                    <p>{city.name}</p>
-                                </li>
-                            );
-                        })}
-                    </ul>
 */

@@ -4,18 +4,19 @@
     float: left;
 }
 
-/*
-.game-rules h1{
-    text-align: center;
+.city-library div {
+    float: left;
+    border: none;
+    list-style: none;
+    padding-left: 20%;
 }
 
-.game-rules p{
-    font-size: 20px;
-    font-weight: bold;
-    text-indent: 30px; 
+.city-library .letters {
+    text-align: center;
+    list-style: none;
 }
-.game-rules p::first-letter {
-    font-size: 30px;
-    color: blue;
+.city-library h2:hover{
+    text-decoration: underline;
+    color: #0404bd;
+    cursor: pointer;
 }
-*/
