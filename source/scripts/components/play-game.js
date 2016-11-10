@@ -22,17 +22,14 @@ define(['react', 'superagent'], function (React, Superagent) {
                 .end((error, response) => /* arrow function */{
                     if (response.body && response.body.length > 0){
                         var name = response.body[0].name;
-                        var letter = name[name.length - 1];
+                        var i = 1;
+                        var letter = name[name.length - i];
                         
-                        if(letter === 'й' || letter === 'ы' || letter === 'ь' || letter === 'ъ' || letter === 'ц'){
-                            letter = name[name.length - 2];
-                            if (letter === 'ц'){
-                                letter = name[name.length - 3];
-                            }
-                            letter = letter.toUpperCase();
-                        } else {
-                            letter = letter.toUpperCase();
+                        while (letter === 'й' || letter === 'ы' || letter === 'ь' || letter === 'ъ' || letter === 'ц'){
+                            i++;
+                            letter = name[name.length - i];
                         }
+                        letter = letter.toUpperCase();
                         
                         this.setState({
                             city: letter,
@@ -45,6 +42,13 @@ define(['react', 'superagent'], function (React, Superagent) {
         
         onInputChange: function (event) {
             var city = event.target.value;
+            city = city.slice(0, 1).toUpperCase() + city.slice(1);
+            
+/*
+            if (city.split('-').length > 1 || city.split(' ').length > 1){
+                
+            }
+*/
             
             if (this.state.inputLetter && city[0] !== this.state.inputLetter){
                 city = this.state.inputLetter;
