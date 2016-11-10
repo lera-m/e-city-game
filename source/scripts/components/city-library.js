@@ -37,7 +37,6 @@ define(['react', 'superagent'], function (React, Superagent) {
                     sorted[char].push(this.state.library[i]);
                 }
             }
-            console.log(sorted);
             return sorted;
         },
         
