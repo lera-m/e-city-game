@@ -5,16 +5,16 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         displayName: 'Login',
         
         onButtonClick: function (event) {
-            Superagent
-                //.get('http://ecity.org.ua:8080/user/hello')
-                .get(Settings.host + Settings.api + '/user/hello')
-                .set('Accept', 'application/json')
-                .auth('user', 'password', {type:'auto'})
-                .end((error, response) => /* arrow function */{
-                    console.log(error, response);
+            this.props.game.logIn('user', 'password')
+                .then(function(){
+                    location.href = '#/before-start';
+                    console.log('ok');
+                })
+                .fail(function(){
+                    console.log('not ok');
                 });
         },
-
+        
         render: function () {
             return (
                 <div className="login">

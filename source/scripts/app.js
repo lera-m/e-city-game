@@ -1,9 +1,37 @@
-define(['react', 'react-dom', 'react-router', './pages/login', './pages/e-city', './pages/rules', './pages/library', './pages/before-start'], function (React, ReactDom, ReactRouter, Login, Ecity, Rules, Library, BeforeStart) {
+define(['react', 'react-dom', 'react-router', 'q', './pages/login', './pages/e-city', './pages/rules', './pages/library', './pages/before-start', './controller/game'], function (React, ReactDom, ReactRouter, Q, Login, Ecity, Rules, Library, BeforeStart, Game) {
 
     var Router = ReactRouter.Router;
     var Route = ReactRouter.Route;
     var hashHistory = ReactRouter.hashHistory;
-
+    
+    var props = {
+        game: new Game()
+    };
+    
+    var getComponent = function(page){
+        return function(route){
+            var defer = Q.defer();
+            
+            defer.resolve(function(){
+                return {
+                    render: function(){
+                        return React.createElement(page, props);
+                    }
+                };
+            });
+            
+            return defer.promise;  
+        };
+    };
+        
+    var requireLogIn = function(nextState, replace, callback){
+        console.log(nextState, replace);
+        if(!props.game.isLoggedIn()){
+            replace('/login');
+        }
+        callback();
+    };
+    
     var Page = React.createClass({
 
         displayName: 'Page',
@@ -11,13 +39,13 @@ define(['react', 'react-dom', 'react-router', './pages/login', './pages/e-city',
         render: function () {
             return (
                 <Router history={hashHistory}>
-                    <Route path="/" component={Login}/>
-                    <Route path="/login" component={Login}/>
-                    <Route path="/e-city" component={Ecity}/>
-                    <Route path="/e-city/:name" component={Ecity}/>
-                    <Route path="/rules" component={Rules}/>
-                    <Route path="/library" component={Library}/>
-                    <Route path="/before-start" component={BeforeStart}/>
+                    <Route path="/" getComponent={getComponent(Login)}/>
+                    <Route path="/login" getComponent={getComponent(Login)}/>
+                    <Route path="/e-city" getComponent={getComponent(Ecity)} onEnter={requireLogIn}/>
+                    <Route path="/e-city/:name" getComponent={getComponent(Ecity)} onEnter={requireLogIn}/>
+                    <Route path="/rules" getComponent={getComponent(Rules)} onEnter={requireLogIn}/>
+                    <Route path="/library" getComponent={getComponent(Library)} onEnter={requireLogIn}/>
+                    <Route path="/before-start" getComponent={getComponent(BeforeStart)} onEnter={requireLogIn}/>
 
                 </Router>
             );

@@ -17,6 +17,7 @@ define(['react', '../components/side-bar', '../components/city-list', '../compon
         },
                 
         render: function () {
+            console.log(this.props);
             return (
                 <div>
                     <SideBar/>
