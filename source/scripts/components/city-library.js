@@ -49,7 +49,7 @@ define(['react', 'superagent'], function (React, Superagent) {
             return sorted;
         },
         
-        onAddcities: function(){
+        addCities: function(){
             var letter = this.state.letter;
             var sort = this.citySort();
             var cities = sort[letter];
@@ -90,7 +90,7 @@ define(['react', 'superagent'], function (React, Superagent) {
                             }
                         })}
                     </ul>
-                    {this.onAddcities()}
+                    {this.addCities()}
                 </div>
             );
         }
