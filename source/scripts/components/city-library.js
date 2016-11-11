@@ -9,7 +9,8 @@ define(['react', 'superagent'], function (React, Superagent) {
         getInitialState: function () {
             return {
                 library: [],
-                expanded: null
+                expanded: null,
+                letter: ''
             };
         },
         
@@ -30,7 +31,8 @@ define(['react', 'superagent'], function (React, Superagent) {
         
         onClickButton: function(letter, event){
             this.setState ({
-                expanded: this.state.expanded === letter ? null : letter
+                expanded: this.state.expanded === letter ? null : letter,
+                letter: letter
             });
         },
         
@@ -47,6 +49,28 @@ define(['react', 'superagent'], function (React, Superagent) {
             return sorted;
         },
         
+        onAddcities: function(){
+            var letter = this.state.letter;
+            var sort = this.citySort();
+            var cities = sort[letter];
+            
+            return (
+                this.state.expanded === letter ? (
+                    <div key={letter} className='table-cities'>
+                        <ul>
+                            {cities.map((city, i) => {
+                                return (
+                                    <li key={city.id}>
+                                        <p>{city.name}</p>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                ) : null
+            );
+        },
+        
         render: function () {
             var sort = this.citySort();
             return (
@@ -60,24 +84,13 @@ define(['react', 'superagent'], function (React, Superagent) {
                                         <h2 onClick={this.onClickButton.bind(this, letter)}>
                                             {letter.toUpperCase()}
                                         </h2>
-                                        {this.state.expanded === letter ? (
-                                            <div key={letter}>
-                                                <ul>
-                                                    {cities.map((city, i) => {
-                                                        return (
-                                                            <li key={city.id}>
-                                                                <p>{city.name}</p>
-                                                            </li>
-                                                        );
-                                                    })}
-                                                </ul>
-                                            </div>
-                                        ) : null}
+                                        
                                     </li>
                                 );
                             }
                         })}
                     </ul>
+                    {this.onAddcities()}
                 </div>
             );
         }

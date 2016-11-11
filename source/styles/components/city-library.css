@@ -5,25 +5,26 @@
     text-align: center;
 }
 
-.city-library div {
-    float: left;
-    border: none;
-    list-style: none;
+.city-library .table-cities {
+    border: 1px solid black;
 }
 
+.city-library .table-cities li {
+    list-style: none;
+    display: inline-block;
+    padding: 5px;
+}
 .city-library ul {
     padding: 0;
 }
 
-.city-library .letters li{
-    list-style: none;
-}
 
 .city-library .letters > li{
     text-align: center;
     padding: 5px;
     display: inline-block;
     text-align: center;
+    list-style: none;
     }
 .city-library h2:hover{
     text-decoration: underline;
@@ -31,6 +32,3 @@
     cursor: pointer;
 }
 
-.city-library .letters div {
-    padding: 0;
-}
