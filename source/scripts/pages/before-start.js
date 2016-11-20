@@ -19,6 +19,10 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                 });
         },
         
+        onLogOut: function(){
+            this.props.game.logOut();
+        },
+        
         render: function () {
             return (
                 <div className="before-start">
@@ -38,7 +42,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                         <a href="#/library">Library</a>
                     </div>
                     <div>
-                        <a href="#/login">Exit</a>
+                        <a href="#/login" onClick={this.onLogOut}>Log Out</a>
                     </div>
                 </div>
             );
