@@ -1,28 +1,40 @@
+
 .side-bar {
     float: left;
     width: 18%;
-    font-size: 35px;
-    
-    background-color: #0404bd;
-    text-align: center;
+    background-color: #07588a;
 }
 .side-bar div {
-    padding: 20px 5px;
+    padding: 20px 35px;
 }
 .side-bar div:last-child {
     height: 300px;
 }
 .side-bar a {
     text-decoration: none;
-    color: white;
-
+    color: #fffc02;
+    font-family: Roboto, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 22px; 
+    text-align: left; 
+}
+.side-bar .grey-color {
+    color: #d2d2d2;
 }
 
 .side-bar a:hover {
-    color: #8cbcd1;
+    color: #fead00;
 }
 
 .side-bar .logo {
-    border-bottom: 2px solid white;
-    color: white;
+/*     border-bottom: 2px solid white; */
+    color: #f8f8f8;
+    font-family: "Myriad  Pro";
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 70px; 
 }

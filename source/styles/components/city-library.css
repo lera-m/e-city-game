@@ -13,6 +13,9 @@
     list-style: none;
     display: inline-block;
     padding: 5px;
+    font-family: Roboto, sans-serif;
+    
+    color: #07588a;
 }
 .city-library ul {
     padding: 0;
@@ -25,10 +28,14 @@
     display: inline-block;
     text-align: center;
     list-style: none;
+    font-family: Roboto, sans-serif;
+    color: #07588a;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
     }
 .city-library h2:hover{
-    text-decoration: underline;
-    color: #0404bd;
+    color: #fead00;
     cursor: pointer;
 }
 

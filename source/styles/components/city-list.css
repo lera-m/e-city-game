@@ -2,13 +2,16 @@
     width: 18%;
     height: 830px;
     float: left;
-    border: 3px solid #0404bd;
+    border: 2px solid #07588a;
     overflow: scroll;
     
 }
 .city-list h2 {
-    font-size: 20px;
-    font-weight: bold;
+    color: #07588a;
+    font-family: Roboto, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
     text-align: center;
 }
 
@@ -16,12 +19,18 @@
     list-style: none;
     margin-left: -35px;
     margin-right: 5px;
-    text-align: center;
+    text-align: left;
+    color: #07588a;
+    font-family: Roboto, sans-serif;
+    font-size: 24px;
+    font-weight: 100;
+    line-height: 20px;
 }
-
+.city-list ul li p {
+    padding-left: 16px;
+}
 .city-list ul li p:hover {
     text-decoration: underline;
-    color: #0404bd;
     cursor: pointer;
 }
 
@@ -39,4 +48,9 @@
     animation-name: information;
     animation-duration: 5s;
     overflow: hidden;
+    color: #07588a;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 22px;
 }

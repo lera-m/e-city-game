@@ -19,7 +19,7 @@ define(['react'], function (React) {
         render: function () {
             return (
                 <div className="city-list">
-                    <h2>Названные города</h2>
+                    <h2>Название городов</h2>
                     <ul className='ul-city'>
                         {this.props.cities && this.props.cities.map((city, i) => {
                             

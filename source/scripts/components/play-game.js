@@ -18,8 +18,9 @@ define(['react', 'superagent'], function (React, Superagent) {
                 .query({
                     name: this.state.city
                 })
-                .auth('user', 'password', {type:'auto'})
+                //.auth('user', 'password', {type:'auto'})
                 .end((error, response) => /* arrow function */{
+                    console.log(error, response);
                     if (response.body && response.body.length > 0){
                         var name = response.body[0].name;
                         var i = 1;
@@ -62,9 +63,22 @@ define(['react', 'superagent'], function (React, Superagent) {
         render: function () {
             return (
                 <div className="play-game">
+                    <div className='score'>
+                        <div className="first-number counter"><p>6</p></div>
+                        <div className="second-number counter"><p>0</p></div>
+                    </div>
+                    <div className='playField'>
+                        <div>
+                        <input className='city buttonStyle' type="text" value={this.state.city} onChange={this.onInputChange} placeholder="Введите город"/>
+                        </div>
+                        <div>
+                        <button className='send buttonStyle'onClick={this.onButtonClick}>Отправить</button>
+                        </div>
+                        <div>
+                        <button className='giveUp buttonStyle'>Сдаться</button>
+                        </div>
+                    </div>
                     <div>
-                        <input className='city' type="text" value={this.state.city} onChange={this.onInputChange}/>
-                        <button onClick={this.onButtonClick}>Send</button>
                     </div>
                 </div>
             );

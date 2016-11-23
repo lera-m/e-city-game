@@ -1,17 +1,15 @@
-define(['react', 'superagent', '../settings'], function (React, Superagent, Settings) {
+define(['react', 'superagent', '../settings'], function (React,  Superagent, Settings) {
     
     return React.createClass ({
         
         displayName: 'SideBar',
         
-         onButtonClick: function (event) {
-            Superagent
-                .get(Settings.host + Settings.api + '/game/new')
-                .set('Accept', 'application/json')
-                .end((error, response) => /* arrow function */{
-                    var id = JSON.parse(response.text).id;
-                    console.log(id);
+        onButtonClick: function(event) {
+            this.props.game.getGameId()
+                .then(function(){
+                    console.log(this.state.game.gameId);
                 });
+
         },
         
         render: function () {
@@ -21,19 +19,22 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                         E-City
                     </div>
                     <div>
-                        <a href="#/e-city" onClick={this.onButtonClick}>New Game</a>
+                        <a href="#/e-city" onClick={this.onButtonClick}>Новая игра</a>
                     </div>
                     <div>
-                        <a href="#">Continue</a>
+                        <a className='grey-color' href="#">Продолжить</a>
                     </div>
                     <div>
-                        <a href="#/rules">Rules</a>
+                        <a href="#/e-city">Рекорды</a>
                     </div>
                     <div>
-                        <a href="#/library">Library</a>
+                        <a href="#/rules">Правила</a>
                     </div>
                     <div>
-                        <a href="#/before-start">Exit</a>
+                        <a href="#/library">Библиотека</a>
+                    </div>
+                    <div>
+                        <a href="#/before-start">Выход</a>
                     </div>
                     <div>
                     </div>
