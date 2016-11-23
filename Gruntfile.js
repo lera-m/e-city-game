@@ -11,14 +11,15 @@ module.exports = function (grunt) {
         configPath: path.join(process.cwd(), 'grunt/config'),
         config: {
             pkg: grunt.file.readJSON('package.json')
-        }
+        },
+        additionalSuffixes: ['.js']
     });
 
-    grunt.loadTasks('./grunt/tasks'); // Will load the custom tasks
+    //grunt.loadTasks('./grunt/tasks'); // Will load the custom tasks
 
     grunt.registerTask('test', 'Run tests and lint on dev sources', [
         'jsonlint:source',
-        'jshint-jsx:source'
+        'jshint:source'
         //'jscs:source'
     ]);
 

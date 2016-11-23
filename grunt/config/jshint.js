@@ -1,8 +1,10 @@
 module.exports = {
+    options: {
+        additionalSuffixes: ['.js']
+    },
     all: {
         options: {
-            jshintrc: '.jshintrc',
-            convertJSX: 'js'
+            jshintrc: '.jshintrc'
         },
         files: {
             src: [
@@ -14,8 +16,7 @@ module.exports = {
     },
     source: {
         options: {
-            jshintrc: '.jshintrc',
-            convertJSX: 'js'
+            jshintrc: '.jshintrc'
         },
         files: {
             src: [
