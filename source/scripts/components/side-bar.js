@@ -4,10 +4,13 @@ define(['react', 'superagent', '../settings'], function (React,  Superagent, Set
         
         displayName: 'SideBar',
         
+        propTypes: {
+            game: React.PropTypes.object.isRequired
+        },
+        
         onButtonClick: function(event) {
             this.props.game.getGameId()
-                .then(function(){
-                    console.log(this.state.game.gameId);
+                .then(() => {
                 });
 
         },

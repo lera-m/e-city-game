@@ -25,7 +25,7 @@ define(['react', 'react-dom', 'react-router', 'q', './pages/login', './pages/e-c
     };
         
     var requireLogIn = function(nextState, replace, callback){
-        console.log(nextState, replace);
+      //  console.log(nextState, replace);
         if(!props.game.isLoggedIn()){
             replace('/login');
         }
@@ -46,7 +46,6 @@ define(['react', 'react-dom', 'react-router', 'q', './pages/login', './pages/e-c
                     <Route path="/rules" getComponent={getComponent(Rules)} onEnter={requireLogIn}/>
                     <Route path="/library" getComponent={getComponent(Library)} onEnter={requireLogIn}/>
                     <Route path="/before-start" getComponent={getComponent(BeforeStart)} onEnter={requireLogIn}/>
-
                 </Router>
             );
         }

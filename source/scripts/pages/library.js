@@ -7,7 +7,7 @@ define(['react', '../components/side-bar', '../components/city-library', '../com
         render: function () {
             return (
                 <div>
-                    <SideBar/>
+                    <SideBar game={this.props.game}/>
                     <CityLibrary/>
                     <CityList/>
                 </div>
