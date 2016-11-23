@@ -2,6 +2,25 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
 
     var Game = function(){
           this.loggedIn = false;
+          this.gameId = 0;
+    };
+    
+    Game.prototype.getGameId = function(){
+        var defer = Q.defer();
+        
+        Superagent
+                .get(Settings.host + Settings.api + '/game/new')
+                .set('Accept', 'application/json')
+                .end((error, response) => /* arrow function */{
+                    if(!error || response.body.length > 0){
+                        this.gameId = JSON.parse(response.text).id;
+                        console.log(this.gameId);
+                        defer.resolve();
+                    } else {
+                        defer.reject();
+                    }
+                });
+            return defer.promise;
     };
     
     Game.prototype.logIn = function(user, password){

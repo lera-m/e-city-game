@@ -17,10 +17,10 @@ define(['react', '../components/side-bar', '../components/city-list', '../compon
         },
                 
         render: function () {
-            console.log(this.props);
+            console.log(this.props.game);
             return (
                 <div>
-                    <SideBar/>
+                    <SideBar game={this.props.game}/>
                     <PlayGame onAddCity={this.onAddCity}/>
                     <CityList cities={this.state.cities}/>
                 </div>

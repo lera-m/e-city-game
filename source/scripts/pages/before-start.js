@@ -4,19 +4,13 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         
         displayName: 'BeforeStart',
         
-        getInitialState: function () {
-            return {
-                id: 0
-            };
-        },
         
         onButtonClick: function (event) {
-            Superagent
-                .get(Settings.host + Settings.api + '/game/new')
-                .set('Accept', 'application/json')
-                .end((error, response) => /* arrow function */{
-                    var id = JSON.parse(response.text).id;
+            this.props.game.getGameId()
+                .then(function(){
+                    console.log('got id');
                 });
+
         },
         
         onLogOut: function(){
