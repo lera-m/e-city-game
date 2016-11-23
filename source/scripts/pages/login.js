@@ -32,13 +32,12 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                         Remember me
                     </div>
                     <div>
-                        <input type="submit" onClick={this.onButtonClick} value="Submit"/>
+                        <input type="submit" onClick={this.onButtonClick} value="Log In"/>
                     </div>
                     <div>
                         <a href="#">New Player</a>
                     </div>
                     <div>
-                        <a href="#/before-start">Start</a>
                     </div>
                 </div>
 
