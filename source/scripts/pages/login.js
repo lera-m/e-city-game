@@ -17,30 +17,40 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         
         render: function () {
             return (
-                <div className="login">
-                    <div className="logo">
-                        E-City
+                <div>
+                    <div className="bg-layer-1">
+                        <div className="bg-layer-2"/>
                     </div>
-                    <div>
-                        <input type="text" placeholder="Login"/>
+                    <div className="login">
+                        <div className="logo">
+                            <p>E-City</p>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Логин"/>
+                        </div>
+                        <div>
+                            <input type="password" placeholder="Пароль"/>
+                        </div>
+                        <div className="checkbox">
+                            <input type="checkbox"/>
+                            Запомнить меня
+                        </div>
+                        <div className="vorgetPassword">
+                            <a href='#'>Забыли пароль?</a>
+                        </div>
+                        <div>
+                            <input type="submit" onClick={this.onButtonClick} value="Войти"/>
+                        </div>
+                        <div className='social'>
+                            <p>Войти при помощи</p>
+                            <div>
+                                <input type='image' src='../img/vk.png'/>
+                                <input type='image' src='../img/facebook.png'/>
+                                <input type='image' src='../img/insta.png'/>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <input type="password" placeholder="Password"/>
-                    </div>
-                    <div className="checkbox">
-                        <input type="checkbox"/>
-                        Remember me
-                    </div>
-                    <div>
-                        <input type="submit" onClick={this.onButtonClick} value="Log In"/>
-                    </div>
-                    <div>
-                        <a href="#">New Player</a>
-                    </div>
-                    <div>
-                    </div>
-                </div>
-
+                </div>  
             );
         }
     });
