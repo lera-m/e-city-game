@@ -1,6 +1,7 @@
 
 .bg-layer-1 {
-    background-image: url('bg.png');
+/*
+    background-image: url('/img/bg.png');
     position: relative;
     display: inline-block;
     width: 100%;
@@ -8,6 +9,15 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
+*/
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    min-width: 100%;
+  min-height: 100%;
 }
 .bg-layer-2 {
     opacity: 0.4;
@@ -20,6 +30,7 @@
     text-align: center;
     border-radius: 9px;
     box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.35);
+    z-index: 1;
 }
 
 .login div {
