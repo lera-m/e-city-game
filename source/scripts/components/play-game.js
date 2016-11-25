@@ -1,4 +1,4 @@
-define(['react', 'superagent'], function (React, Superagent) {
+define(['react', 'superagent', '../components/map-svg',], function (React, Superagent, MapSvg) {
     
     return React.createClass ({
         
@@ -78,8 +78,7 @@ define(['react', 'superagent'], function (React, Superagent) {
                         <button className='giveUp buttonStyle'>Сдаться</button>
                         </div>
                     </div>
-                    <div>
-                    </div>
+                    <MapSvg/>
                 </div>
             );
         }
