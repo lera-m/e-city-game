@@ -17,9 +17,8 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         
         render: function () {
             return (
-                
                 <div>
-                <img src="/img/bg.png" className="bg-layer-1" alt=""/>
+                    <img src="/img/bg.png" className="bg-layer-1" alt=""/>
                     <div className="login">
                         <div className="logo">
                             <p>E-City</p>
