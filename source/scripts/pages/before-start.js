@@ -8,7 +8,6 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         onButtonClick: function (event) {
             this.props.game.getGameId()
                 .then(function(){
-                    console.log('got id');
                 });
 
         },
