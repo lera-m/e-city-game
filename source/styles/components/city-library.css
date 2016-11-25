@@ -39,3 +39,8 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 1350px){
+    .city-library .letters > li {
+        font-size: 14px;
+    }
+}
