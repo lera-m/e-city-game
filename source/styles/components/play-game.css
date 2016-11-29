@@ -35,6 +35,7 @@
     padding-right: 30px;
     width: 183px;
     box-shadow: 0 2px 7px rgba(0, 3, 45, 0.15);
+    color: #07588a;
 }
 
 .play-game .send {
@@ -46,7 +47,6 @@
 }
 .play-game .giveUp {
     padding: 10px 25px;
-    background-color: #07588a;
     border-radius: 5px;
     box-shadow: 0 2px 7px rgba(0, 3, 45, 0.15);
     color: #fffc02;

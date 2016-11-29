@@ -21,25 +21,28 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                     <div>
                         <img src="/img/bg.png" className="bg-layer-1" alt=""/>
                     </div>
-                    <div className="login">
+                    <div className="login bg-color">
                         <div className="logo">
                             <p>E-City</p>
                         </div>
                         <div>
-                            <input type="text" placeholder="Логин"/>
+                            <input type="text" className='login_input_style' placeholder="Логин"/>
                         </div>
                         <div>
-                            <input type="password" placeholder="Пароль"/>
+                            <input type="password" className='login_input_style' placeholder="Пароль"/>
                         </div>
                         <div className="checkbox">
                             <input type="checkbox"/>
                             Запомнить меня
                         </div>
                         <div className="vorgetPassword">
+                            <a href="#/register">Зарегистрироваться</a>
+                        </div>
+                        <div className="vorgetPassword">
                             <a href='#'>Забыли пароль?</a>
                         </div>
                         <div>
-                            <input type="submit" onClick={this.onButtonClick} value="Войти"/>
+                            <input type="submit" className='login_submit' onClick={this.onButtonClick} value="Войти"/>
                         </div>
                         <div className='social'>
                             <p>Войти при помощи</p>

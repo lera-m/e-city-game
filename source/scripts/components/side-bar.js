@@ -17,9 +17,9 @@ define(['react', 'superagent', '../settings'], function (React,  Superagent, Set
         
         render: function () {
             return (
-                <div className="side-bar">
+                <div className="side-bar bg-color">
                     <div className="logo">
-                        E-City
+                        <p>E-City</p>
                     </div>
                     <div>
                         <a href="#/e-city" onClick={this.onButtonClick}>Новая игра</a>

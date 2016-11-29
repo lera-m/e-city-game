@@ -8,11 +8,25 @@
 @import url("./components/play-game.css");
 @import url("./components/before-start.css");
 @import url("./components/map-svg.css");
+@import url("./components/register.css");
 
 
-/*
 
-#page {
-    display: 
-} 
-*/
+.bg-layer-1 {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    z-index: -2;
+    min-width: 100%;
+    min-height: 100%;
+}
+.bg-color {
+    background-color: #07588a;
+}
+
+ .logo p{
+    color: white;
+    font-family: Tahoma;
+    font-size: 30px;
+}

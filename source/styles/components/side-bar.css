@@ -2,7 +2,6 @@
 .side-bar {
     float: left;
     width: 18%;
-    background-color: #07588a;
 }
 .side-bar div {
     padding: 20px 35px;
@@ -28,7 +27,10 @@
 }
 
 .side-bar .logo {
-/*     border-bottom: 2px solid white; */
+    text-align: center;
+}
+/*
+.side-bar .logo {
     color: #f8f8f8;
     font-family: "Myriad  Pro";
     font-size: 24px;
@@ -38,6 +40,7 @@
     padding-top: 40px;
     padding-bottom: 70px; 
 }
+*/
 
 @media screen and (max-width: 1200px){
     .side-bar a {

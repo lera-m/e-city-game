@@ -18,26 +18,31 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         
         render: function () {
             return (
-                <div className="before-start">
-                    <div className="logo">
-                        E-City
-                    </div>
                     <div>
-                        <a href="#/e-city" onClick={this.onButtonClick}>New Game</a>
+                        <div>
+                            <img src="/img/bg.png" className="bg-layer-1" alt=""/>
+                        </div>
+                        <div className="before-start bg-color">
+                            <div className="logo">
+                                <p>E-City</p>
+                            </div>
+                            <div>
+                                <a href="#/e-city" onClick={this.onButtonClick}>Новая игра</a>
+                            </div>
+                            <div>
+                                <a href="#/e-city" className='grey-color'>Продолжить</a>
+                            </div>
+                            <div>
+                                <a href="#/rules">Правила</a>
+                            </div>
+                            <div>
+                                <a href="#/library">Библиотека</a>
+                            </div>
+                            <div>
+                                <a href="#/login" onClick={this.onLogOut}>Выход</a>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <a href="#">Continue</a>
-                    </div>
-                    <div>
-                        <a href="#/rules">Rules</a>
-                    </div>
-                    <div>
-                        <a href="#/library">Library</a>
-                    </div>
-                    <div>
-                        <a href="#/login" onClick={this.onLogOut}>Log Out</a>
-                    </div>
-                </div>
             );
         }
         
