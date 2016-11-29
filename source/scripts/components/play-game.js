@@ -1,4 +1,4 @@
-define(['react', 'superagent', '../components/map-svg',], function (React, Superagent, MapSvg) {
+define(['react', 'superagent', '../components/map-svg', '../settings'], function (React, Superagent, MapSvg, Settings) {
     
     return React.createClass ({
         
@@ -12,17 +12,20 @@ define(['react', 'superagent', '../components/map-svg',], function (React, Super
         },
         
         onButtonClick: function (event) {
+            console.log(this.state.city);
+            console.log(this.props.game.gameId);
             Superagent
-                .get('http://ecity.org.ua:8080/city')
+                .post(Settings.host + Settings.api + '/game/move')
+                .type('form')
                 .set('Accept', 'application/json')
-                .query({
-                    name: this.state.city
+                .send({
+                    game_id: this.props.game.gameId,
+                    city_name: this.state.city
                 })
-                //.auth('user', 'password', {type:'auto'})
                 .end((error, response) => /* arrow function */{
-                    console.log(error, response);
-                    if (response.body && response.body.length > 0){
-                        var name = response.body[0].name;
+                    console.log(response);
+                    if (JSON.parse(response.text).city){
+                        var name = JSON.parse(response.text).city.name;
                         var i = 1;
                         var letter = name[name.length - i];
                         
@@ -36,7 +39,8 @@ define(['react', 'superagent', '../components/map-svg',], function (React, Super
                             city: letter,
                             inputLetter: letter
                         });
-                        this.props.onAddCity(response.body[0]);
+//                         this.props.onAddCity(this.state.city);
+                        this.props.onAddCity(JSON.parse(response.text).city);
                     }
                 });
         },
@@ -75,7 +79,7 @@ define(['react', 'superagent', '../components/map-svg',], function (React, Super
                         <button className='send buttonStyle'onClick={this.onButtonClick}>Отправить</button>
                         </div>
                         <div>
-                        <button className='giveUp buttonStyle'>Сдаться</button>
+                        <button className='giveUp buttonStyle bg-color'>Сдаться</button>
                         </div>
                     </div>
                     <MapSvg/>
