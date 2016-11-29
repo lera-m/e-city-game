@@ -3,6 +3,7 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
     var Game = function(){
           this.loggedIn = false;
           this.gameId = 0;
+          this.gameStatus = false;
     };
     
     Game.prototype.getGameId = function(){
@@ -27,7 +28,6 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
         var defer = Q.defer();
         
         Superagent
-            //.get('http://ecity.org.ua:8080/user/hello')
             .get(Settings.host + Settings.api + '/user/hello')
             .set('Accept', 'application/json')
             .auth(user, password, {type:'auto'})
@@ -40,7 +40,14 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
                     defer.reject();
                 }
             });
-            
+        Superagent
+            .get(Settings.host + Settings.api + '/game/status')
+            .set('Accept', 'application/json')
+            .end((error, response) => /* arrow function */{
+                this.gameId = JSON.parse(response.text).id;
+                console.log(this.gameId);
+            });
+
         return defer.promise;
     };
     
