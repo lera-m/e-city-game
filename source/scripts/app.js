@@ -1,4 +1,4 @@
-define(['react', 'react-dom', 'react-router', 'q', './pages/login', './pages/e-city', './pages/rules', './pages/library', './pages/before-start', './controller/game'], function (React, ReactDom, ReactRouter, Q, Login, Ecity, Rules, Library, BeforeStart, Game) {
+define(['react', 'react-dom', 'react-router', 'q', './pages/login', './pages/e-city', './pages/rules', './pages/library', './pages/before-start', './controller/game', './pages/register'], function (React, ReactDom, ReactRouter, Q, Login, Ecity, Rules, Library, BeforeStart, Game, Register) {
 
     var Router = ReactRouter.Router;
     var Route = ReactRouter.Route;
@@ -46,6 +46,7 @@ define(['react', 'react-dom', 'react-router', 'q', './pages/login', './pages/e-c
                     <Route path="/rules" getComponent={getComponent(Rules)} onEnter={requireLogIn}/>
                     <Route path="/library" getComponent={getComponent(Library)} onEnter={requireLogIn}/>
                     <Route path="/before-start" getComponent={getComponent(BeforeStart)} onEnter={requireLogIn}/>
+                    <Route path="/register" getComponent={getComponent(Register)}/>
                 </Router>
             );
         }
