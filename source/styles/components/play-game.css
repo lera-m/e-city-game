@@ -69,3 +69,9 @@
 .play-game input, button:focus {
     outline: none;
 }
+
+.warningMessage {
+    color: red;
+    padding-left: 20px;
+    font-family: Roboto, sans-serif;
+}
