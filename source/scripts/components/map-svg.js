@@ -7283,7 +7283,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWk98B5A0QTYSnSoUAAAAASUVO
 RK5CYII=" transform="matrix(0.75 0 0 0.75 -59.5 34)">
 </image>
-<image overflow="visible" width="541" height="473" id="region25" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAh4AAAHkCAYAAABxIiaoAAAACXBIWXMAABWvAAAVrwEEu8dLAAAA
+<image overflow="visible" width="541" height="473" id="region25" style={{opacity: this.props.regionId === 25 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAh4AAAHkCAYAAABxIiaoAAAACXBIWXMAABWvAAAVrwEEu8dLAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAhzJJREFUeNrs3QmQZMd9Hvh/Hu+q
 u/rumZ77xH0SBECCICiCF8BbIkhRsCRasmQydmWudy0rLNk6LFuCpF3bG4q1LXljw1ortApR1NLi
 WhJ1WBTE+xRxnwMMpnumz+rqOt6VmZtZVT0zuAeDmZ7u6u8H5FR3V3XP9Kv38n2ZLzMfEQAAAAAA
@@ -7894,7 +7894,7 @@ kLMtHnqxic77LGZCCukocj1QPBAEQRAEeWouQIx0FKtdpZGOcpKpfFpPhiAIgiAIyke5FaIhUTwQ
 BEEQBHlW8nHc1zjVgiAIgiDIc5MQANzbBUEQBEEQBEEQBEEQBEEQBEEQZBr4/wUYAKQ3wEKjy0hQ
 AAAAAElFTkSuQmCC" transform="matrix(0.5106 0 0 0.5201 2 540.9139)">
 </image>
-<image overflow="visible" width="604" height="549" id="region24" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlwAAAIlCAYAAAAAMSa5AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="604" height="549" id="region24" style={{opacity: this.props.regionId === 24 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlwAAAIlCAYAAAAAMSa5AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAA5m9JREFUeNrsnQl8FOX9/5+ZvXIf
 JCHhDlfCGSAcCsipeKBFrDet/rSIFypaUbSVP6WolapVamk9irbaglVrEYtnRQUBuW9CINzkPva+
 5/jPM9kNs5PZJEBIdjeft6/HPbIhyezOzHu+z/f5fhkCAABRTuHoUfE7t213Y0sAEBvcdses7J3b
@@ -8932,7 +8932,7 @@ uriouPxOwe3yWzduamybR+I2I+0qng9Zez7cbXDSr86SmoLgAoAWLlqpQe+ujik7nEhc/uoajjgk
 hPXBZ3uFNQgv6uvIUhY+yDG4HkQXADTu2Ob2HdAPp4jgTBw/Mg5VpXqBeqk1EN+uLQ5wZ7y354Mo
 VJXWAR8+wHnN/OwN38fxcmRAPLUmIhvVnvMQADyG/xdgAILrFpfrYqk3AAAAAElFTkSuQmCC" transform="matrix(0.75 0 0 0.75 2 314.25)">
 </image>
-<image overflow="visible" width="328" height="427" id="region23" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUgAAAGRCAYAAAAHJSrUAAAACXBIWXMAAA2vAAANrwFCv+cqAAAA
+<image overflow="visible" width="328" height="427" id="region23" style={{opacity: this.props.regionId === 23 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUgAAAGRCAYAAAAHJSrUAAAACXBIWXMAAA2vAAANrwFCv+cqAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAWihJREFUeNrsvQecJFd173+qqqs6
 p+nJOe/OzmwO2tUqISERJIMAC5lsMPAeYIxtDNgPMGD7mcdz+Bts/x8fYcPDMsn2Q5iHQCCUd6XV
 7myeDZPzdM6pcr263dXa1mqlzTvdPef7+Zytnp7emZ7bVb86595zzwFAEARBEARBEARBEARBEARB
@@ -9340,7 +9340,7 @@ L8Xnc/F5DrKaYeAgKyq0luTMDpicIXSQ5BSR1Dk2hkJuCanLSgwlSSMlQXJXyUnhhA6SnEp0FV7L
 DoWC+jjp2e6Au2YIBZLwvdwXypR6TNbIJsXgdI+EEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBC
 CCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQggZT/5PgAEAfSmNUkCxCe8AAAAASUVORK5CYII=" transform="matrix(0.8052 0 0 0.7579 135.125 498.1058)">
 </image>
-<image overflow="visible" width="399" height="415" id="region22" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGgCAYAAACExTFhAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="399" height="415" id="region22" style={{opacity: this.props.regionId === 22 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGgCAYAAACExTFhAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAUk5JREFUeNrsvQmUXOd153ffq33p
 6q7uqt53LARAggRBUgRJiaJELbZlyRov8jqWx1a8ji07jmeck5NolEyScTzJ8cSZSTyxxzkeW/bY
 HtmSrNEucd9AkCABEMTW+1r7vr0t3636HrrYBMgG0I2urvr/eC6ru7rQy6v33v+7y3cvEQAAAAAA
@@ -9713,7 +9713,7 @@ YIo3xy/7q90H7fuPX86//RiqKKDiVgV/PyP14Lz+D/dZzpbQQQUCSx4iTZyXzozvd0lj4TU+ArhX
 iDQzhEI75WdYKB7jhfkQHAgQ4MpFFQzCAZL+LNznnHSECAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAwEK4FGAAKpiXpfmXJS0AAAAASUVORK5CYII=" transform="matrix(0.75 0 0 0.75 176.2553 134)">
 </image>
-<image overflow="visible" width="395" height="453" id="region21" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYwAAAHHCAYAAACspm/lAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="395" height="453" id="region21" style={{opacity: this.props.regionId === 21 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYwAAAHHCAYAAACspm/lAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAZ89JREFUeNrsvQmYXFd177vOqXnu
 rp7nltSaLFu2LMkjNjZgwHEwBhIwziPvEh5k4Ibw8nLhJnnc3JAvFwjOAHl5uV8IGYBLIAnJCwnG
 4BlsyZIsy5I19zxWV3dV1zwP5+11ah91qd0a3VN1/3/+lk91VfWgU+ec//nvtfbaRAAAAAAAAAAA
@@ -10183,7 +10183,7 @@ y196hheBYZhDBbes+OhwwgDDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzD
 MAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzDMAzD7Dn/L8AAVvhQHZZL
 RfgAAAAASUVORK5CYII=" transform="matrix(0.75 0 0 0.75 296 143.6272)">
 </image>
-<image overflow="visible" width="337" height="455" id="region20" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVMAAAHICAYAAADz6gn0AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="337" height="455" id="region20" style={{opacity: this.props.regionId === 20 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVMAAAHICAYAAADz6gn0AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAATldJREFUeNrsvQmYXFd55/3epfal
 q7q7el/V2ldLlncb2dgY2xiCE8KShWQSQkgIX5bJQJYnM8wkM/OQ+QLhY/KFAZIQkgDJlwDBNjHE
 YMs2eJG8aLOklnpfat+rbt2663dP1S2pLWS7tXSrq+v/83Oe6q5uSe3bt371vue85z1EAAAAAAAA
@@ -10538,7 +10538,7 @@ aAAAAAAAAAAAAAAAAAAAAAAAAABgOw/3d1W7PAiAvzg/O23aNfMkgDGY/NeFH5+e03K52Lu9udbN
 H+A3Lq4uq7quy7zslIxHAQau6un65bPMiQEYlD5GPZcd6roTqACDMtnBPR35gcGZ9hica8d8YKiq
 nu8hSAEAAAAAAAAAAAAAAAAAAAAAAADYkS8BBgC7WGbxg7VuvwAAAABJRU5ErkJggg==" transform="matrix(0.75 0 0 0.75 229 385.75)">
 </image>
-<image overflow="visible" width="411" height="214" id="region19" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZ0AAADXCAYAAADBa4wcAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="411" height="214" id="region19" style={{opacity: this.props.regionId === 19 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZ0AAADXCAYAAADBa4wcAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAQb9JREFUeNrsnQl8W/WV78/VritZ
 3uR4d+wkzkoSZ09ICAkECKEBAoUCA+3QhqUw7cxQBtrX0mE67bzXN20/ZebRvoGZUnidlraUfQ2E
 sIUQsu/xGu+SLVn7vly9e6T/xTeKnNiJY0v2+X4+/yiWZV2t/9/9nf/5nwNAEARBEARBEARBEARB
@@ -10837,7 +10837,7 @@ oTQbEyDqj0MQBDGGcFn2WFAkMOcZ86AN7P/y0Jo0hgqvJWSiIw/VSeG1IBsh9rNADocgCGJyig7A
 maExRdrj5NLcEcCZCQVD3Xao9R+CIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAhirPn/AgwAEH8/
 WU7NCK4AAAAASUVORK5CYII=" transform="matrix(0.75 0 0 0.75 255.8739 650)">
 </image>
-<image overflow="visible" width="316" height="484" id="region18" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT0AAAHlCAYAAACH9ivfAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="316" height="484" id="region18" style={{opacity: this.props.regionId === 18 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT0AAAHlCAYAAACH9ivfAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAYvVJREFUeNrsvQmUXOd1mHn//621
 71VdvWFfiJUgQNIkQFKkJIqSaNmidlmLZZkSbR3ZnokcyxNnJkfWTKx4TuJ4jnw8VhzH1mSUiHNi
 JrHsaKdkURQXECCIHY219+7q2t++zfurXhFNCDux1HI/nv9Uo7pBdL9+9dW9/3IvAIIgCIIgCIIg
@@ -11285,7 +11285,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADA
 bvL/AgwAo215MXxgYsMAAAAASUVORK5CYII=" transform="matrix(0.75 0 0 0.75 375.999 380.125)">
 </image>
-<image overflow="visible" width="375" height="485" id="region17" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAHnCAYAAACyrUYwAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="375" height="485" id="region17" style={{opacity: this.props.regionId === 17 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAHnCAYAAACyrUYwAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAfktJREFUeNrsvQlwXNd55/udu9/e
 F6CxgyAAkiAJUly0cZMoybJsyVtsS2N5y+I4XjJOppJJnHnv5aVcUzWTZKYyNe9VMi+VSlKx3yRO
 Kq/ixJPYcuwolrVYkiWRFPcFIPYG0I3eu+9+3zmN2wZEkRIIAiRu4/tVfQLVAMju06f/93+/853v
@@ -11856,7 +11856,7 @@ EARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARB
 EARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEMSzzv8XYACXL9HXDOwJ
 9AAAAABJRU5ErkJggg==" transform="matrix(0.75 0 0 0.75 497.499 216.4972)">
 </image>
-<image overflow="visible" width="438" height="498" id="region16" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbgAAAH0CAYAAABPUDikAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="438" height="498" id="region16" style={{opacity: this.props.regionId === 16 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbgAAAH0CAYAAABPUDikAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAgfRJREFUeNrsvQecZFd153/ue69y
 7px7ZnqmJ+cZjSKSCAKJbAwGjMAGw3rNH8xf9rLrPxjvelmzNtjL2hv+Nn+v19hgGxYjghGIKGmU
 J8ee0Dl3dXXl/N67/3urXjEjMZJmeqpDVf++Hx1VdXVPh1vv3d89595zDhEAAAAAAAAAAAAAAAAA
@@ -12443,7 +12443,7 @@ nr+HwKFg4Xoahh5x7M0V/XHSpcSB5Y4eVAdGEAQJHLHpJOto6LRuaXHD0CKuwXFYvdF2CMsTsSd7
 oIWNQpEEQZDAEdv2b8xgObRIIUaCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiC
 IAiCIAiCIAiCIAhiffn/AgwAVF2nHb2Y3ygAAAAASUVORK5CYII=" transform="matrix(0.75 0 0 0.75 672.9944 247.5033)">
 </image>
-<image overflow="visible" width="526" height="488" id="region15" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAg8AAAHpCAYAAAAF0N+gAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="526" height="488" id="region15" style={{opacity: this.props.regionId === 15 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAg8AAAHpCAYAAAAF0N+gAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAbUJJREFUeNrs3XmQJNd9J/ZfHlVZ
 lXVXdXVXX9M99w3MiQEGBIiDJHgtCICERIqkKOqwJEsrywp7Y3384/A/jvAVljccYUWstRHrkLmW
 JVMUtasDPExCIC7OADOYA3N090z1fdZ9Z6Xfr/IlpjAagHP0UV39/YR+qkZ1YzB81ZX5rd97+ZII
@@ -12937,7 +12937,7 @@ DwAAtEX3CYoAzOsDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAIAB/+Y//DtcBAD2CQouAQDgeaDruvwHf/gD9aPTH2IrbQD2ODIu
 AQDgeXDu7Oe8zXYCVwKAvc//F2AAFv0YN5jO/6EAAAAASUVORK5CYII=" transform="matrix(0.75 0 0 0.75 770.0039 81.6261)">
 </image>
-<image overflow="visible" width="376" height="414" id="region14" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXkAAAGfCAYAAAC6HqKiAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="376" height="414" id="region14" style={{opacity: this.props.regionId === 14 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXkAAAGfCAYAAAC6HqKiAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAdN9JREFUeNrsvQeYZVd157v2Pvnm
 VDl0V1XnqG5JCGUJkISIsjUyDAIb24BxGuOBwZ43Y39+fp/tNzz7s98bvwlmPNjGYN5gYxgzGAxY
 gFCWuhU6p0pduermcPJ+e997Sl0Che6qeyuuH1rc6nurbtjn3P9Ze+2115JgY0K5ydwYIAiCIK+J
@@ -13465,7 +13465,7 @@ gXgqdYBAIF4NaFuQPZI+AoFAoDBDIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAg
 EAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQ
 CAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgXip+P8CDAALYl0yfkcCIAAAAABJRU5ErkJggg==" transform="matrix(0.75 0 0 0.75 521.5014 495.2522)">
 </image>
-<image overflow="visible" width="485" height="423" id="region13" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeUAAAGoCAYAAAB49v3QAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="485" height="423" id="region13" style={{opacity: this.props.regionId === 13 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeUAAAGoCAYAAAB49v3QAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAiKlJREFUeNrsvQecZFd54PudmyvH
 DtU5TM/05KAZaSSNAkigBEIy9iIEIloCrGdwYC3Luzgsu9j48Vgbr+3FMuCIMWATLQfZBgRCKMwo
 TY6dc+V083nnVFdLrWHydE9XVX9//Y6qpqq66t5Tt+7/fid8BwBBEARBEARBEARBEARBEARBEARB
@@ -14082,7 +14082,7 @@ MSEOpEum4bNTZhiGYcAO7bEeX/UerjheDIRFmWEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEY
 hmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEY
 hmEYhmEYhmEYhmEYhmEYhmEY5rHx/wswACbNmVWm//bAAAAAAElFTkSuQmCC" transform="matrix(0.75 0 0 0.75 716.125 423.6222)">
 </image>
-<image overflow="visible" width="530" height="422" id="region12" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhMAAAGoCAYAAAD8RmcPAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="530" height="422" id="region12" style={{opacity: this.props.regionId === 12 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhMAAAGoCAYAAAD8RmcPAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAj75JREFUeNrs3QeYXWd9Lvr/6mv3
 Onv6aNS7rGK52xhjsOmGYEwJ5HAgBAgETpILpN6EnBQCuaTclJMcAoQWcu9NIDEJzQ1jy7jLsqw+
 ve3e1l579XXXN7PHlmwZy7bKjOb9Pc+nkfYejTTf7L3W+3WBAAAAAF4GAVUAAAAACBMAAACAMAEA
@@ -14731,7 +14731,7 @@ ECQmCIIgCIIgSEwQBEEQBEFigiAIgiAIEhMEQRAEQZCYIAiCIAiCIDFBEARBEASJCYIgCIIgSEwQ
 BEEQBEFigiAIgiAIgsQEQRAEQRAkJgiCIAiCIDFBEARBEASJCYIgCIIgCBITBEEQBEGQmCAIgiAI
 gsQEQRAEQRCTzP8vwAA8obG9/CE07wAAAABJRU5ErkJggg==" transform="matrix(0.75 0 0 0.75 935.4978 366.5013)">
 </image>
-<image overflow="visible" width="405" height="473" id="region11" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZUAAAHZCAYAAABOwaYsAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="405" height="473" id="region11" style={{opacity: this.props.regionId === 11 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZUAAAHZCAYAAABOwaYsAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAdZhJREFUeNrsvQmYXGd55/ue2rde
 qveu3ru1y5KtzbZseZFtjG2wMWYA2wEzgZBkeCAhmRuGcBkIM3duyIRcJuQyyVxgLgMJJiTEZjUE
 vOHdkuVFlmRZ6lbvW3V3de1Vp86pM99b5ztSdbsltaRuWVX1/z16n6o6XequOsv3P+/yvR8RAAAA
@@ -15263,7 +15263,7 @@ Jdomg8GkwmAck+sXyUUjMpEpt7tJRfblkmm4fuS5ryOqbISopEJCpdOAXuowt5ZnMKkwGMf4On7c
 NR084f8nbUvbNZTIe6XCebjgFu9+BpMKg8F4FqJ6GnJiMBgMBoPBeD78fwEGAHwpkzaegyxWAAAA
 AElFTkSuQmCC" transform="matrix(0.75 0 0 0.75 1028.0011 110.25)">
 </image>
-<image overflow="visible" width="521" height="434" id="region10" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgkAAAGzCAYAAACl24R2AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="521" height="434" id="region10" style={{opacity: this.props.regionId === 10 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgkAAAGzCAYAAACl24R2AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAf4lJREFUeNrsvQeQnNd173m+Dl/n
 OD0zPQkTEAkQAAECBBPAJIqkREkMEmVRJdmyZImW0z4/a+1da+uF8tu3b1W1tc9b3tLTrvzK1lrW
 85NtZZumJZMURTGABInEAWYwGExOneOX957pr8khCBCBANjh/6s61Y3uHgxwv9vf/d9zzj2HCAAA
@@ -15839,7 +15839,7 @@ OhMJKhMJvLtjib1WJ3FAEPsbykkgCIKDpxIwByEEvXBDHHoljFEMYEgBExaxsiKFFgiCRAJBEAd0
 TkCx4GXmgq2Sxh2gqoUEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAE
 QRAEQRAEQRAEQRAEQRAEQRAEQexp/r8AAwCM+LkDlL5jRgAAAABJRU5ErkJggg==" transform="matrix(0.75 0 0 0.75 1204.2389 365.0013)">
 </image>
-<image overflow="visible" width="370" height="492" id="region9" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXQAAAHtCAYAAAAJCoXYAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="370" height="492" id="region9" style={{opacity: this.props.regionId === 9 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXQAAAHtCAYAAAAJCoXYAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAXSJJREFUeNrsvQl4W9d177sAECRB
 iiApTqI4iBQlUpSoefAU2bIcJ7YcD5kdu3HTpmni9qVNb9M2bnub1/S26ZDXps8vzdTeNk7sOrm2
 G9uN7NixM8iDbM0jRVIUZ3EESQAEiBlvL5y9xSMIlCiOOMD/933rOyBAUcDBOf+zztprIAIAAAAA
@@ -16261,7 +16261,7 @@ xFzleM9Xe9ho3N2A8thVqiB75WXy9X4ZbrkgPwfEfBHAoigAyX9+6hdDLTpTC6wmmr76M7pAeqHE
 AAAAAAAAAAAAAAAAAAAAgP+fPTgkAAAAABD0/7U3DAAAAAAAAAAAAAAAAAAAAAAAAMBHAgwA/Ra+
 slnsb0cAAAAASUVORK5CYII=" transform="matrix(0.75 0 0 0.75 1511.7509 402.7472)">
 </image>
-<image overflow="visible" width="354" height="466" id="region8" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWMAAAHTCAYAAADyCHmUAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="354" height="466" id="region8" style={{opacity: this.props.regionId === 8 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWMAAAHTCAYAAADyCHmUAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAedxJREFUeNrsvQd0Xed157u/08+5
 HRcdIAoB9iJSpLpFSnKRJcs97pFjxy2O7STz4pSJM14zyXKe7SSTSV5mvLKUl+e3PHGS8Zpnx0W2
 ZVlWL6RIsYodvd7eTz/nfR/uuSJEkzQpAQQI7N/S1gUuLsB7T/mf/9nf/vYHgCAIgiAIgiAIgiAI
@@ -16812,7 +16812,7 @@ xgYHrs5By/oLC20wZhUULC2xDlhPjEL1nbCFZv98TuF2SKy3MEtThM3dWb6Y5ZJZuoLljU3+GPaM
 QKEQxqj7oLDHsMKvaMK+ImH7S48HQhiFQhijHtDn1f65BZvcR6FQKBQKhUKhUCgUqs/0/wUYAIjC
 Ws8/EOUGAAAAAElFTkSuQmCC" transform="matrix(0.75 0 0 0.75 1417.4814 580.2473)">
 </image>
-<image overflow="visible" width="594" height="368" id="region7" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlMAAAFwCAYAAACckf7tAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="594" height="368" id="region7" style={{opacity: this.props.regionId === 7 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlMAAAFwCAYAAACckf7tAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAc91JREFUeNrs3QmYXGd5J/r3LLXv
 1VXV+6K9bK2WLdloxQvYGGKDHQcbzBaG7WFmyOWSZGZCcglDSCbkznOTTGacZCCZCYQkhAkYMDE2
 NtjyKm9au1tSr9VdXfu+nqpzzj1f1SmpJWtXd6uX/+/x97RUVW5Vn67lX+/3nfcjAgAAAAAAAAAA
@@ -17336,7 +17336,7 @@ LVRY4sBPv2dIXOH9VVgsJSCsWB0WUgyz+XDMFMMwzObPwyLTD+Ol0CqF2XItk4hS6PcWLK1szjAM
 iymGYRiGEGUHxDmAnWXiiWEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhtnO/H8B
 BgA9+0jPQPbTxAAAAABJRU5ErkJggg==" transform="matrix(0.75 0 0 0.75 729.4937 549)">
 </image>
-<image overflow="visible" width="468" height="375" id="region6" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdUAAAF5CAYAAADJZ7BiAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="468" height="375" id="region6" style={{opacity: this.props.regionId === 6 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdUAAAF5CAYAAADJZ7BiAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAdoxJREFUeNrsvQmcW2d193/uql0a
 jWY0u2Y89mx2vO+xHWdzQgKkBEpIIAn8U0KhUCi0NC28pEDoS1n6kkL/Lf+m5dOSt2xhKYSEQEhC
 NjuJ923Gs++b9l260l3+zyNd2WPHiR17bGs538/nWDN3JFm62+855znPOQAIgiAIgiAIgiAIgiAI
@@ -17872,7 +17872,7 @@ YRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiG
 YRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYZi9QshhynEiHo8/++1XX4nyIWEYhmEYhmEYhmF2
 jf8vwAA0NuNNc7OeagAAAABJRU5ErkJggg==" transform="matrix(0.75 0 0 0.75 787.4937 731.752)">
 </image>
-<image overflow="visible" width="629" height="389" id="region5" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAncAAAGFCAYAAACfeNXtAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="629" height="389" id="region5" style={{opacity: this.props.regionId === 5 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAncAAAGFCAYAAACfeNXtAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAgmFJREFUeNrsvQt0W9d57/kdHLxI
 ECRA8CGKEiWKEiXRelqSo0h+yFbtJHYSO0njxG7rPtJ32mam96Y3M3PvuJ51Zyazetes1XZ1Vrva
 9OG2Tpv23tU4bZrGdRLHseLEsi1Lsh7UkxQlkSBBkATxxsGZ/Z2zt3gIkRJF8QGA/99an0ACEAAe
@@ -18461,7 +18461,7 @@ LKvqeV5w7Vw4cxdRNNb91RVawkrSLJ9GtPhFA/9vPSCJrdbxiezdozdYEiaEEEK5I6TjBU8CwhNc
 v6vV4nel3BFCyAmCe8sS8nhiFV4Pd1IF7Tg+EFLqCCHkBMI5d4SQbhdSQgih3BFCSIh2O1lQ9Agh
 hBBCCCGEkOPi/wswAAkAjH6z7SdAAAAAAElFTkSuQmCC" transform="matrix(0.75 0 0 0.75 1015.3847 1026.0021)">
 </image>
-<image overflow="visible" width="462" height="712" id="region4" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAc8AAALJCAYAAADSyairAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="462" height="712" id="region4" style={{opacity: this.props.regionId === 4 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAc8AAALJCAYAAADSyairAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAz2xJREFUeNrsvXmcZcdV53nibu/e
 t6+5Z1bWotq177sl2RbewB6mDWYw7RljBkPD0Ew3zQzTDd3N/NHNMHR7MEMPHzDNjofGjE3bGANe
 ZEm2dpVU+165L29f7n7vRLx3nytVKklZUm5V9ft+Pkcv872XL0uREfGLc+LECSIAAAAAAAAAAAAA
@@ -19396,7 +19396,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAB45/1+AAQDhUmKJHLjSxgAAAABJRU5ErkJggg==" transform="matrix(0.75 0 0 0.75 579.25 717.25)">
 </image>
-<image overflow="visible" width="587" height="353" id="region3" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkwAAAFjCAYAAADPdlS9AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="587" height="353" id="region3" style={{opacity: this.props.regionId === 3 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkwAAAFjCAYAAADPdlS9AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAjChJREFUeNrs3QecZFd9J/r/ubly
 6FCduyfPaJI0GmUJkBDGki1hMBmBsY0wz6zZ5/CBz/t44eO33mBjP/PWXrPYrL1eYxMN0gMDBiwD
 EkIojzRJk6dzqK5cdXN491RVj0ajkSaoZ6bD7wtH1V0dpvt03Xt/90QiAAAAAAAAAAAAAAAAAAAA
@@ -20029,7 +20029,7 @@ RCKRSCQSiUQikUgkEolEIpFIJBKJRCKRSCQSiUQikUgkEolEIpFIJBKJRCKRSCQSiUQikUgkEolE
 IpFIJBKJRCKRSCQSiUQikUgkEolEIpFIJBKJRCKRSCQSiUQikUgkEolEIpFIJBKJRCKRSCQSiUQi
 kY6n/n8BBgAo311zleMagQAAAABJRU5ErkJggg==" transform="matrix(0.75 0 0 0.75 881.3162 819.5)">
 </image>
-<image overflow="visible" width="745" height="450" id="region2" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAusAAAHDCAYAAACd7lT7AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="745" height="450" id="region2" style={{opacity: this.props.regionId === 2 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAusAAAHDCAYAAACd7lT7AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAcpNJREFUeNrs3QeYZFd5J/z3nJsr
 dXUOkzQzmqQZjQJCSCiNRgIZAwbLXmQDshAr9sOBXRsbMGjBeC0WgUBy4rPXfH6wzRpwehxYY5Yg
 wIABIZRmRmly7Jwq3njOd0/VrenSJE3qVP3/PTqqrpru6qrTVff+76n3nkMEAAAAAAAAAAAAAAAA
@@ -20547,7 +20547,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAmtg/7H92bgAAAADA
 AAAAAIR1uFoCmwAAAAAAYR1qN6gjsAMAAAAgrEMtcF0XGwEAAAAAYR1qkLArFWwFAAAAAIR1qEHc
 DQYtGwEAAAA2wP8XYACtu14CY7fPcgAAAABJRU5ErkJggg==" transform="matrix(0.75 0 0 0.75 995.2606 555.5)">
 </image>
-<image overflow="visible" width="560" height="507" id="region1" className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjEAAAH8CAYAAAAg8f4DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+<image overflow="visible" width="560" height="507" id="region1" style={{opacity: this.props.regionId === 1 ? 1 : null}} className="layer" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjEAAAH8CAYAAAAg8f4DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAiqFJREFUeNrs3QecnHWdP/Dv06a3
 3ZnZXpJNdpOQQhIIPYQiIoiIIh5yh+2sINhOz7Oent6dnt6dhb+eeB6oB+oJREBAQye0FNKTTXaT
 bC/Te3nmKf/nN/NMdkMSSCBls/t55/V7ze4zu5OdZ56Z5/P8KhEAAAAAAAAAAAAAAAAAAAAAAAAA

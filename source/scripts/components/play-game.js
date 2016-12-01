@@ -7,11 +7,16 @@ define(['react', 'superagent', '../components/map-svg', '../settings'], function
         getInitialState: function () {
             return {
                 city: '',
-                inputLetter: ''
+                inputLetter: '',
+                warningMessage: '',
+                regionId: null
             };
         },
         
         onButtonClick: function (event) {
+            this.setState({
+                        warningMessage: ''
+                    });
             console.log(this.state.city);
             console.log(this.props.game.gameId);
             Superagent
@@ -24,8 +29,12 @@ define(['react', 'superagent', '../components/map-svg', '../settings'], function
                 })
                 .end((error, response) => /* arrow function */{
                     console.log(response);
-                    if (JSON.parse(response.text).city){
-                        var name = JSON.parse(response.text).city.name;
+                    var state = {};
+                    
+                    response.body = JSON.parse(response.text);
+                    
+                    if (response.body.city){
+                        var name = response.body.city.name;
                         var i = 1;
                         var letter = name[name.length - i];
                         
@@ -35,26 +44,39 @@ define(['react', 'superagent', '../components/map-svg', '../settings'], function
                         }
                         letter = letter.toUpperCase();
                         
-                        this.setState({
-                            city: letter,
-                            inputLetter: letter
-                        });
+                        state.city = letter;
+                        state.inputLetter = letter;
+                        state.regionId = response.body.city.regionId;
 //                         this.props.onAddCity(this.state.city);
-                        this.props.onAddCity(JSON.parse(response.text).city);
+                        this.props.onAddCity(response.body.city);
                     }
+                    if (response.body.gameStatus.code !== 0){
+                        state.city =  this.state.inputLetter;
+                    }
+                    var message = '';
+                    switch (response.body.gameStatus.code) {
+                        case 10:
+                            message = 'Такого города нет в базе';
+                            break;
+                        case 12:
+                            message = 'Город начинается с неправильной буквы';
+                            break;
+                        case 11:
+                            message = 'Город уже был использован';
+                            break;
+                        default:
+                            message = '';
+                            break;
+                    }
+                    state.warningMessage = message;
+                    this.setState (state);
                 });
         },
         
         onInputChange: function (event) {
             var city = event.target.value;
             city = city.slice(0, 1).toUpperCase() + city.slice(1);
-            
-/*
-            if (city.split('-').length > 1 || city.split(' ').length > 1){
-                
-            }
-*/
-            
+                        
             if (this.state.inputLetter && city[0] !== this.state.inputLetter){
                 city = this.state.inputLetter;
             }
@@ -82,7 +104,10 @@ define(['react', 'superagent', '../components/map-svg', '../settings'], function
                         <button className='giveUp buttonStyle bg-color'>Сдаться</button>
                         </div>
                     </div>
-                    <MapSvg/>
+                    <div className='warningMessage'>
+                        {this.state.warningMessage}
+                    </div>
+                    <MapSvg regionId={this.state.regionId}/>
                 </div>
             );
         }
