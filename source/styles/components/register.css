@@ -46,3 +46,10 @@
     outline: none;
 }
 
+.warning-message {
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    color: red;
+    margin-left: 10px;
+}
+
