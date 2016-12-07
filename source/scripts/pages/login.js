@@ -5,7 +5,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         displayName: 'Login',
         
         onButtonClick: function (event) {
-            this.props.game.logIn('user', 'password')
+            this.props.game.logIn('user2', 'password1')
                 .then(function(){
                     location.href = '#/before-start';
                     console.log('ok');
@@ -31,7 +31,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                         <div>
                             <input type="password" className='login_input_style' placeholder="Пароль"/>
                         </div>
-                        <div className="checkbox">
+                        <div className="checkbox text-color-yellow">
                             <input type="checkbox"/>
                             Запомнить меня
                         </div>
