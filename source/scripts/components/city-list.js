@@ -27,7 +27,9 @@ define(['react'], function (React) {
                                 <li key={city.id} onClick={this.onClickButton.bind(this, city)}>
                                     <p>{city.name}</p>
                                     {this.state.expanded === city.id ? (
-                                        <div>{city.url}</div>
+                                        <div>
+                                            <a href={city.url} target="_blank">{city.url}</a>
+                                        </div>
                                     ) : null}
                                     
                                 </li>
