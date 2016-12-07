@@ -67,7 +67,7 @@ define(['react', 'superagent'], function (React, Superagent) {
                             {cities.map((city, i) => {
                                 return (
                                     <li key={city.id}>
-                                        <p onClick={this.getCityInfo.bind(this, city.name)}>{city.name}</p>
+                                        <p onClick={this.getCityInfo.bind(this, city.id)}>{city.name}</p>
                                     </li>
                                 );
                             })}
@@ -80,14 +80,17 @@ define(['react', 'superagent'], function (React, Superagent) {
         getCityInfo: function(city){
             if (city){
                 Superagent
-                    .get('http://ecity.org.ua:8080/city')
+                    .get('http://ecity.org.ua:8080/city/' + city)
                     .set('Accept', 'application/json')
+/*
                     .query({
-                        name: city
+                        id: city
                     })                
+*/
                     .end((error, response) =>{
+                        console.log(JSON.parse(response.text));
                         this.setState({
-                            cityInfo: response.body[0]
+                            cityInfo: JSON.parse(response.text)
                         });   
                     });
             }
@@ -114,11 +117,11 @@ define(['react', 'superagent'], function (React, Superagent) {
                     </ul>
                     {this.addCities(sort)}
                     {this.state.cityInfo ? (
-                        <div key={this.state.cityInfo.name} className='city_info'>
+                        <div key={this.state.cityInfo.id} className='city_info'>
                             <h3>{this.state.cityInfo.name}</h3>
                             <p><strong>Население: </strong>{this.state.cityInfo.population}</p>
                             <span><strong>Узнать больше: </strong></span>
-                            <a href={this.state.cityInfo.url}>{this.state.cityInfo.url}</a>
+                            <a href={this.state.cityInfo.url} target="_blank">{this.state.cityInfo.url}</a>
                         </div>
                     ) : null}
                 </div>
