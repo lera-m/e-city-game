@@ -13,6 +13,7 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
                 .get(Settings.host + Settings.api + '/game/new')
                 .set('Accept', 'application/json')
                 .end((error, response) => /* arrow function */{
+                    console.log(error);
                     if(!error || response.body.length > 0){
                         this.gameId = JSON.parse(response.text).id;
                         console.log(this.gameId);
@@ -32,6 +33,7 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
             .set('Accept', 'application/json')
             .auth(user, password, {type:'auto'})
             .end((error, response) => /* arrow function */{
+                console.log(error);
                 if(!error || response.body.length > 0){
                     this.loggedIn = true;
                     defer.resolve();
