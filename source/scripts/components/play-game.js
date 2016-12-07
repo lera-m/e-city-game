@@ -9,13 +9,15 @@ define(['react', 'superagent', '../components/map-svg', '../settings'], function
                 city: '',
                 inputLetter: '',
                 warningMessage: '',
-                regionId: null
+                winnerMessage: '',
+                regionId: null,
+                disabled: null
             };
         },
         
         onButtonClick: function (event) {
             this.setState({
-                        warningMessage: ''
+                        warningMessage: '',
                     });
             console.log(this.state.city);
             console.log(this.props.game.gameId);
@@ -38,7 +40,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings'], function
                         var i = 1;
                         var letter = name[name.length - i];
                         
-                        while (letter === 'й' || letter === 'ы' || letter === 'ь' || letter === 'ъ' || letter === 'ц'){
+                        while (letter === 'й' || letter === 'ы' || letter === 'ь' || letter === 'ъ' || letter === 'ц' || letter === ' '){
                             i++;
                             letter = name[name.length - i];
                         }
@@ -47,28 +49,45 @@ define(['react', 'superagent', '../components/map-svg', '../settings'], function
                         state.city = letter;
                         state.inputLetter = letter;
                         state.regionId = response.body.city.regionId;
-//                         this.props.onAddCity(this.state.city);
+                        
+                        this.props.onAddCity(response.body.cityClient);
                         this.props.onAddCity(response.body.city);
                     }
                     if (response.body.gameStatus.code !== 0){
                         state.city =  this.state.inputLetter;
                     }
-                    var message = '';
+                    var warningMessage = '';
+                    var winnerMessage = '';
                     switch (response.body.gameStatus.code) {
+                        case 2:
+                            warningMessage = 'Игра закончена. Начните новую игру';
+                            state.disabled = true;
+                            break;
                         case 10:
-                            message = 'Такого города нет в базе';
+                            warningMessage = 'Такого города нет в базе';
                             break;
                         case 12:
-                            message = 'Город начинается с неправильной буквы';
+                            warningMessage = 'Город начинается с неправильной буквы';
                             break;
                         case 11:
-                            message = 'Город уже был использован';
+                            warningMessage = 'Город уже был использован';
+                            break;
+                        case 20:
+                            winnerMessage = 'Поздравляем! Вы победили! Сыгрыйте снова!';
+                            state.disabled = true;
+                            break;
+                        case 21:
+                            winnerMessage = 'Вы проиграли. Попробуйте еще раз.';
+                            state.disabled = true;
                             break;
                         default:
-                            message = '';
+                            winnerMessage = '';
+                            warningMessage = '';
                             break;
                     }
-                    state.warningMessage = message;
+                    console.log(winnerMessage);
+                    state.winnerMessage = winnerMessage
+                    state.warningMessage = warningMessage;
                     this.setState (state);
                 });
         },
@@ -101,11 +120,14 @@ define(['react', 'superagent', '../components/map-svg', '../settings'], function
                         <button className='send buttonStyle'onClick={this.onButtonClick}>Отправить</button>
                         </div>
                         <div>
-                        <button className='giveUp buttonStyle bg-color'>Сдаться</button>
+                        <button className='giveUp buttonStyle bg-color text-color-yellow'>Сдаться</button>
                         </div>
                     </div>
-                    <div className='warningMessage'>
+                    <div className='warning-message'>
                         {this.state.warningMessage}
+                    </div>
+                    <div className='winner-message'>
+                        {this.state.winnerMessage}
                     </div>
                     <MapSvg regionId={this.state.regionId}/>
                 </div>

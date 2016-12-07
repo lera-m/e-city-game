@@ -49,7 +49,6 @@
     padding: 10px 25px;
     border-radius: 5px;
     box-shadow: 0 2px 7px rgba(0, 3, 45, 0.15);
-    color: #fffc02;
     
     
 }
@@ -70,8 +69,15 @@
     outline: none;
 }
 
-.warningMessage {
+.warning-message {
     color: red;
     padding-left: 20px;
     font-family: Roboto, sans-serif;
+}
+
+.winner-message {
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: 34px;
+    color: #07588a;
 }
