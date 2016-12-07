@@ -12,7 +12,7 @@ define(['react', '../components/side-bar', '../components/city-list', '../compon
         
         onAddCity: function(city){
             this.setState({
-                cities: this.state.cities.concat([city])
+                cities: [city].concat(this.state.cities)
             });
         },
                 
@@ -20,7 +20,7 @@ define(['react', '../components/side-bar', '../components/city-list', '../compon
             return (
                 <div>
                     <SideBar game={this.props.game}/>
-                    <PlayGame onAddCity={this.onAddCity}/>
+                    <PlayGame onAddCity={this.onAddCity}  game={this.props.game}/>
                     <CityList cities={this.state.cities}/>
                 </div>
             );
