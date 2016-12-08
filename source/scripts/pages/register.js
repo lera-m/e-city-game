@@ -44,20 +44,46 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
             email = this.emailValidation(this.state.email),
             name = this.state.name.slice(0, 1).toUpperCase() + this.state.name.slice(1),
             surname = this.state.surname.slice(0, 1).toUpperCase() + this.state.surname.slice(1),
-            city = this.state.city.slice(0, 1).toUpperCase() + this.state.city.slice(1);
+            city = this.state.city.slice(0, 1).toUpperCase() + this.state.city.slice(1),
+            state = {};
             
-            console.log(email);
             if (!login || !password){
-                this.setState({
-                        warningMessage: 'Заполните все обязательные поля'
-                });
+                        state.warningMessage = 'Заполните все обязательные поля'
             } else if (login && password && email) {
-                console.log('ok');
                 
+                Superagent
+                    .post('http://ecity.org.ua:8080/register')
+                    .set('Accept', 'application/json')
+                    .type('form')
+                    .send({
+                        login: login,
+                        password: password,
+                        email: email,
+                        firstName: name,
+                        lastName: surname,
+                        cityLive: city
+                    })
+                    .end((error, response) => {
+                        console.log(error, response);
+                        switch (response.body.code) {
+                            case 31:
+                                location.href = '#/login';
+                                console.log(31);
+                                break;
+                            case 32:
+                                console.log(32);
+                                state.warningMessage = 'Игрок с таким именем уже существует';
+                                break;
+                            default:
+                                break;
+                        }
+                        this.setState(state);
+                    });
                 
             } else {
                 console.log('not ok');
             }
+            this.setState(state);
             
         },
         
