@@ -69,7 +69,8 @@
     outline: none;
 }
 
-.warning-message {
+.warning_message {
+    text-align: left;
     color: red;
     padding-left: 20px;
     font-family: Roboto, sans-serif;
