@@ -4,8 +4,32 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
 
         displayName: 'Login',
         
+        getInitialState: function () {
+            return {
+                login: null,
+                password: null
+            };
+        },
+        
+        onInputChange: function (target, event) {
+            var value =  event.target.value;
+            
+            this.setState({
+                        [target]: value
+            });
+        },
+        
         onButtonClick: function (event) {
-            this.props.game.logIn('user2', 'password1')
+/*
+            var user = this.state.login;
+            var password = this.state.password;
+*/
+            
+            var user = 'user2';
+            var password = 'password1';
+            
+            if (user && password){
+                this.props.game.logIn(user, password)
                 .then(function(){
                     location.href = '#/before-start';
                     console.log('ok');
@@ -13,6 +37,8 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                 .fail(function(){
                     console.log('not ok');
                 });
+            }
+            
         },
         
         render: function () {
@@ -26,10 +52,10 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                             <p>E-City</p>
                         </div>
                         <div>
-                            <input type="text" className='login_input_style' placeholder="Логин"/>
+                            <input type="text" className='login_input_style' placeholder="Логин" onChange={this.onInputChange.bind(this, 'login')}/>
                         </div>
                         <div>
-                            <input type="password" className='login_input_style' placeholder="Пароль"/>
+                            <input type="password" className='login_input_style' placeholder="Пароль" onChange={this.onInputChange.bind(this, 'password')}/>
                         </div>
                         <div className="checkbox text-color-yellow">
                             <input type="checkbox"/>
