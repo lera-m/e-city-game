@@ -11,7 +11,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings'], function
                 warningMessage: '',
                 winnerMessage: '',
                 regionId: null,
-                disabled: null
+                disabled: false
             };
         },
         
@@ -73,7 +73,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings'], function
                             warningMessage = 'Город уже был использован';
                             break;
                         case 20:
-                            winnerMessage = 'Поздравляем! Вы победили! Сыгрыйте снова!';
+                            winnerMessage = 'Поздравляем! Вы победили! Сыграйте снова!';
                             state.disabled = true;
                             break;
                         case 21:
@@ -114,7 +114,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings'], function
                     </div>
                     <div className='playField'>
                         <div>
-                        <input className='city buttonStyle' type="text" value={this.state.city} onChange={this.onInputChange} placeholder="Введите город"/>
+                        <input className='city buttonStyle' type="text" value={this.state.city} onChange={this.onInputChange} placeholder="Введите город" disabled={this.state.disabled}/>
                         </div>
                         <div>
                         <button className='send buttonStyle'onClick={this.onButtonClick}>Отправить</button>
@@ -123,7 +123,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings'], function
                         <button className='giveUp buttonStyle bg-color text-color-yellow'>Сдаться</button>
                         </div>
                     </div>
-                    <div className='warning-message'>
+                    <div className='warning_message'>
                         {this.state.warningMessage}
                     </div>
                     <div className='winner-message'>
