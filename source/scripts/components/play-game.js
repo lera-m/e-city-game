@@ -1,4 +1,4 @@
-define(['react', 'superagent', '../components/map-svg', '../settings'], function (React, Superagent, MapSvg, Settings) {
+define(['react', 'superagent', '../components/map-svg', '../settings', '../components/timer'], function (React, Superagent, MapSvg, Settings, Timer) {
     
     return React.createClass ({
         
@@ -14,7 +14,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings'], function
                 disabled: false
             };
         },
-        
+                
         onButtonClick: function (event) {
             this.setState({
                         warningMessage: '',
@@ -85,10 +85,10 @@ define(['react', 'superagent', '../components/map-svg', '../settings'], function
                             warningMessage = '';
                             break;
                     }
-                    console.log(winnerMessage);
                     state.winnerMessage = winnerMessage
                     state.warningMessage = warningMessage;
                     this.setState (state);
+                    
                 });
         },
         
@@ -104,14 +104,11 @@ define(['react', 'superagent', '../components/map-svg', '../settings'], function
                 city: city
             });
         },
-        
+                
         render: function () {
             return (
                 <div className="play-game">
-                    <div className='score'>
-                        <div className="first-number counter"><p>6</p></div>
-                        <div className="second-number counter"><p>0</p></div>
-                    </div>
+                    <Timer/>
                     <div className='playField'>
                         <div>
                         <input className='city buttonStyle' type="text" value={this.state.city} onChange={this.onInputChange} placeholder="Введите город" disabled={this.state.disabled}/>

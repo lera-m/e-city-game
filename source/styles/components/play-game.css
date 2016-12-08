@@ -9,27 +9,6 @@
     display: flex;
     justify-content: space-between;
 }
-.score {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 40px;
-}
-.score p {
-    margin: 0;
-}
-.counter {
-    margin: 5px;
-    text-align: center;
-    width: 46px;
-    height: 61px;
-    border: 1px solid #07588a;
-    border-radius: 5px 4px 4px 5px;
-    color: #6ac1b8;
-    font-family: Roboto, sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 58px;
-}
 .play-game .city {
     padding-left: 30px;
     padding-right: 30px;
