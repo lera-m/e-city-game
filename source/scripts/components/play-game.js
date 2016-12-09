@@ -14,6 +14,25 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                 disabled: false
             };
         },
+        
+        componentDidMount: function (){
+            this.interval = setInterval(this.timerControl, 1000)
+        },
+        
+        componentWillUnmount: function (){
+            clearInterval(this.interval);
+            console.log('finished interval');
+        }, 
+        
+        timerControl: function (){
+            if (this.props.time === 0){
+                this.setState ({
+                    disabled: true,
+                    warningMessage: 'ВРЕМЯ ВЫШЛО'
+                });
+                this.componentWillUnmount();
+            }
+        },
                 
         onButtonClick: function (event) {
             this.setState({
@@ -108,7 +127,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
         render: function () {
             return (
                 <div className="play-game">
-                    <Timer/>
+                    <Timer getTimerValue={this.props.getTimerValue}/>
                     <div className='playField'>
                         <div>
                         <input className='city buttonStyle' type="text" value={this.state.city} onChange={this.onInputChange} placeholder="Введите город" disabled={this.state.disabled}/>

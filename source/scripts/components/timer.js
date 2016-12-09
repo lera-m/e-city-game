@@ -6,7 +6,7 @@ define(['react'], function (React) {
         
         getInitialState: function () {
             return {
-                time: 12
+                time: '05'
             };
         },
         
@@ -25,6 +25,7 @@ define(['react'], function (React) {
             
             if (counter < 0 || counter === '00'){
                 this.componentWillUnmount();
+                this.props.getTimerValue();
             } else if (counter <= 10){
                 state.time = '0' + (counter - 1);
             } else {

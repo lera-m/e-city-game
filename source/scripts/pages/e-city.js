@@ -6,7 +6,8 @@ define(['react', '../components/side-bar', '../components/city-list', '../compon
         
           getInitialState: function () {
             return {
-                cities: []
+                cities: [],
+                time: null
             };
         },
         
@@ -15,12 +16,18 @@ define(['react', '../components/side-bar', '../components/city-list', '../compon
                 cities: [city].concat(this.state.cities)
             });
         },
+        
+        getTimerValue: function(){
+            this.setState({
+                time: 0
+            });
+        },
                 
         render: function () {
             return (
                 <div>
                     <SideBar game={this.props.game}/>
-                    <PlayGame onAddCity={this.onAddCity}  game={this.props.game}/>
+                    <PlayGame onAddCity={this.onAddCity}  game={this.props.game} getTimerValue={this.getTimerValue} time={this.state.time}/>
                     <CityList cities={this.state.cities}/>
                 </div>
             );
