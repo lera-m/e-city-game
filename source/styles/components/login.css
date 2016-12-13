@@ -29,10 +29,10 @@
     color: #07588a;
 }
 .login .vorgetPassword a,
-.social p{
+.social p,
+.login_register a{
     margin: 0;
     text-decoration: none;
-    color: #bfe9db;
     font-family: Roboto, sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -42,6 +42,7 @@
 .login .checkbox {
     padding: 10px 35px;
     text-align: left;
+    color: #f6ed60;
     font-family: Roboto;
     font-size: 18px;
     font-weight: 700;

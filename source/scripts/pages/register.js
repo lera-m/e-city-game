@@ -41,7 +41,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         onButtonClick: function (event) {
             var login = this.state.login,
             password = this.state.password,
-            email = this.emailValidation(this.state.email),
+            email =  this.emailValidation(this.state.email),
             name = this.state.name.slice(0, 1).toUpperCase() + this.state.name.slice(1),
             surname = this.state.surname.slice(0, 1).toUpperCase() + this.state.surname.slice(1),
             city = this.state.city.slice(0, 1).toUpperCase() + this.state.city.slice(1),
