@@ -4,11 +4,24 @@ define(['react', '../components/side-bar', '../components/city-list', '../compon
 
         displayName: 'E-City',
         
-          getInitialState: function () {
+        getInitialState: function () {
             return {
-                cities: [],
-                time: null
+                cities: []
             };
+        },
+        
+        componentDidMount: function () {
+            this.props.game.onChangeGameId(this.onChangeGameId);
+        },
+
+        componentWillUnmount: function () {
+            this.props.game.offChangeGameId(this.onChangeGameId);
+        },
+
+        onChangeGameId: function (gameId) {
+            this.setState({
+                cities: []
+            });
         },
         
         onAddCity: function(city){
@@ -16,18 +29,12 @@ define(['react', '../components/side-bar', '../components/city-list', '../compon
                 cities: [city].concat(this.state.cities)
             });
         },
-        
-        getTimerValue: function(){
-            this.setState({
-                time: 0
-            });
-        },
                 
         render: function () {
             return (
                 <div>
                     <SideBar game={this.props.game}/>
-                    <PlayGame onAddCity={this.onAddCity}  game={this.props.game} getTimerValue={this.getTimerValue} time={this.state.time}/>
+                    <PlayGame onAddCity={this.onAddCity} game={this.props.game}/>
                     <CityList cities={this.state.cities}/>
                 </div>
             );
