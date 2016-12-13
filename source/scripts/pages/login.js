@@ -15,7 +15,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
             var value =  event.target.value;
             
             this.setState({
-                        [target]: value
+                [target]: value
             });
         },
         
@@ -57,20 +57,20 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                         <div>
                             <input type="password" className='login_input_style' placeholder="Пароль" onChange={this.onInputChange.bind(this, 'password')}/>
                         </div>
-                        <div className="checkbox text-color-yellow">
+                        <div className="checkbox">
                             <input type="checkbox"/>
                             Запомнить меня
                         </div>
-                        <div className="vorgetPassword">
-                            <a href="#/register">Зарегистрироваться</a>
+                        <div className="login_register">
+                            <a href="#/register" className='text-control-color'>Зарегистрироваться</a>
                         </div>
                         <div className="vorgetPassword">
-                            <a href='#'>Забыли пароль?</a>
+                            <a href='#' className='text-control-color'>Забыли пароль?</a>
                         </div>
                         <div>
                             <input type="submit" className='login_submit' onClick={this.onButtonClick} value="Войти"/>
                         </div>
-                        <div className='social'>
+                        <div className='social text-control-color'>
                             <p>Войти при помощи</p>
                             <div>
                                 <input type='image' src='../img/vk.png'/>

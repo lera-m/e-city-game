@@ -35,3 +35,10 @@
 .text-color-yellow {
     color: #f6ed60;
 }
+
+.text-control-color {
+    color: #e1f6f4;
+}
+.text-control-color:hover {
+    color: #f6ed60;
+}

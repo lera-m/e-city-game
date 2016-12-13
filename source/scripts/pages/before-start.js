@@ -27,19 +27,19 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                                 <p>E-City</p>
                             </div>
                             <div>
-                                <a className='text-color-yellow' href="#/e-city" onClick={this.onButtonClick}>Новая игра</a>
+                                <a className='text-control-color' href="#/e-city" onClick={this.onButtonClick}>Новая игра</a>
                             </div>
                             <div>
                                 <a href="#/e-city" className='grey-color'>Продолжить</a>
                             </div>
                             <div>
-                                <a className='text-color-yellow' href="#/rules">Правила</a>
+                                <a className='text-control-color' href="#/rules">Правила</a>
                             </div>
                             <div>
-                                <a className='text-color-yellow' href="#/library">Библиотека</a>
+                                <a className='text-control-color' href="#/library">Библиотека</a>
                             </div>
                             <div>
-                                <a className='text-color-yellow' href="#/login" onClick={this.onLogOut}>Выход</a>
+                                <a className='text-control-color' href="#/login" onClick={this.onLogOut}>Выход</a>
                             </div>
                         </div>
                     </div>
