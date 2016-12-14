@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.css');
 
 @import url("./components/side-bar.css");
 @import url("./components/login.css");

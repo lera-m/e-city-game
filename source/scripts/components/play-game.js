@@ -1,4 +1,4 @@
-define(['react', 'superagent', '../components/map-svg', '../settings', '../components/timer', '../components/timer-placeholder'], function (React, Superagent, MapSvg, Settings, Timer, TimerPlaceholder) {
+define(['react', 'superagent', '../components/map-leaflet', '../settings', '../components/timer', '../components/timer-placeholder'], function (React, Superagent, MapLeaflet, Settings, Timer, TimerPlaceholder) {
 
     return React.createClass ({
 
@@ -216,7 +216,7 @@ console.log(response);
                     <div className='winner-message'>
                         {this.state.winnerMessage}
                     </div>
-                    <MapSvg regionId={this.state.regionId} regionClientId={this.state.regionClientId} topPosition={this.state.topPosition} leftPosition={this.state.leftPosition}/>
+                    <MapLeaflet/>
                 </div>
             );
         }
