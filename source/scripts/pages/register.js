@@ -52,7 +52,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
             } else if (login && password && email) {
                 
                 Superagent
-                    .post('http://ecity.org.ua:8080/register')
+                    .post(Settings.host + Settings.api + '/register')
                     .set('Accept', 'application/json')
                     .type('form')
                     .send({

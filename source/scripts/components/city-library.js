@@ -1,4 +1,4 @@
-define(['react', 'superagent'], function (React, Superagent) {
+define(['react', 'superagent', '../settings'], function (React, Superagent, Settings) {
     
     var alphabet = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ы', 'э', 'ю', 'я'];
     
@@ -26,7 +26,7 @@ define(['react', 'superagent'], function (React, Superagent) {
         
         getLibrary: function () {
             Superagent
-            .get('http://ecity.org.ua:8080/cities')
+            .get(Settings.host + Settings.api + '/cities')
                 .set('Accept', 'application/json')
                 .end((error, response) => /* arrow function */{
                     this.setState({
@@ -80,7 +80,7 @@ define(['react', 'superagent'], function (React, Superagent) {
         getCityInfo: function(city){
             if (city){
                 Superagent
-                    .get('http://ecity.org.ua:8080/city/' + city)
+                    .get(Settings.host + Settings.api + '/city/' + city)
                     .set('Accept', 'application/json')
 /*
                     .query({
