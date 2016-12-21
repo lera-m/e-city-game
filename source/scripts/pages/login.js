@@ -20,13 +20,13 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         },
         
         onButtonClick: function (event) {
-/*
             var user = this.state.login;
             var password = this.state.password;
-*/
             
+/*
             var user = 'user2';
             var password = 'password1';
+*/
             
             if (user && password){
                 this.props.game.logIn(user, password)
