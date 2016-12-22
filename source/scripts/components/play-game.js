@@ -45,7 +45,9 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
             });
         },
 
-        onButtonClick: function (event) {
+        onFormSubmit: function (event) {
+            event.preventDefault();
+            
             this.setState({
                         warningMessage: '',
                     });
@@ -110,11 +112,15 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                             break;
                         case 20:
                             winnerMessage = 'Поздравляем! Вы победили! Сыграйте снова!';
+                            state.inputLetter = '';
                             state.disabled = true;
+                            state.showTimer = 0;
+                            state.city = '';
                             break;
                         case 21:
                             winnerMessage = 'Вы проиграли. Попробуйте еще раз.';
                             state.disabled = true;
+                            state.showTimer = 0;
                             break;
                         default:
                             winnerMessage = '';
@@ -124,7 +130,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                     state.winnerMessage = winnerMessage
                     state.warningMessage = warningMessage;
                     this.setState (state);
-
+                    console.log(this.state.inputLetter);
                 });
         },
 
@@ -149,17 +155,17 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                     ) : (
                         <TimerPlaceholder/>
                     )}
-                    <div className='playField'>
+                    <form className='playField' onSubmit={this.onFormSubmit}>
                         <div>
-                        <input className='city buttonStyle' type="text" value={this.state.city} onChange={this.onInputChange} placeholder="Введите город" disabled={this.state.disabled}/>
+                            <input className='city buttonStyle' type="text" value={this.state.city} onChange={this.onInputChange} placeholder="Введите город" disabled={this.state.disabled}/>
                         </div>
                         <div>
-                        <button className='send buttonStyle'onClick={this.onButtonClick}>Отправить</button>
+                            <button type='submit' className='send buttonStyle'>Отправить</button>
                         </div>
                         <div>
-                        <button className='giveUp buttonStyle bg-color text-color-yellow'>Сдаться</button>
+                            <button type='button' className='giveUp buttonStyle bg-color text-color-yellow'>Сдаться</button>
                         </div>
-                    </div>
+                    </form>
                     <div className='warning_message'>
                         {this.state.warningMessage}
                     </div>
