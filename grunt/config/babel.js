@@ -7,6 +7,17 @@ module.exports = {
         presets: babelConfig.presets
     },
 
+    dist: {
+        files: [{
+            expand: true,
+            cwd: './source',
+            src: [
+                '**/*.js'
+            ],
+            dest: './dist'
+        }]
+    },
+
     build: {
         files: [{
             expand: true,

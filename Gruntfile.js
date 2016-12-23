@@ -28,6 +28,11 @@ module.exports = function (grunt) {
         'babel:build'
     ]);
 
+    grunt.registerTask('dist', 'Build', [
+        'copy:dist',
+        'babel:dist'
+    ]);
+
     grunt.registerTask('run', 'Dev', [
         'clean:build',
         'build',
