@@ -130,7 +130,6 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                     state.winnerMessage = winnerMessage
                     state.warningMessage = warningMessage;
                     this.setState (state);
-                    console.log(this.state.inputLetter);
                 });
         },
 
@@ -145,6 +144,26 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
             this.setState({
                 city: city
             });
+        },
+        
+        giveUpButton: function(){
+            Superagent
+                .get(Settings.host + Settings.api + '/game/over/giveup')
+                .set('Accept', 'application/json')
+                .query({
+                    game_id: this.props.game.gameId
+                })
+                .end((error, response) => {
+                    if (response.body.gameStatus.code === 21){
+                        this.setState ({
+                            winnerMessage: 'Вы проиграли. Попробуйте еще раз.',
+                            disabled: true,
+                            showTimer: 0,
+                            inputLetter: '',
+                            city: ''
+                        });
+                    }
+                });
         },
 
         render: function () {
@@ -163,7 +182,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                             <button type='submit' className='send buttonStyle'>Отправить</button>
                         </div>
                         <div>
-                            <button type='button' className='giveUp buttonStyle bg-color text-color-yellow'>Сдаться</button>
+                            <button type='button' className='giveUp buttonStyle bg-color text-color-yellow' onClick={this.giveUpButton}>Сдаться</button>
                         </div>
                     </form>
                     <div className='warning_message'>
