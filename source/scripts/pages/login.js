@@ -3,44 +3,55 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
     return React.createClass({
 
         displayName: 'Login',
-        
+
         getInitialState: function () {
             return {
                 login: null,
                 password: null
             };
         },
-        
+
+        componentDidMount: function () {
+            this.props.game.getGameStatus()
+                .then(function(){
+                    location.href = '#/before-start';
+                    console.log('loged in');
+                })
+                .fail(function(){
+                    console.log('not loged in');
+                });
+        },
+
         onInputChange: function (target, event) {
             var value =  event.target.value;
-            
+
             this.setState({
                 [target]: value
             });
         },
-        
+
         onButtonClick: function (event) {
+/*
             var user = this.state.login;
             var password = this.state.password;
-            
-/*
+
+*/
             var user = 'user2';
             var password = 'password1';
-*/
-            
+
             if (user && password){
                 this.props.game.logIn(user, password)
-                .then(function(){
-                    location.href = '#/before-start';
-                    console.log('ok');
-                })
-                .fail(function(){
-                    console.log('not ok');
-                });
+                    .then(function(){
+                        location.href = '#/before-start';
+                        console.log('ok');
+                    })
+                    .fail(function(){
+                        console.log('not ok');
+                    });
             }
-            
+
         },
-        
+
         render: function () {
             return (
                 <div>
@@ -79,7 +90,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                             </div>
                         </div>
                     </div>
-                </div>  
+                </div>
             );
         }
     });

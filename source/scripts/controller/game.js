@@ -46,12 +46,28 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
                     defer.reject();
                 }
             });
-        Superagent
+
+        return defer.promise;
+    };
+    
+     Game.prototype.getGameStatus = function (){
+         var defer = Q.defer();
+         
+         Superagent
             .get(Settings.host + Settings.api + '/game/status')
             .set('Accept', 'application/json')
             .end((error, response) => /* arrow function */{
                 this.gameId = JSON.parse(response.text).id;
-                console.log(this.gameId);
+                
+                console.log('getGameStatus => gameId', this.gameId);
+                
+                if (!error) {
+                    this.loggedIn = true;
+                    defer.resolve();
+                } else {
+                    this.loggedIn = false;
+                    defer.reject();
+                }
             });
 
         return defer.promise;
