@@ -1,4 +1,4 @@
-define(['react', 'superagent', '../settings'], function (React,  Superagent, Settings) {
+define(['react', 'superagent', '../settings', 'react-popup'], function (React,  Superagent, Settings, Popup) {
     
     return React.createClass ({
         
@@ -8,11 +8,29 @@ define(['react', 'superagent', '../settings'], function (React,  Superagent, Set
             game: React.PropTypes.object.isRequired
         },
         
+/*
+        onButtonClick: function(event) {
+            Popup.create({
+                content: 'Вы уверены, что хотите начать новую игру?',
+                buttons: {
+                    left: ['нет'],
+                    right: [{
+                        text: 'да',
+                        action: function(popup){
+                            this.props.game.getGameId()
+                                .then(() => {
+                                    location.href="#/e-city";
+                                });
+                            popup.close();
+                        }
+                    }]
+                },
+            });
+*/
         onButtonClick: function(event) {
             this.props.game.getGameId()
                 .then(() => {
                 });
-
         },
         
         render: function () {
@@ -22,7 +40,7 @@ define(['react', 'superagent', '../settings'], function (React,  Superagent, Set
                         <p>E-City</p>
                     </div>
                     <div>
-                        <a className='text-control-color' href="#/e-city" onClick={this.onButtonClick}>Новая игра</a>
+                        <a className='text-control-color' href='#/e-city' onClick={this.onButtonClick}>Новая игра</a>
                     </div>
                     <div>
                         <a className='grey-color' href="#">Продолжить</a>
