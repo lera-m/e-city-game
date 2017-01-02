@@ -24,14 +24,12 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('build', 'Build', [
-        'copy:build',
-        'babel:build'
+        'copy:build'
     ]);
 
     grunt.registerTask('dist', 'Build', [
         'clean:dist',
-        'copy:dist',
-        'babel:dist'
+        'copy:dist'
     ]);
 
     grunt.registerTask('run', 'Dev', [
