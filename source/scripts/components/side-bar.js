@@ -80,6 +80,7 @@ const SideBar = React.createClass({
                             this.props.game.getGameId()
                                 .then(() => {
                                     location.href="#/library";
+                                    this.props.game.giveUp();
                                 });
                             this.props.game.changeGameWasStarted(false);
                             popup.close();

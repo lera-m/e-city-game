@@ -69,16 +69,16 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                     
                     response.body = JSON.parse(response.text);
                     
-                    if (this.props.game.gameWasStarted === false){
-                        this.props.game.changeGameWasStarted(true);
-                    }
-                    
                     if (response.body.cityClient){
                         this.props.onAddCity(response.body.cityClient);
                         state.regionClientId = response.body.cityClient.regionId;
                     }
                     
                     if (response.body.city){
+                        
+                        if (this.props.game.gameWasStarted === false){
+                            this.props.game.changeGameWasStarted(true);
+                        }
                         var name = response.body.city.name;
                         var i = 1;
                         var letter = name[name.length - i];
@@ -103,6 +103,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                     var warningMessage = '';
                     var winnerMessage = '';
                     switch (response.body.gameStatus.code) {
+                        case 1:
                         case 2:
                             warningMessage = 'Игра закончена. Начните новую игру';
                             state.disabled = true;
@@ -153,14 +154,9 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
         },
         
         giveUpButton: function(){
-            Superagent
-                .get(Settings.host + Settings.api + '/game/over/giveup')
-                .set('Accept', 'application/json')
-                .query({
-                    game_id: this.props.game.gameId
-                })
-                .end((error, response) => {
-                    if (response.body.gameStatus.code === 21){
+            this.props.game.giveUp()
+                .then(code => {
+                    if (code === 21){
                         this.setState ({
                             winnerMessage: 'Вы проиграли. Попробуйте еще раз.',
                             disabled: true,
@@ -169,8 +165,10 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                             city: ''
                         });
                     }
+                })
+                .fail(error => {
+                     
                 });
-            this.props.game.changeGameWasStarted(false);
         },
 
         render: function () {

@@ -5,6 +5,7 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
           this.gameId = 0;
           this.gameStatus = false;
           this.gameWasStarted = false;
+          this.giveUpCode = 0;
     };
 
     Game.prototype.getGameId = function(){
@@ -14,7 +15,6 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
                 .get(Settings.host + Settings.api + '/game/new')
                 .set('Accept', 'application/json')
                 .end((error, response) => /* arrow function */{
-                    console.log(error);
                     if(!error || response.body.length > 0){
                         this.gameId = JSON.parse(response.text).id;
                         console.log(this.gameId);
@@ -38,7 +38,6 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
             .set('Accept', 'application/json')
             .auth(user, password, {type:'auto'})
             .end((error, response) => /* arrow function */{
-                console.log(error);
                 if(!error || response.body.length > 0){
                     this.loggedIn = true;
                     defer.resolve();
@@ -60,7 +59,7 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
             .end((error, response) => /* arrow function */{
                 this.gameId = JSON.parse(response.text).id;
                 
-                console.log('getGameStatus => gameId', this.gameId);
+console.log('getGameStatus => gameId', this.gameId);
                 
                 if (!error) {
                     this.loggedIn = true;
@@ -74,10 +73,31 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
         return defer.promise;
     };
     
+    Game.prototype.giveUp = function (){
+        return Q.promise((resolve, reject) => {
+            Superagent
+                .get(Settings.host + Settings.api + '/game/over/giveup')
+                .set('Accept', 'application/json')
+                .query({
+                    game_id: this.gameId
+                })
+                .end((error, response) => {
+                    if (error) {
+                        return reject(error);
+                    }
+                    
+                    this.giveUpCode =  response.body.gameStatus.code;
+                    
+                    this.changeGameWasStarted(false);
+                                        
+                    resolve(this.giveUpCode);
+                });
+        });
+    };
+    
     Game.prototype.changeGameWasStarted = function (value){
         this.gameWasStarted = value;
-        console.log(this.gameWasStarted);
-    }
+    };
 
     Game.prototype.logOut = function(){
         this.loggedIn = false;
