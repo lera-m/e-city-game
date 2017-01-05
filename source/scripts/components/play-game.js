@@ -105,7 +105,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                     switch (response.body.gameStatus.code) {
                         case 1:
                         case 2:
-                            warningMessage = 'Игра закончена. Начните новую игру';
+                            warningMessage = 'Эта игра уже окончена. Начните новую игру';
                             state.disabled = true;
                             break;
                         case 10:
@@ -154,21 +154,24 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
         },
         
         giveUpButton: function(){
-            this.props.game.giveUp()
-                .then(code => {
-                    if (code === 21){
-                        this.setState ({
-                            winnerMessage: 'Вы проиграли. Попробуйте еще раз.',
-                            disabled: true,
-                            showTimer: 0,
-                            inputLetter: '',
-                            city: ''
-                        });
-                    }
-                })
-                .fail(error => {
-                     
-                });
+            
+            if (this.props.game.gameWasStarted === true){
+                 this.props.game.giveUp()
+                    .then(code => {
+                        if (code === 21){
+                            this.setState ({
+                                winnerMessage: 'Вы проиграли. Попробуйте еще раз.',
+                                disabled: true,
+                                showTimer: 0,
+                                inputLetter: '',
+                                city: ''
+                            });
+                        }
+                    })
+                    .fail(error => {
+                         
+                    });
+            }
         },
 
         render: function () {

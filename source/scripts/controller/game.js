@@ -74,6 +74,7 @@ console.log('getGameStatus => gameId', this.gameId);
     };
     
     Game.prototype.giveUp = function (){
+        
         return Q.promise((resolve, reject) => {
             Superagent
                 .get(Settings.host + Settings.api + '/game/over/giveup')
