@@ -29,28 +29,71 @@ const SideBar = React.createClass({
     onButtonClick: function(event) {
         event.preventDefault();
         
-        Popup.create({
-            content: 'Вы уверены, что хотите начать новую игру?',
-            buttons: {
-                left: [{
-                    text: 'нет',
-                    action: (popup) => {
-                        popup.close();
-                    }
-                }],
-                right: [{
-                    text: 'да',
-                    action: (popup) => {
-                        this.props.game.getGameId()
-                            .then(() => {
-                                console.log('popup action');
-                                location.href="#/e-city";
-                            });
-                        popup.close();
-                    }
-                }]
-            }
-        });
+        if (this.props.game.gameWasStarted === true) {
+            Popup.create({
+                content: 'Ваша игра еще не закончена. Вы уверены, что хотите начать новую игру?',
+                buttons: {
+                    left: [{
+                        text: 'нет',
+                        action: (popup) => {
+                            popup.close();
+                        }
+                    }],
+                    right: [{
+                        text: 'да',
+                        action: (popup) => {
+                            this.props.game.getGameId()
+                                .then(() => {
+                                    location.href="#/e-city";
+                                });
+                            this.props.game.changeGameWasStarted(false);
+                            popup.close();
+                        }
+                    }]
+                }
+            });
+        } else {
+            this.props.game.getGameId()
+                .then(() => {
+                    location.href="#/e-city";
+                });
+            this.props.game.changeGameWasStarted(false);
+        }
+    },
+    
+    onLibraryClick: function (event){
+        event.preventDefault();
+        
+        if (this.props.game.gameWasStarted === true) {
+            Popup.create({
+                content: 'При переходе в библиотеку Ваша игра будет закончена. Вы уверены, что хотите закончить игру?',
+                buttons: {
+                    left: [{
+                        text: 'нет',
+                        action: (popup) => {
+                            popup.close();
+                        }
+                    }],
+                    right: [{
+                        text: 'да',
+                        action: (popup) => {
+                            this.props.game.getGameId()
+                                .then(() => {
+                                    location.href="#/library";
+                                });
+                            this.props.game.changeGameWasStarted(false);
+                            popup.close();
+                        }
+                    }]
+                }
+            });
+        } else {
+            this.props.game.getGameId()
+                .then(() => {
+                    location.href="#/library";
+                });
+            this.props.game.changeGameWasStarted(false);
+        }
     },
     
     render: function () {
@@ -63,16 +106,16 @@ const SideBar = React.createClass({
                     <a className='text-control-color' href='#' onClick={this.onButtonClick}>Новая игра</a>
                 </div>
                 <div>
-                    <a className='grey-color' href="#">Продолжить</a>
+                    <a className='grey-color' href="#/e-city">Продолжить</a>
                 </div>
                 <div>
-                    <a className='text-control-color' href="#/e-city">Рекорды</a>
+                    <a className='text-control-color' href="#">Рекорды</a>
                 </div>
                 <div>
                     <a className='text-control-color' href="#/rules">Правила</a>
                 </div>
                 <div>
-                    <a className='text-control-color' href="#/library">Библиотека</a>
+                    <a className='text-control-color' href="#" onClick={this.onLibraryClick}>Библиотека</a>
                 </div>
                 <div>
                     <a className='text-control-color' href="#/before-start">Выход</a>

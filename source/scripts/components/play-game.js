@@ -23,6 +23,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
 
         componentWillUnmount: function () {
             this.props.game.offChangeGameId(this.onChangeGameId);
+            this.props.game.changeGameWasStarted(false);
         },
 
         onChangeGameId: function (gameId) {
@@ -43,6 +44,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                 disabled: true,
                 warningMessage: 'ВРЕМЯ ВЫШЛО'
             });
+            this.props.game.changeGameWasStarted(false);
         },
 
         onFormSubmit: function (event) {
@@ -64,8 +66,12 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                 .end((error, response) => {
                     console.log(response);
                     var state = {};
-
+                    
                     response.body = JSON.parse(response.text);
+                    
+                    if (this.props.game.gameWasStarted === false){
+                        this.props.game.changeGameWasStarted(true);
+                    }
                     
                     if (response.body.cityClient){
                         this.props.onAddCity(response.body.cityClient);
@@ -164,6 +170,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                         });
                     }
                 });
+            this.props.game.changeGameWasStarted(false);
         },
 
         render: function () {

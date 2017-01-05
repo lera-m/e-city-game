@@ -4,6 +4,7 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
           this.loggedIn = false;
           this.gameId = 0;
           this.gameStatus = false;
+          this.gameWasStarted = false;
     };
 
     Game.prototype.getGameId = function(){
@@ -72,6 +73,11 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
 
         return defer.promise;
     };
+    
+    Game.prototype.changeGameWasStarted = function (value){
+        this.gameWasStarted = value;
+        console.log(this.gameWasStarted);
+    }
 
     Game.prototype.logOut = function(){
         this.loggedIn = false;
