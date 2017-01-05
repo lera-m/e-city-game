@@ -29,7 +29,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('dist', 'Build', [
         'clean:dist',
-        'copy:dist'
+        'copy:dist',
+        'webpack:dist'
     ]);
 
     grunt.registerTask('run', 'Dev', [

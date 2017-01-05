@@ -36,6 +36,7 @@
     "grunt-jscs": "^2.6.0",
     "grunt-jsonlint": "^1.0.4",
     "grunt-jsxhint": "^0.8.0",
+    "grunt-webpack": "^1.0.18",
     "load-grunt-config": "^0.9.2",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
