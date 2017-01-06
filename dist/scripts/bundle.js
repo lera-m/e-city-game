@@ -24693,8 +24693,8 @@
 	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 
 	    return {
-	        host: 'http://dev.ecity.org.ua:3000',
-	        api: '/api'
+	        host: 'http://ecity.org.ua:8080',
+	        api: ''
 	    };
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
@@ -32049,14 +32049,14 @@
 	            this.setState(_defineProperty({}, target, value));
 	        },
 
-	        onButtonClick: function onButtonClick(event) {
+	        onFormSubmit: function onFormSubmit(event) {
+	            var user = this.state.login;
+	            var password = this.state.password;
+
 	            /*
-	                        var user = this.state.login;
-	                        var password = this.state.password;
-	            
+	                        var user = 'user2';
+	                        var password = 'password1';
 	            */
-	            var user = 'user2';
-	            var password = 'password1';
 
 	            if (user && password) {
 	                this.props.game.logIn(user, password).then(function () {
@@ -32090,43 +32090,47 @@
 	                        )
 	                    ),
 	                    React.createElement(
-	                        'div',
-	                        null,
-	                        React.createElement('input', { type: 'text', className: 'login_input_style', placeholder: '\u041B\u043E\u0433\u0438\u043D', onChange: this.onInputChange.bind(this, 'login') })
-	                    ),
-	                    React.createElement(
-	                        'div',
-	                        null,
-	                        React.createElement('input', { type: 'password', className: 'login_input_style', placeholder: '\u041F\u0430\u0440\u043E\u043B\u044C', onChange: this.onInputChange.bind(this, 'password') })
-	                    ),
-	                    React.createElement(
-	                        'div',
-	                        { className: 'checkbox' },
-	                        React.createElement('input', { type: 'checkbox' }),
-	                        '\u0417\u0430\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u043C\u0435\u043D\u044F'
-	                    ),
-	                    React.createElement(
-	                        'div',
-	                        { className: 'login_register' },
+	                        'form',
+	                        { onSubmit: this.onFormSubmit },
 	                        React.createElement(
-	                            'a',
-	                            { href: '#/register', className: 'text-control-color' },
-	                            '\u0417\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043E\u0432\u0430\u0442\u044C\u0441\u044F'
-	                        )
-	                    ),
-	                    React.createElement(
-	                        'div',
-	                        { className: 'vorgetPassword' },
+	                            'div',
+	                            null,
+	                            React.createElement('input', { type: 'text', className: 'login_input_style', placeholder: '\u041B\u043E\u0433\u0438\u043D', onChange: this.onInputChange.bind(this, 'login') })
+	                        ),
 	                        React.createElement(
-	                            'a',
-	                            { href: '#', className: 'text-control-color' },
-	                            '\u0417\u0430\u0431\u044B\u043B\u0438 \u043F\u0430\u0440\u043E\u043B\u044C?'
+	                            'div',
+	                            null,
+	                            React.createElement('input', { type: 'password', className: 'login_input_style', placeholder: '\u041F\u0430\u0440\u043E\u043B\u044C', onChange: this.onInputChange.bind(this, 'password') })
+	                        ),
+	                        React.createElement(
+	                            'div',
+	                            { className: 'checkbox' },
+	                            React.createElement('input', { type: 'checkbox' }),
+	                            '\u0417\u0430\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u043C\u0435\u043D\u044F'
+	                        ),
+	                        React.createElement(
+	                            'div',
+	                            { className: 'login_register' },
+	                            React.createElement(
+	                                'a',
+	                                { href: '#/register', className: 'text-control-color' },
+	                                '\u0417\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043E\u0432\u0430\u0442\u044C\u0441\u044F'
+	                            )
+	                        ),
+	                        React.createElement(
+	                            'div',
+	                            { className: 'vorgetPassword' },
+	                            React.createElement(
+	                                'a',
+	                                { href: '#', className: 'text-control-color' },
+	                                '\u0417\u0430\u0431\u044B\u043B\u0438 \u043F\u0430\u0440\u043E\u043B\u044C?'
+	                            )
+	                        ),
+	                        React.createElement(
+	                            'div',
+	                            null,
+	                            React.createElement('input', { type: 'submit', className: 'login_submit', value: '\u0412\u043E\u0439\u0442\u0438' })
 	                        )
-	                    ),
-	                    React.createElement(
-	                        'div',
-	                        null,
-	                        React.createElement('input', { type: 'submit', className: 'login_submit', onClick: this.onButtonClick, value: '\u0412\u043E\u0439\u0442\u0438' })
 	                    ),
 	                    React.createElement(
 	                        'div',
