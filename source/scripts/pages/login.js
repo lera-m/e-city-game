@@ -30,14 +30,14 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
             });
         },
 
-        onButtonClick: function (event) {
-/*
+        onFormSubmit: function (event) {
             var user = this.state.login;
             var password = this.state.password;
 
-*/
+/*
             var user = 'user2';
             var password = 'password1';
+*/
 
             if (user && password){
                 this.props.game.logIn(user, password)
@@ -62,25 +62,27 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                         <div className="logo">
                             <p>E-City</p>
                         </div>
-                        <div>
-                            <input type="text" className='login_input_style' placeholder="Логин" onChange={this.onInputChange.bind(this, 'login')}/>
-                        </div>
-                        <div>
-                            <input type="password" className='login_input_style' placeholder="Пароль" onChange={this.onInputChange.bind(this, 'password')}/>
-                        </div>
-                        <div className="checkbox">
-                            <input type="checkbox"/>
-                            Запомнить меня
-                        </div>
-                        <div className="login_register">
-                            <a href="#/register" className='text-control-color'>Зарегистрироваться</a>
-                        </div>
-                        <div className="vorgetPassword">
-                            <a href='#' className='text-control-color'>Забыли пароль?</a>
-                        </div>
-                        <div>
-                            <input type="submit" className='login_submit' onClick={this.onButtonClick} value="Войти"/>
-                        </div>
+                        <form onSubmit={this.onFormSubmit}>
+                            <div>
+                                <input type="text" className='login_input_style' placeholder="Логин" onChange={this.onInputChange.bind(this, 'login')}/>
+                            </div>
+                            <div>
+                                <input type="password" className='login_input_style' placeholder="Пароль" onChange={this.onInputChange.bind(this, 'password')}/>
+                            </div>
+                            <div className="checkbox">
+                                <input type="checkbox"/>
+                                Запомнить меня
+                            </div>
+                            <div className="login_register">
+                                <a href="#/register" className='text-control-color'>Зарегистрироваться</a>
+                            </div>
+                            <div className="vorgetPassword">
+                                <a href='#' className='text-control-color'>Забыли пароль?</a>
+                            </div>
+                            <div>
+                                <input type="submit" className='login_submit' value="Войти"/>
+                            </div>
+                        </form>
                         <div className='social text-control-color'>
                             <p>Войти при помощи</p>
                             <div>
