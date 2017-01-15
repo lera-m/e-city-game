@@ -12,6 +12,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         },
 
         componentDidMount: function () {
+/*
             this.props.game.getGameStatus()
                 .then(function(){
                     location.href = '#/before-start';
@@ -20,6 +21,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                 .fail(function(){
                     console.log('not loged in');
                 });
+*/
         },
 
         onInputChange: function (target, event) {

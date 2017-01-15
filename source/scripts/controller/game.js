@@ -34,7 +34,7 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
         var defer = Q.defer();
 
         Superagent
-            .get(Settings.host + Settings.api + '/user/hello')
+            .get(Settings.host + Settings.api + '/login')
             .set('Accept', 'application/json')
             .auth(user, password, {type:'auto'})
             .end((error, response) => /* arrow function */{
