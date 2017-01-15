@@ -17,14 +17,15 @@ define(['react'], function (React) {
         },
         
         render: function () {
+            console.log('length', this.props.cities.length);
             return (
                 <div className="city-list">
                     <h2>Название городов</h2>
                     <ul className='ul-city'>
                         {this.props.cities && this.props.cities.map((city, i) => {
-                            
+                            console.log(i);
                             return (
-                                <li key={city.id} onClick={this.onClickButton.bind(this, city)}>
+                                <li key={city.id} onClick={this.onClickButton.bind(this, city)} className={(i === 0) ? 'highlightLastCity' : 'noHighlightLastCity'}>
                                     <p>{city.name}</p>
                                     {this.state.expanded === city.id ? (
                                         <div>
