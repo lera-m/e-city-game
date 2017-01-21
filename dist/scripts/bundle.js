@@ -24694,8 +24694,8 @@
 	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 
 	    return {
-	        host: 'http://dev.ecity.org.ua:3000',
-	        api: '/api'
+	        host: 'http://ecity.org.ua:8080',
+	        api: ''
 	    };
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
