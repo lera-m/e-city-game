@@ -51,10 +51,9 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
             event.preventDefault();
             
             this.setState({
-                        warningMessage: '',
+                        warningMessage: ''
                     });
-            console.log(this.state.city);
-            console.log(this.props.game.gameId);
+console.log(this.props.game.gameId);
             Superagent
                 .post(Settings.host + Settings.api + '/game/move')
                 .type('form')
@@ -64,7 +63,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                     city_name: this.state.city
                 })
                 .end((error, response) => {
-                    console.log(response);
+console.log(response);
                     var state = {};
                     
                     response.body = JSON.parse(response.text);
@@ -123,11 +122,13 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                             state.disabled = true;
                             state.showTimer = 0;
                             state.city = '';
+                            this.props.game.changeGameWasStarted(false);
                             break;
                         case 21:
                             winnerMessage = 'Вы проиграли. Попробуйте еще раз.';
                             state.disabled = true;
                             state.showTimer = 0;
+                            this.props.game.changeGameWasStarted(false);
                             break;
                         default:
                             winnerMessage = '';

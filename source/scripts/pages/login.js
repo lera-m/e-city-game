@@ -7,11 +7,22 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         getInitialState: function () {
             return {
                 login: null,
-                password: null
+                password: null,
+                warningMessage: ''
             };
         },
 
         componentDidMount: function () {
+            if(localStorage.getItem('userLoggedIn') === 'true'){
+                this.props.game.setLogIn()
+                    .then(function(){
+                        location.href = '#/before-start';
+console.log('loged in');
+                    })
+                    .fail(function(){
+console.log('not loged in');
+                    }); 
+            } 
 /*
             this.props.game.getGameStatus()
                 .then(function(){
@@ -33,13 +44,15 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         },
 
         onFormSubmit: function (event) {
+/*
             var user = this.state.login;
             var password = this.state.password;
+*/
+            
+            var warningMessage = '';
 
-/*
             var user = 'user2';
             var password = 'password1';
-*/
 
             if (user && password){
                 this.props.game.logIn(user, password)
@@ -48,9 +61,15 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                         console.log('ok');
                     })
                     .fail(function(){
+                        warningMessage = 'незарегистрированный пользователь';
                         console.log('not ok');
+                        console.log(warningMessage);
                     });
             }
+            this.setState({
+                warningMessage: warningMessage
+            });
+
 
         },
 
@@ -70,6 +89,9 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                             </div>
                             <div>
                                 <input type="password" className='login_input_style' placeholder="Пароль" onChange={this.onInputChange.bind(this, 'password')}/>
+                            </div>
+                            <div className='warning-message'>
+                                {this.state.warningMessage}
                             </div>
                             <div className="checkbox">
                                 <input type="checkbox"/>

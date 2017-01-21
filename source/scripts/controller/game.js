@@ -17,9 +17,8 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
                 .end((error, response) => /* arrow function */{
                     if(!error || response.body.length > 0){
                         this.gameId = JSON.parse(response.text).id;
-                        console.log(this.gameId);
-
-                        // Tell all listeners that game id changed
+console.log(this.gameId);
+                        // Tell all listeners that game id is changed
                         this.triggerChangeGameId();
 
                         defer.resolve();
@@ -38,7 +37,11 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
             .set('Accept', 'application/json')
             .auth(user, password, {type:'auto'})
             .end((error, response) => /* arrow function */{
-                if(!error || response.body.length > 0){
+                if(response.body.result === true){
+                    //set Cookies
+                    localStorage.setItem('userLoggedIn', 'true');
+console.log('userLoggedIn', localStorage.getItem('userLoggedIn'));
+
                     this.loggedIn = true;
                     defer.resolve();
                 } else {
@@ -96,12 +99,39 @@ console.log('getGameStatus => gameId', this.gameId);
         });
     };
     
+    Game.prototype.setLogIn = function(){
+        var defer = Q.defer();
+        this.loggedIn = true;
+        defer.resolve();
+        return defer.promise;
+    };
+    
     Game.prototype.changeGameWasStarted = function (value){
         this.gameWasStarted = value;
     };
 
     Game.prototype.logOut = function(){
-        this.loggedIn = false;
+        var defer = Q.defer();
+         
+         Superagent
+            .get(Settings.host + Settings.api + '/logout')
+            .set('Accept', 'application/json')
+            .end((error, response) => /* arrow function */{
+                if (!error) {
+                    this.loggedIn = false;
+console.log(response);
+                    //set Cookies
+                    localStorage.setItem('userLoggedIn', 'false');
+console.log('userLoggedIn', localStorage.getItem('userLoggedIn'));
+                    location.href = '#/login';
+                    defer.resolve();
+                } else {
+                    this.loggedIn = true;
+                    defer.reject();
+                }
+            });
+
+        return defer.promise;
     };
 
     Game.prototype.isLoggedIn = function(){
