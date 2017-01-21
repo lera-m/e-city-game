@@ -13,7 +13,9 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                 regionId: null,
                 regionClientId: null,
                 disabled: false,
-                showTimer: 0 
+                showTimer: 0,
+                topPosition: null,
+                leftPosition: null 
             };
         },
 
@@ -34,7 +36,9 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                 winnerMessage: '',
                 regionId: null,
                 disabled: false,
-                showTimer: 0
+                showTimer: 0,
+                topPosition: null,
+                leftPosition: null 
             });
         },
 
@@ -92,6 +96,8 @@ console.log(response);
                         state.inputLetter = letter;
                         state.regionId = response.body.city.regionId;
                         state.showTimer = this.state.showTimer + 1;
+                        state.topPosition = response.body.city.x + '%';
+                        state.leftPosition = response.body.city.y + '%';
 
                         this.props.onAddCity(response.body.city);
                     }
@@ -174,7 +180,7 @@ console.log(response);
                     });
             }
         },
-
+        
         render: function () {
             return (
                 <div className="play-game">
@@ -200,7 +206,7 @@ console.log(response);
                     <div className='winner-message'>
                         {this.state.winnerMessage}
                     </div>
-                    <MapSvg regionId={this.state.regionId} regionClientId={this.state.regionClientId}/>
+                    <MapSvg regionId={this.state.regionId} regionClientId={this.state.regionClientId} topPosition={this.state.topPosition} leftPosition={this.state.leftPosition}/>
                 </div>
             );
         }
