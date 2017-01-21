@@ -44,6 +44,7 @@ console.log('not loged in');
         },
 
         onFormSubmit: function (event) {
+            event.preventDefault();
 /*
             var user = this.state.login;
             var password = this.state.password;
