@@ -40,7 +40,6 @@ console.log(this.gameId);
                 if(response.body.result === true){
                     //set Cookies
                     localStorage.setItem('userLoggedIn', 'true');
-console.log('userLoggedIn', localStorage.getItem('userLoggedIn'));
 
                     this.loggedIn = true;
                     defer.resolve();
@@ -62,7 +61,6 @@ console.log('userLoggedIn', localStorage.getItem('userLoggedIn'));
             .end((error, response) => /* arrow function */{
                 this.gameId = JSON.parse(response.text).id;
                 
-console.log('getGameStatus => gameId', this.gameId);
                 
                 if (!error) {
                     this.loggedIn = true;
@@ -119,10 +117,8 @@ console.log('getGameStatus => gameId', this.gameId);
             .end((error, response) => /* arrow function */{
                 if (!error) {
                     this.loggedIn = false;
-console.log(response);
                     //set Cookies
                     localStorage.setItem('userLoggedIn', 'false');
-console.log('userLoggedIn', localStorage.getItem('userLoggedIn'));
                     location.href = '#/login';
                     defer.resolve();
                 } else {
