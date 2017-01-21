@@ -119,6 +119,8 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                     {this.state.cityInfo ? (
                         <div key={this.state.cityInfo.id} className='city_info'>
                             <h3>{this.state.cityInfo.name}</h3>
+                            <img src={this.state.cityInfo.arms} alt={this.state.cityInfo.name}/>
+                            <p><strong>Год основания: </strong>{this.state.cityInfo.establishment}</p>
                             <p><strong>Население: </strong>{this.state.cityInfo.population}</p>
                             <span><strong>Узнать больше: </strong></span>
                             <a href={this.state.cityInfo.url} target="_blank">{this.state.cityInfo.url}</a>
