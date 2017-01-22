@@ -51,6 +51,7 @@
 }
 
 .city-list ul li div {
+    text-align: center;
     border: 1px solid grey;
     word-wrap: break-word;
     animation-name: information;

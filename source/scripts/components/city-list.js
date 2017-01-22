@@ -27,6 +27,7 @@ define(['react'], function (React) {
                                     <p>{city.name}</p>
                                     {this.state.expanded === city.id ? (
                                         <div>
+                                            <img src={city.arms} alt={city.name}/>
                                             <a href={city.url} target="_blank">{city.url}</a>
                                         </div>
                                     ) : null}
