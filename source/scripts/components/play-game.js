@@ -38,7 +38,9 @@ define(['react', 'superagent', '../components/map-leaflet', '../settings', '../c
                 disabled: false,
                 showTimer: 0,
                 topPosition: null,
-                leftPosition: null 
+                leftPosition: null,
+                serverCity: null,
+                clientCity: null 
             });
         },
 
@@ -109,6 +111,8 @@ console.log(response);
                         state.showTimer = this.state.showTimer + 1;
                         state.topPosition = response.body.city.x + '%';
                         state.leftPosition = response.body.city.y + '%';
+                        state.serverCity = response.body.city;
+                        state.clientCity = response.body.cityClient;
 
                         this.props.onAddCity(response.body.city);
                     }
@@ -217,7 +221,7 @@ console.log(response);
                     <div className='winner-message'>
                         {this.state.winnerMessage}
                     </div>
-                    <MapLeaflet regionId={this.state.regionId} regionClientId={this.state.regionClientId}/>
+                    <MapLeaflet serverCity={this.state.serverCity} clientCity={this.state.clientCity} />
                 </div>
             );
         }

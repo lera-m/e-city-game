@@ -20,21 +20,36 @@ define(['react', 'leaflet', 'react-dom', '../data/regions'], function (React, L,
 
             this.updateRegions();
         },
+        componentDidUpdate: function(){
+            this.updateRegions();
+        },
 
         updateRegions: function () {
+            
+            if (this.layers){
+                this.layers.forEach(layer => {
+                    this.map.removeLayer(layer);
+                })
+            }
+            
+            const serverRegionId = this.props.serverCity && this.props.serverCity.regionId;
+            
+            this.layers = [];
+            
             for (let regionId in Regions) {
                 const coordinates = Regions[regionId].geometry.coordinates.map(function (list) {
                     return list.map(function (lnglat) {
                         return [lnglat[1], lnglat[0]];
                     });
                 });
-                
+
                 const polygon = L.polygon(coordinates, {
                     stroke: false,
                     fillOpacity: 1,
-                    color: regionId === '4' ? '#0b3577' : '#b1c9ef'
+                    color: parseInt(regionId) === serverRegionId ? '#0b3577' : '#b1c9ef'
                 });
-
+                
+                this.layers.push(polygon);
                 polygon.addTo(this.map);
             }
             
@@ -50,8 +65,15 @@ define(['react', 'leaflet', 'react-dom', '../data/regions'], function (React, L,
                     weight: 2,
                     color: 'black'
                 });
-
+                
+                this.layers.push(polygon);
                 polygon.addTo(this.map);
+            }
+            
+            if(this.props.serverCity){
+                const marker = L.marker([this.props.serverCity.latitude, this.props.serverCity.longitude]); 
+                this.layers.push(marker);
+                marker.addTo(this.map);
             }
         },
 
