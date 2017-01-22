@@ -43,12 +43,22 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
         },
 
         onTimeout: function () {
-            this.setState({
-                showTimer: 0,
-                disabled: true,
-                warningMessage: 'ВРЕМЯ ВЫШЛО'
-            });
-            this.props.game.changeGameWasStarted(false);
+            if (this.props.game.gameWasStarted === true){
+                 this.props.game.timeOut()
+                    .then(code => {
+                        if (code === 22){
+                            this.setState({
+                                showTimer: 0,
+                                disabled: true,
+                                warningMessage: 'ВРЕМЯ ВЫШЛО'
+                            })
+                        }
+                    })
+                    .fail(error => {
+                         
+                    });
+            }
+            
         },
 
         onFormSubmit: function (event) {

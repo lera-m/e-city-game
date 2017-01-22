@@ -96,6 +96,27 @@ console.log(this.gameId);
                 });
         });
     };
+    Game.prototype.timeOut = function (){
+        return Q.promise((resolve, reject) => {
+            Superagent
+                .get(Settings.host + Settings.api + '/game/over/timeup')
+                .set('Accept', 'application/json')
+                .query({
+                    game_id: this.gameId
+                })
+                .end((error, response) => {
+                    if (error) {
+                        return reject(error);
+                    }
+                    
+                    this.timeOutCode =  response.body.gameStatus.code;
+                    
+                    this.changeGameWasStarted(false);
+                                        
+                    resolve(this.timeOutCode);
+                });
+        });
+    };
     
     Game.prototype.setLogIn = function(){
         var defer = Q.defer();
