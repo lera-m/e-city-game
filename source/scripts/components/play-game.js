@@ -105,6 +105,7 @@ console.log(response);
                         state.city = letter;
                         state.inputLetter = letter;
                         state.regionId = response.body.city.regionId;
+                        state.regionClientId = response.body.cityClient.regionId;
                         state.showTimer = this.state.showTimer + 1;
                         state.topPosition = response.body.city.x + '%';
                         state.leftPosition = response.body.city.y + '%';
@@ -216,7 +217,7 @@ console.log(response);
                     <div className='winner-message'>
                         {this.state.winnerMessage}
                     </div>
-                    <MapLeaflet/>
+                    <MapLeaflet regionId={this.state.regionId} regionClientId={this.state.regionClientId}/>
                 </div>
             );
         }
