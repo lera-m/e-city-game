@@ -24,11 +24,15 @@ define(['react'], function (React) {
                         {this.props.cities && this.props.cities.map((city, i) => {
                             return (
                                 <li key={city.id} onClick={this.onClickButton.bind(this, city)} className={(i === 0) ? 'highlightLastCity' : 'noHighlightLastCity'}>
-                                    <p>{city.name}</p>
+                                    <p className='city_list_name'>{city.name}</p>
                                     {this.state.expanded === city.id ? (
                                         <div>
-                                            <img src={city.arms} alt={city.name}/>
-                                            <a href={city.url} target="_blank">{city.url}</a>
+                                            {
+                                                city.arms ? <img src={city.arms}/> : null
+                                            }
+                                            <p>Год основания: {city.establishment}</p>
+                                            <p>Население: {city.population}</p>
+                                            <a href={city.url} target="_blank" className='wiki-link-list'>Больше информации по ссылке</a>
                                         </div>
                                     ) : null}
                                     

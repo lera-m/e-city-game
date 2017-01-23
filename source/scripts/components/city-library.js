@@ -12,11 +12,6 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                 expanded: null,
                 letter: '',
                 cityInfo: null
-                /*
-                letterStyle: {
-                    color: 'black'
-                }
-*/
             };
         },
         
@@ -28,7 +23,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
             Superagent
             .get(Settings.host + Settings.api + '/cities')
                 .set('Accept', 'application/json')
-                .end((error, response) => /* arrow function */{
+                .end((error, response) => {
                     this.setState({
                             library: response.body
                     });
@@ -40,8 +35,8 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                 expanded: this.state.expanded === letter ? null : letter,
                 letter: letter,
                 cityInfo: null
-                //letterStyle: this.state.letterStyle.color === 'red' ? {color: 'black'} : {color: 'red'}
             });
+            console.log(event.target.className);
         },
         
         citySort: function(){
@@ -77,16 +72,11 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
             );
         },
                 
-        getCityInfo: function(city){
-            if (city){
+        getCityInfo: function(id){
+            if (id){
                 Superagent
-                    .get(Settings.host + Settings.api + '/city/' + city)
+                    .get(Settings.host + Settings.api + '/city/' + id)
                     .set('Accept', 'application/json')
-/*
-                    .query({
-                        id: city
-                    })                
-*/
                     .end((error, response) =>{
                         console.log(JSON.parse(response.text));
                         this.setState({
@@ -106,7 +96,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                             if (cities){
                                 return (
                                     <li key={i}>
-                                        <h2 onClick={this.onClickButton.bind(this, letter)} /* style={this.state.letterStyle} */>
+                                        <h2 onClick={this.onClickButton.bind(this, letter)} className='orange'>
                                             {letter.toUpperCase()}
                                         </h2>
                                         
@@ -119,11 +109,12 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                     {this.state.cityInfo ? (
                         <div key={this.state.cityInfo.id} className='city_info'>
                             <h3>{this.state.cityInfo.name}</h3>
-                            <img src={this.state.cityInfo.arms} alt={this.state.cityInfo.name}/>
+                            {
+                                this.state.cityInfo.arms ? <img src={this.state.cityInfo.arms}/> : null
+                            }
                             <p><strong>Год основания: </strong>{this.state.cityInfo.establishment}</p>
                             <p><strong>Население: </strong>{this.state.cityInfo.population}</p>
-                            <span><strong>Узнать больше: </strong></span>
-                            <a href={this.state.cityInfo.url} target="_blank">{this.state.cityInfo.url}</a>
+                            <a href={this.state.cityInfo.url} target="_blank" className='wiki-link-library'><strong>Больше информации по ссылке</strong></a>
                         </div>
                     ) : null}
                 </div>

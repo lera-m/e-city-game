@@ -10,12 +10,15 @@
 .city_info {
     border: 1px solid black;
 }
-.city-library .city_info {
+.city-library .city_info, .wiki-link-library {
     position: relative;
     margin-top: 20px;
     padding: 0 10px 10px 10px;
     font-family: Roboto, sans-serif;
     color: #07588a;
+}
+.wiki-link-library {
+    padding-left: 0;
 }
 .city-library .city_info img {
     display: block;
