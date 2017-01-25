@@ -11,7 +11,8 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                 library: [],
                 expanded: null,
                 letter: '',
-                cityInfo: null
+                cityInfo: null,
+                marked: false
             };
         },
         
@@ -31,12 +32,14 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         },
         
         onClickButton: function(letter, event){
+            event.target.className = 'marked';
+            
             this.setState ({
                 expanded: this.state.expanded === letter ? null : letter,
                 letter: letter,
-                cityInfo: null
+                cityInfo: null,
+                marked: true
             });
-            console.log(event.target.className);
         },
         
         citySort: function(){
@@ -62,7 +65,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                             {cities.map((city, i) => {
                                 return (
                                     <li key={city.id}>
-                                        <p onClick={this.getCityInfo.bind(this, city.id)}>{city.name}</p>
+                                        <p onClick={this.getCityInfo.bind(this, city.id)} className='not-marked'>{city.name}</p>
                                     </li>
                                 );
                             })}
@@ -72,13 +75,14 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
             );
         },
                 
-        getCityInfo: function(id){
+        getCityInfo: function(id, event){ 
+            event.target.className = 'marked';
             if (id){
                 Superagent
                     .get(Settings.host + Settings.api + '/city/' + id)
                     .set('Accept', 'application/json')
                     .end((error, response) =>{
-                        console.log(JSON.parse(response.text));
+console.log(JSON.parse(response.text));
                         this.setState({
                             cityInfo: JSON.parse(response.text)
                         });   
@@ -96,7 +100,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                             if (cities){
                                 return (
                                     <li key={i}>
-                                        <h2 onClick={this.onClickButton.bind(this, letter)} className='orange'>
+                                        <h2 onClick={this.onClickButton.bind(this, letter)} className='not-marked'>
                                             {letter.toUpperCase()}
                                         </h2>
                                         
