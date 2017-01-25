@@ -46,6 +46,14 @@
     background-color: orange;
     border-radius: 40px;
 }
+.map-inner-box {
+    position: absolute;
+    top: 9.2%;
+    left: 1%;
+    right: 1.9%;
+    bottom: 6%;
+    border: 1px solid red;
+}
 
 /*
 @media screen and (max-width: 1300px) {

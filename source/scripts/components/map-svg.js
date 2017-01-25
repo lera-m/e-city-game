@@ -7,10 +7,12 @@ define(['react'], function (React) {
         render: function () {
             return (
                 <div className="map">
+                    <div className='map-inner-box'>
                     {
                         this.props.topPosition && this.props.leftPosition ? <div className='cityOnAMap' style={{top: this.props.topPosition, left: this.props.leftPosition}}></div>
                         : null
                     }
+                    </div>
                         <svg version="1.1" id="Слой_1" x="0px" y="0px"
                         	 viewBox="0 0 1800 1400" enableBackground="new 0 0 1800 1400" xmlSpace="preserve">
                         <image overflow="visible" width="2466" height="1749" id="карта_1_" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACaMAAAbVCAYAAAAjikvjAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA

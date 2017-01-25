@@ -106,8 +106,8 @@ console.log(response);
                         state.inputLetter = letter;
                         state.regionId = response.body.city.regionId;
                         state.showTimer = this.state.showTimer + 1;
-                        state.topPosition = response.body.city.x + '%';
-                        state.leftPosition = response.body.city.y + '%';
+                        state.topPosition = response.body.cityClient.x + '%';
+                        state.leftPosition = response.body.cityClient.y + '%';
 
                         this.props.onAddCity(response.body.city);
                     }
