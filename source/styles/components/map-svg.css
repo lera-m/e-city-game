@@ -39,7 +39,7 @@
 	transition: all .5s ease-in-out;
 }
 
-.cityOnAMap {
+.displayCityPosition {
     width: 10px;
     height: 10px;
     position: absolute;
@@ -48,13 +48,19 @@
 }
 .map-inner-box {
     position: absolute;
-    top: 9.2%;
-    left: 1%;
-    right: 1.9%;
-    bottom: 6%;
+    top: 9.5%;
+    left: 2.3%;
+    right: 2.3%;
+    bottom: 6.5%;
     border: 1px solid red;
 }
 
+.displayCityName {
+    position: absolute;
+    font-family: Roboto, sans-serif;
+    font-weight: 800;
+    color: red;
+}
 /*
 @media screen and (max-width: 1300px) {
     .map {

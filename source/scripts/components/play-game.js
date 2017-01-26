@@ -15,7 +15,8 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                 disabled: false,
                 showTimer: 0,
                 topPosition: null,
-                leftPosition: null 
+                leftPosition: null,
+                cityName: '' 
             };
         },
 
@@ -104,10 +105,11 @@ console.log(response);
 
                         state.city = letter;
                         state.inputLetter = letter;
-                        state.regionId = response.body.city.regionId;
+                        state.regionId = response.body.cityClient.regionId;
                         state.showTimer = this.state.showTimer + 1;
-                        state.topPosition = response.body.cityClient.x + '%';
-                        state.leftPosition = response.body.cityClient.y + '%';
+                        state.topPosition = response.body.cityClient.x;
+                        state.leftPosition = response.body.cityClient.y;
+                        state.cityName = response.body.cityClient.name;
 
                         this.props.onAddCity(response.body.city);
                     }
@@ -216,7 +218,7 @@ console.log(response);
                     <div className='winner-message'>
                         {this.state.winnerMessage}
                     </div>
-                    <MapSvg regionId={this.state.regionId} regionClientId={this.state.regionClientId} topPosition={this.state.topPosition} leftPosition={this.state.leftPosition}/>
+                    <MapSvg regionId={this.state.regionId} regionClientId={this.state.regionClientId} topPosition={this.state.topPosition} leftPosition={this.state.leftPosition} cityName={this.state.cityName}/>
                 </div>
             );
         }

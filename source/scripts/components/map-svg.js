@@ -5,11 +5,22 @@ define(['react'], function (React) {
         displayName: 'MapSVG',
         
         render: function () {
+            
+            var topNamePosition = this.props.topPosition - 4 + '%';
+            var leftNamePosition = this.props.leftPosition + 2 + '%';
+            
             return (
                 <div className="map">
                     <div className='map-inner-box'>
                     {
-                        this.props.topPosition && this.props.leftPosition ? <div className='cityOnAMap' style={{top: this.props.topPosition, left: this.props.leftPosition}}></div>
+                        this.props.cityName ? <div className='displayCityName' style={{top: topNamePosition, left: leftNamePosition}}>
+                            {this.props.cityName}
+                        </div>
+                        : null
+                    }
+
+                    {
+                        this.props.topPosition && this.props.leftPosition ? <div className='displayCityPosition' style={{top: this.props.topPosition + '%', left: this.props.leftPosition + '%'}}></div>
                         : null
                     }
                     </div>
