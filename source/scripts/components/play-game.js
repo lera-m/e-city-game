@@ -19,7 +19,7 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                 cityName: '' 
             };
         },
-
+        
         componentDidMount: function () {
             this.props.game.onChangeGameId(this.onChangeGameId);
         },
@@ -39,7 +39,8 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
                 disabled: false,
                 showTimer: 0,
                 topPosition: null,
-                leftPosition: null 
+                leftPosition: null,
+                cityName: '' 
             });
         },
 
@@ -105,11 +106,11 @@ console.log(response);
 
                         state.city = letter;
                         state.inputLetter = letter;
-                        state.regionId = response.body.cityClient.regionId;
+                        state.regionId = response.body.city.regionId;
                         state.showTimer = this.state.showTimer + 1;
-                        state.topPosition = response.body.cityClient.x;
-                        state.leftPosition = response.body.cityClient.y;
-                        state.cityName = response.body.cityClient.name;
+                        state.topPosition = response.body.city.x;
+                        state.leftPosition = response.body.city.y;
+                        state.cityName = response.body.city.name;
 
                         this.props.onAddCity(response.body.city);
                     }

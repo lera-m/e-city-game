@@ -7,7 +7,7 @@ define(['react'], function (React) {
         render: function () {
             
             var topNamePosition = this.props.topPosition - 4 + '%';
-            var leftNamePosition = this.props.leftPosition + 2 + '%';
+            var leftNamePosition = this.props.leftPosition - 5 + '%';
             
             return (
                 <div className="map">
