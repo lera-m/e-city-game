@@ -25,7 +25,6 @@ define(['react', 'react-dom', 'react-router', 'q', './pages/login', './pages/e-c
     };
         
     var requireLogIn = function(nextState, replace, callback){
-      //  console.log(nextState, replace);
         if(!props.game.isLoggedIn()){
             replace('/login');
         }
