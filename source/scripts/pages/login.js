@@ -45,15 +45,13 @@ console.log('not loged in');
 
         onFormSubmit: function (event) {
             event.preventDefault();
-/*
             var user = this.state.login;
             var password = this.state.password;
-*/
             
-            var warningMessage = '';
-
+/*
             var user = 'user2';
             var password = 'password1';
+*/
 
             if (user && password){
                 this.props.game.logIn(user, password)
@@ -61,17 +59,14 @@ console.log('not loged in');
                         location.href = '#/before-start';
                         console.log('ok');
                     })
-                    .fail(function(){
-                        warningMessage = 'незарегистрированный пользователь';
+                    .fail(() => {
+                        this.setState({
+                            warningMessage: 'незарегистрированный пользователь'
+                        });
                         console.log('not ok');
-                        console.log(warningMessage);
                     });
             }
-            this.setState({
-                warningMessage: warningMessage
-            });
-
-
+            
         },
 
         render: function () {
