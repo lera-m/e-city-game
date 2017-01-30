@@ -35,7 +35,7 @@ define(['react', '../components/side-bar', '../components/city-list', '../compon
                 <div>
                     <SideBar game={this.props.game}/>
                     <PlayGame onAddCity={this.onAddCity} game={this.props.game}/>
-                    <CityList cities={this.state.cities}/>
+                    <CityList cities={this.state.cities} game={this.props.game}/>
                 </div>
             );
         }

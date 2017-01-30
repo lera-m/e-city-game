@@ -30,6 +30,9 @@ define(['react'], function (React) {
                                             {
                                                 city.arms ? <img src={city.arms}/> : null
                                             }
+                                            {
+                                                city.regionId ? <p>{this.props.game.getRegion(city.regionId)} область</p> : null
+                                            }
                                             <p>Год основания: {city.establishment}</p>
                                             <p>Население: {city.population}</p>
                                             <a href={city.url} target="_blank" className='wiki-link-list'>Больше информации по ссылке</a>
