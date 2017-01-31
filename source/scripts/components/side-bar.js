@@ -26,12 +26,19 @@ const SideBar = React.createClass({
         }
     },
 
-    onButtonClick: function(event) {
+    onButtonClick: function(message, page, event) {
         event.preventDefault();
+        
+        var getNewGameId = () => {
+            this.props.game.getGameId()
+                .then(() => {
+                    location.href=page;
+                });
+        };
         
         if (this.props.game.gameWasStarted === true) {
             Popup.create({
-                content: 'Ваша игра еще не закончена. Вы уверены, что хотите начать новую игру?',
+                content: message,
                 buttons: {
                     left: [{
                         text: 'нет',
@@ -42,81 +49,50 @@ const SideBar = React.createClass({
                     right: [{
                         text: 'да',
                         action: (popup) => {
-                            this.props.game.getGameId()
-                                .then(() => {
-                                    location.href="#/e-city";
-                                });
+                            if (page === "#/e-city"){
+                                getNewGameId();
+                            } else {
+                                location.href=page;
+                            }
                             this.props.game.changeGameWasStarted(false);
                             popup.close();
                         }
                     }]
                 }
             });
+        } else if (page === "#/e-city"){
+            getNewGameId();
+            this.props.game.changeGameWasStarted(false);
         } else {
-            this.props.game.getGameId()
-                .then(() => {
-                    location.href="#/e-city";
-                });
+            location.href=page;
             this.props.game.changeGameWasStarted(false);
         }
     },
-    
-    onLibraryClick: function (event){
-        event.preventDefault();
         
-        if (this.props.game.gameWasStarted === true) {
-            Popup.create({
-                content: 'При переходе в библиотеку Ваша игра будет закончена. Вы уверены, что хотите закончить игру?',
-                buttons: {
-                    left: [{
-                        text: 'нет',
-                        action: (popup) => {
-                            popup.close();
-                        }
-                    }],
-                    right: [{
-                        text: 'да',
-                        action: (popup) => {
-                            this.props.game.getGameId()
-                                .then(() => {
-                                    location.href="#/library";
-                                    this.props.game.giveUp();
-                                });
-                            this.props.game.changeGameWasStarted(false);
-                            popup.close();
-                        }
-                    }]
-                }
-            });
-        } else {
-            this.props.game.getGameId()
-                .then(() => {
-                    location.href="#/library";
-                });
-            this.props.game.changeGameWasStarted(false);
-        }
-    },
-    
     render: function () {
+        
+        var popupMessageNewGame = 'Ваша игра еще не закончена. Вы уверены, что хотите начать новую игру?';
+        var popupMessageOthers = 'При переходе на другую страницу Ваша игра будет закончена. Вы уверены, что хотите закончить игру?';
+        
         return (
             <div className="side-bar bg-color">
                 <div className="logo">
                     <p>E-City</p>
                 </div>
                 <div>
-                    <a className='text-control-color' href='#' onClick={this.onButtonClick}>Новая игра</a>
+                    <a className='text-control-color' href='#' onClick={this.onButtonClick.bind(this, popupMessageNewGame, "#/e-city")}>Новая игра</a>
                 </div>
                 <div>
                     <a className='grey-color' href="#/e-city">Продолжить</a>
                 </div>
                 <div>
-                    <a className='text-control-color' href="#">Рекорды</a>
+                    <a className='text-control-color' href="#" onClick={this.onButtonClick.bind(this, popupMessageOthers, "#/records")}>Рекорды</a>
                 </div>
                 <div>
-                    <a className='text-control-color' href="#/rules">Правила</a>
+                    <a className='text-control-color' href="#" onClick={this.onButtonClick.bind(this, popupMessageOthers, "#/rules")}>Правила</a>
                 </div>
                 <div>
-                    <a className='text-control-color' href="#" onClick={this.onLibraryClick}>Библиотека</a>
+                    <a className='text-control-color' href="#" onClick={this.onButtonClick.bind(this, popupMessageOthers, "#/library")}>Библиотека</a>
                 </div>
                 <div>
                     <a className='text-control-color' href="#/before-start">Выход</a>
