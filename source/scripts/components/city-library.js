@@ -116,7 +116,7 @@ console.log(JSON.parse(response.text));
                                 this.state.cityInfo.arms ? <img src={this.state.cityInfo.arms}/> : null
                             }
                             {
-                                this.state.cityInfo.regionId ? <p><strong>{this.props.game.getRegion(this.state.cityInfo.regionId)} область</strong></p> : null
+                                this.state.cityInfo.regionId ? <p><strong>{this.props.game.getRegion(this.state.cityInfo.regionId)}</strong></p> : null
                             }
                             <p><strong>Год основания: </strong>{this.state.cityInfo.establishment}</p>
                             <p><strong>Население: </strong>{this.state.cityInfo.population}</p>

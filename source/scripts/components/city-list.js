@@ -31,7 +31,7 @@ define(['react'], function (React) {
                                                 city.arms ? <img src={city.arms}/> : null
                                             }
                                             {
-                                                city.regionId ? <p>{this.props.game.getRegion(city.regionId)} область</p> : null
+                                                city.regionId ? <p>{this.props.game.getRegion(city.regionId)}</p> : null
                                             }
                                             <p>Год основания: {city.establishment}</p>
                                             <p>Население: {city.population}</p>
