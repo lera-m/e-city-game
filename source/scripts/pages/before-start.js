@@ -33,6 +33,9 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                                 <a href="#/e-city" className='grey-color'>Продолжить</a>
                             </div>
                             <div>
+                                <a className='text-control-color' href="#/records">Рекорды</a>
+                            </div>
+                            <div>
                                 <a className='text-control-color' href="#/rules">Правила</a>
                             </div>
                             <div>
