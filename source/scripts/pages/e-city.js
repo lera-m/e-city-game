@@ -10,6 +10,15 @@ define(['react', '../components/side-bar', '../components/city-list', '../compon
             };
         },
         
+        componentWillMount: function(){
+            if (this.props.game.gameHistory){
+                
+                this.setState({
+                    cities: this.props.game.gameHistory.map(historyItem => historyItem.city).reverse()
+                });
+            }  
+        },
+        
         componentDidMount: function () {
             this.props.game.onChangeGameId(this.onChangeGameId);
         },

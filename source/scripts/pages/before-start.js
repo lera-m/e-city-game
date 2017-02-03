@@ -4,12 +4,38 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         
         displayName: 'BeforeStart',
         
+        getInitialState: function(){
+            return {
+                pointerEvents: this.props.game.continueButtonPointerEvents,
+            };  
+        },
+        
+        componentWillMount: function(){
+            this.props.game.getGameStatus()
+                .then(response => {
+                    if(response.id){
+                        this.setState ({
+                            pointerEvents: ''
+                        });
+                        this.props.game.getGameHistory();
+                    }
+                })
+                .fail(function(error){
+console.log(error);
+                    localStorage.setItem('userLoggedIn', 'false');
+                    location.href = '#/login';
+                });  
+        },
         
         onButtonClick: function (event) {
             this.props.game.getGameId()
                 .then(function(){
                 });
 
+        },
+        
+        continueClick: function (event) {
+            this.props.game.changeGameWasStarted(true);
         },
         
         onLogOut: function(){
@@ -30,7 +56,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                                 <a className='text-control-color' href="#/e-city" onClick={this.onButtonClick}>Новая игра</a>
                             </div>
                             <div>
-                                <a href="#/e-city" className='grey-color'>Продолжить</a>
+                                <a href="#/e-city" className={this.state.pointerEvents ? 'grey-color' : 'text-control-color'} style={{pointerEvents:this.state.pointerEvents}} onClick={this.continueClick}>Продолжить</a>
                             </div>
                             <div>
                                 <a className='text-control-color' href="#/records">Рекорды</a>

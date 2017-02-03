@@ -68,6 +68,10 @@ const SideBar = React.createClass({
             this.props.game.changeGameWasStarted(false);
         }
     },
+    
+    continueClick: function (event) {
+            this.props.game.changeGameWasStarted(true);
+    },
         
     render: function () {
         
@@ -83,7 +87,7 @@ const SideBar = React.createClass({
                     <a className='text-control-color' href='#' onClick={this.onButtonClick.bind(this, popupMessageNewGame, "#/e-city")}>Новая игра</a>
                 </div>
                 <div>
-                    <a className='grey-color' href="#/e-city">Продолжить</a>
+                    <a className={this.props.game.continueButtonPointerEvents ? 'grey-color' : 'text-control-color'} href="#/e-city" onClick={this.continueClick} style={{pointerEvents:this.props.game.continueButtonPointerEvents}}>Продолжить</a>
                 </div>
                 <div>
                     <a className='text-control-color' href="#" onClick={this.onButtonClick.bind(this, popupMessageOthers, "#/records")}>Рекорды</a>

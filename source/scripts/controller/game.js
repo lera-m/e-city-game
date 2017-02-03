@@ -6,6 +6,13 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
           this.gameStatus = false;
           this.gameWasStarted = false;
           this.giveUpCode = 0;
+          this.continueButtonPointerEvents = 'none'; 
+          this.gameHistory = [];
+          this.lastLetterGameHistory = '';
+          this.regionId = null;
+          this.topPosition = null;
+          this.leftPosition = null;
+          this.cityName = '' ;
     };
 
     Game.prototype.getGameId = function(){
@@ -59,12 +66,14 @@ console.log(this.gameId);
             .get(Settings.host + Settings.api + '/game/status')
             .set('Accept', 'application/json')
             .end((error, response) => /* arrow function */{
-                this.gameId = JSON.parse(response.text).id;
+                const data = JSON.parse(response.text);
+                
+                this.gameId = data.id;
                 
                 
                 if (!error) {
                     this.loggedIn = true;
-                    defer.resolve();
+                    defer.resolve(data);
                 } else {
                     this.loggedIn = false;
                     defer.reject();
@@ -96,6 +105,34 @@ console.log(this.gameId);
                 });
         });
     };
+    
+    Game.prototype.getGameHistory = function (){
+        return Q.promise((resolve, reject) => {
+            Superagent
+                .get(Settings.host + Settings.api + '/game/story')
+                .set('Accept', 'application/json')
+                .query({
+                    game_id: this.gameId
+                })
+                .end((error, response) => {
+                    if (error) {
+                        return reject(error);
+                    }
+                    const lastCity = response.body[response.body.length - 1].city;
+                    
+                    this.continueButtonPointerEvents = ''; 
+                    this.gameHistory = response.body;
+                    this.lastLetterGameHistory = lastCity.name[lastCity.name.length - 1].toUpperCase();
+                    this.regionId = lastCity.regionId;
+                    this.topPosition = lastCity.x;
+                    this.leftPosition = lastCity.y;
+                    this.cityName = lastCity.name;
+                    
+                    resolve(this.timeOutCode);
+                });
+        });  
+    };
+    
     Game.prototype.timeOut = function (){
         return Q.promise((resolve, reject) => {
             Superagent

@@ -6,18 +6,26 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
 
         getInitialState: function () {
             return {
-                city: '',
+                city: this.props.game.lastLetterGameHistory,
                 inputLetter: '',
                 warningMessage: '',
                 winnerMessage: '',
-                regionId: null,
+                regionId: this.props.game.regionId,
                 regionClientId: null,
                 disabled: false,
                 showTimer: 0,
-                topPosition: null,
-                leftPosition: null,
-                cityName: '' 
+                topPosition: this.props.game.topPosition,
+                leftPosition: this.props.game.leftPosition,
+                cityName: this.props.game.cityName 
             };
+        },
+        
+        componentWillMount: function (){
+            if (this.state.city){
+                this.setState({
+                    showTimer: 1
+                });
+            }
         },
         
         componentDidMount: function () {
@@ -69,7 +77,6 @@ define(['react', 'superagent', '../components/map-svg', '../settings', '../compo
             this.setState({
                         warningMessage: ''
                     });
-console.log(this.props.game.gameId);
             Superagent
                 .post(Settings.host + Settings.api + '/game/move')
                 .type('form')
