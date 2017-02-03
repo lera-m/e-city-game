@@ -118,15 +118,18 @@ console.log(this.gameId);
                     if (error) {
                         return reject(error);
                     }
-                    const lastCity = response.body[response.body.length - 1].city;
+                    if (response.body.length){
+                        const lastCity = response.body[response.body.length - 1].city;
                     
-                    this.continueButtonPointerEvents = ''; 
-                    this.gameHistory = response.body;
-                    this.lastLetterGameHistory = lastCity.name[lastCity.name.length - 1].toUpperCase();
-                    this.regionId = lastCity.regionId;
-                    this.topPosition = lastCity.x;
-                    this.leftPosition = lastCity.y;
-                    this.cityName = lastCity.name;
+                        this.continueButtonPointerEvents = ''; 
+                        this.gameHistory = response.body;
+                        this.lastLetterGameHistory = lastCity.name[lastCity.name.length - 1].toUpperCase();
+                        this.regionId = lastCity.regionId;
+                        this.topPosition = lastCity.x;
+                        this.leftPosition = lastCity.y;
+                        this.cityName = lastCity.name; 
+                    }
+                    
                     
                     resolve(this.timeOutCode);
                 });
@@ -163,6 +166,7 @@ console.log(this.gameId);
     };
     
     Game.prototype.changeGameWasStarted = function (value){
+        console.log(value);
         this.gameWasStarted = value;
     };
 
