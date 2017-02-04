@@ -24,7 +24,15 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
                 .end((error, response) => /* arrow function */{
                     if(!error || response.body.length > 0){
                         this.gameId = JSON.parse(response.text).id;
-console.log(this.gameId);
+
+                        this.gameHistory = [];
+                        this.lastLetterGameHistory = '';
+                        this.regionId = null;
+                        this.topPosition = null;
+                        this.leftPosition = null;
+                        this.cityName = '' ;
+                        this.continueButtonPointerEvents = 'none'; 
+
                         // Tell all listeners that game id is changed
                         this.triggerChangeGameId();
 
@@ -46,7 +54,7 @@ console.log(this.gameId);
             .end((error, response) => /* arrow function */{
                 if(response.body.result === true){
                     //set Cookies
-                    localStorage.setItem('userLoggedIn', 'true');
+                    sessionStorage.setItem('userLoggedIn', 'true');
 
                     this.loggedIn = true;
                     defer.resolve();
@@ -180,7 +188,7 @@ console.log(this.gameId);
                 if (!error) {
                     this.loggedIn = false;
                     //set Cookies
-                    localStorage.setItem('userLoggedIn', 'false');
+                    sessionStorage.setItem('userLoggedIn', 'false');
                     location.href = '#/login';
                     defer.resolve();
                 } else {
