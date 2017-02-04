@@ -13,7 +13,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
         },
 
         componentDidMount: function () {
-            if(localStorage.getItem('userLoggedIn') === 'true'){
+            if(sessionStorage.getItem('userLoggedIn') === 'true'){
                 this.props.game.setLogIn()
                     .then(function(){
                         location.href = '#/before-start';

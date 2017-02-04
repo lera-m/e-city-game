@@ -22,7 +22,7 @@ define(['react', 'superagent', '../settings'], function (React, Superagent, Sett
                 })
                 .fail(function(error){
 console.log(error);
-                    localStorage.setItem('userLoggedIn', 'false');
+                    sessionStorage.setItem('userLoggedIn', 'false');
                     location.href = '#/login';
                 });  
         },

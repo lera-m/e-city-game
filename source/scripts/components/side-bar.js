@@ -51,6 +51,7 @@ const SideBar = React.createClass({
                         action: (popup) => {
                             if (page === "#/e-city"){
                                 getNewGameId();
+                                this.props.game.onChangeGameId();
                             } else {
                                 location.href=page;
                             }
