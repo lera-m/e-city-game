@@ -44,7 +44,7 @@ define(['react'], function (React) {
                         lose: 65
                     },
                     {
-                        player: 'param-pam-pam',
+                        player: 'param-pam',
                         win: 31,
                         lose: 99
                     },
@@ -90,7 +90,7 @@ define(['react'], function (React) {
                                     {player.lose}
                                 </div>
                                 <div key={'rate' + i} className='col-1of5'>
-                                    {(player.win / player.lose).toFixed(2)}
+                                    {(player.win / (player.lose + player.win)).toFixed(2)}
                                 </div>
                             </div>
                         )
