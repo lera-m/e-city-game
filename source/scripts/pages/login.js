@@ -23,16 +23,6 @@ console.log('loged in');
 console.log('not loged in');
                     }); 
             } 
-/*
-            this.props.game.getGameStatus()
-                .then(function(){
-                    location.href = '#/before-start';
-                    console.log('loged in');
-                })
-                .fail(function(){
-                    console.log('not loged in');
-                });
-*/
         },
 
         onInputChange: function (target, event) {
@@ -61,7 +51,7 @@ console.log('not loged in');
                     })
                     .fail(() => {
                         this.setState({
-                            warningMessage: 'незарегистрированный пользователь'
+                            warningMessage: 'неверный логин или пароль'
                         });
                         console.log('not ok');
                     });
