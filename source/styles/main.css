@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Chewy');
 
 @import url("./components/side-bar.css");
 @import url("./components/login.css");
@@ -13,6 +14,7 @@
 @import url("./components/popup.css");
 @import url("./components/page404.css");
 @import url("./components/records-table.css");
+@import url("./components/team.css");
 
 div {
     box-sizing: border-box;
@@ -33,8 +35,13 @@ div {
 
  .logo p{
     color: white;
-    font-family: Tahoma;
-    font-size: 30px;
+    font-family: 'Chewy', cursive;
+    font-size: 60px;
+    margin: 0;
+}
+.logo {
+    border-bottom: 2px solid white;
+    border-radius: 9px;
 }
 
 .text-color-yellow {
