@@ -1,4 +1,4 @@
-define(['react', 'react-dom', 'react-router', 'q', './pages/login', './pages/e-city', './pages/rules', './pages/library', './pages/before-start', './controller/game', './pages/register', './pages/page404', './pages/records'], function (React, ReactDom, ReactRouter, Q, Login, Ecity, Rules, Library, BeforeStart, Game, Register, Page404, Records) {
+define(['react', 'react-dom', 'react-router', 'q', './pages/login', './pages/e-city', './pages/rules', './pages/library', './pages/before-start', './controller/game', './pages/register', './pages/page404', './pages/records', './pages/team'], function (React, ReactDom, ReactRouter, Q, Login, Ecity, Rules, Library, BeforeStart, Game, Register, Page404, Records, Team) {
 
     var Router = ReactRouter.Router;
     var Route = ReactRouter.Route;
@@ -47,6 +47,7 @@ define(['react', 'react-dom', 'react-router', 'q', './pages/login', './pages/e-c
                     <Route path="/before-start" getComponent={getComponent(BeforeStart)} onEnter={requireLogIn}/>
                     <Route path="/register" getComponent={getComponent(Register)}/>
                     <Route path="/records" getComponent={getComponent(Records)} onEnter={requireLogIn}/>
+                    <Route path="/team" getComponent={getComponent(Team)} onEnter={requireLogIn}/>
                     <Route path="*" getComponent={getComponent(Page404)}/>
                 </Router>
             );

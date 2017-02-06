@@ -104,6 +104,9 @@ const SideBar = React.createClass({
                     <a className='text-control-color' href="#" onClick={this.onButtonClick.bind(this,  popupMessageExit, "#/before-start")}>Выход</a>
                 </div>
                 <div>
+                    <a className='text-control-color' href="#" onClick={this.onButtonClick.bind(this, popupMessageOthers, "#/team")}>Команда</a>
+                </div>
+                <div>
                 </div>
             </div>
         );
