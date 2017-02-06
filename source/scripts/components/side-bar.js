@@ -78,6 +78,7 @@ const SideBar = React.createClass({
         
         var popupMessageNewGame = 'Ваша игра еще не закончена. Вы уверены, что хотите начать новую игру?';
         var popupMessageOthers = 'При переходе на другую страницу Ваша игра будет закончена. Вы уверены, что хотите закончить игру?';
+        var popupMessageExit = 'Ваша игра будет закончена. Вы уверены, что хотите выйти?';
         
         return (
             <div className="side-bar bg-color">
@@ -100,7 +101,7 @@ const SideBar = React.createClass({
                     <a className='text-control-color' href="#" onClick={this.onButtonClick.bind(this, popupMessageOthers, "#/library")}>Библиотека</a>
                 </div>
                 <div>
-                    <a className='text-control-color' href="#/before-start">Выход</a>
+                    <a className='text-control-color' href="#" onClick={this.onButtonClick.bind(this,  popupMessageExit, "#/before-start")}>Выход</a>
                 </div>
                 <div>
                 </div>
