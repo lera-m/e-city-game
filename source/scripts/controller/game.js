@@ -14,7 +14,17 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
           this.leftPosition = null;
           this.cityName = '' ;
     };
-
+    
+    Game.prototype.setGameToZero = function(){
+        this.gameHistory = [];
+        this.lastLetterGameHistory = '';
+        this.regionId = null;
+        this.topPosition = null;
+        this.leftPosition = null;
+        this.cityName = '' ;
+        this.continueButtonPointerEvents = 'none'; 
+    };
+    
     Game.prototype.getGameId = function(){
         var defer = Q.defer();
 
@@ -107,7 +117,7 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
                     
                     this.giveUpCode =  response.body.gameStatus.code;
                     
-                    this.changeGameWasStarted(false);
+                    this.gameWasStarted = false;
                                         
                     resolve(this.giveUpCode);
                 });
@@ -159,7 +169,7 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
                     
                     this.timeOutCode =  response.body.gameStatus.code;
                     
-                    this.changeGameWasStarted(false);
+                    this.gameWasStarted = false;
                                         
                     resolve(this.timeOutCode);
                 });
@@ -174,8 +184,11 @@ define(['superagent', '../settings', 'q'], function (Superagent, Settings, Q) {
     };
     
     Game.prototype.changeGameWasStarted = function (value){
-        console.log(value);
         this.gameWasStarted = value;
+        if (value === false){
+            this.setGameToZero();
+            this.giveUp();
+        }
     };
 
     Game.prototype.logOut = function(){
