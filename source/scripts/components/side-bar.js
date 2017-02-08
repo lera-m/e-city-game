@@ -5,6 +5,7 @@ const ReactDom = require('react-dom');
 const Superagent = require('superagent');
 const Popup = require('react-popup').default;
 const Settings = require('../settings');
+const Logotype = require('../components/logotype');
 
 const SideBar = React.createClass({
 
@@ -63,10 +64,8 @@ const SideBar = React.createClass({
             });
         } else if (page === "#/e-city"){
             getNewGameId();
-            this.props.game.changeGameWasStarted(false);
         } else {
             location.href=page;
-            this.props.game.changeGameWasStarted(false);
         }
     },
     
@@ -82,9 +81,7 @@ const SideBar = React.createClass({
         
         return (
             <div className="side-bar bg-color">
-                <div className="logo">
-                    <p>E-City</p>
-                </div>
+                <Logotype/>
                 <div>
                     <a className='text-control-color' href='#' onClick={this.onButtonClick.bind(this, popupMessageNewGame, "#/e-city")}>Новая игра</a>
                 </div>
@@ -101,10 +98,10 @@ const SideBar = React.createClass({
                     <a className='text-control-color' href="#" onClick={this.onButtonClick.bind(this, popupMessageOthers, "#/library")}>Библиотека</a>
                 </div>
                 <div>
-                    <a className='text-control-color' href="#" onClick={this.onButtonClick.bind(this,  popupMessageExit, "#/before-start")}>Выход</a>
+                    <a className='text-control-color' href="#" onClick={this.onButtonClick.bind(this, popupMessageOthers, "#/team")}>Команда</a>
                 </div>
                 <div>
-                    <a className='text-control-color' href="#" onClick={this.onButtonClick.bind(this, popupMessageOthers, "#/team")}>Команда</a>
+                    <a className='text-control-color' href="#" onClick={this.onButtonClick.bind(this,  popupMessageExit, "#/before-start")}>Выход</a>
                 </div>
                 <div>
                 </div>

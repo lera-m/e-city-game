@@ -15,6 +15,7 @@
 @import url("./components/page404.css");
 @import url("./components/records-table.css");
 @import url("./components/team.css");
+@import url("./components/logotype.css");
 
 div {
     box-sizing: border-box;
@@ -31,17 +32,6 @@ div {
 }
 .bg-color {
     background-color: #07588a;
-}
-
- .logo p{
-    color: white;
-    font-family: 'Chewy', cursive;
-    font-size: 60px;
-    margin: 0;
-}
-.logo {
-    border-bottom: 2px solid white;
-    border-radius: 9px;
 }
 
 .text-color-yellow {

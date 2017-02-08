@@ -1,4 +1,4 @@
-define(['react', 'superagent', '../settings'], function (React, Superagent, Settings) {
+define(['react', 'superagent', '../settings', '../components/logotype'], function (React, Superagent, Settings, Logotype) {
     
     return React.createClass ({
         
@@ -49,9 +49,7 @@ console.log(error);
                             <img src="/img/bg.png" className="bg-layer-1" alt=""/>
                         </div>
                         <div className="before-start bg-color">
-                            <div className="logo">
-                                <p>E-City</p>
-                            </div>
+                            <Logotype/>
                             <div>
                                 <a className='text-control-color' href="#/e-city" onClick={this.onButtonClick}>Новая игра</a>
                             </div>

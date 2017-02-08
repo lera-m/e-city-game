@@ -1,4 +1,4 @@
-define(['react', 'superagent', '../settings'], function (React, Superagent, Settings) {
+define(['react', 'superagent', '../settings', '../components/logotype'], function (React, Superagent, Settings, Logotype) {
 
     return React.createClass({
 
@@ -66,9 +66,7 @@ console.log('not loged in');
                         <img src="/img/bg.png" className="bg-layer-1" alt=""/>
                     </div>
                     <div className="login bg-color">
-                        <div className="logo">
-                            <p>E-City</p>
-                        </div>
+                        <Logotype/>
                         <form onSubmit={this.onFormSubmit}>
                             <div>
                                 <input type="text" className='login_input_style' placeholder="Логин" onChange={this.onInputChange.bind(this, 'login')}/>
