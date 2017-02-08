@@ -8,7 +8,7 @@ define(['react'], function (React) {
             return (
                     <div className='score'>
                         <p>
-                            00
+                            60
                         </p>
                         <div className="first-number counter"></div>
                         <div className="second-number counter"></div>
