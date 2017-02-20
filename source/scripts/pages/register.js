@@ -8,6 +8,7 @@ define(['react', 'superagent', '../settings', '../components/logotype'], functio
             return {
                 login: '',
                 password: '',
+                passwordConfirm: '',
                 email: '',
                 name: '',
                 surname: '',
@@ -30,7 +31,7 @@ define(['react', 'superagent', '../settings', '../components/logotype'], functio
             var dotpos = email.lastIndexOf(".") || false;
             if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length || dotpos === false) {
                 this.setState({
-                        email: false,
+                        email: '',
                         warningMessage: 'Недействительный email'
                 });
             } else {
@@ -41,14 +42,17 @@ define(['react', 'superagent', '../settings', '../components/logotype'], functio
         onFormSubmit: function (event) {
             var login = this.state.login,
             password = this.state.password,
+            passwordConfirm = this.state.passwordConfirm,
             email =  this.emailValidation(this.state.email),
             name = this.state.name.slice(0, 1).toUpperCase() + this.state.name.slice(1),
             surname = this.state.surname.slice(0, 1).toUpperCase() + this.state.surname.slice(1),
             city = this.state.city.slice(0, 1).toUpperCase() + this.state.city.slice(1),
             state = {};
             
-            if (!login || !password){
-                        state.warningMessage = 'Заполните все обязательные поля'
+            if (password !== passwordConfirm){
+                state.warningMessage = 'Пароли не соответствуют';
+            } else if (!login || !password){
+                state.warningMessage = 'Заполните все обязательные поля';
             } else if (login && password && email) {
                 
                 Superagent
@@ -101,6 +105,9 @@ define(['react', 'superagent', '../settings', '../components/logotype'], functio
                             </div>
                             <div>
                                 <input type="password" className='register_input_style' placeholder="Пароль" onChange={this.onInputChange.bind(this, 'password')}/>
+                            </div>
+                            <div>
+                                <input type="password" className='register_input_style' placeholder="Подтверждение пароля" onChange={this.onInputChange.bind(this, 'passwordConfirm')}/>
                             </div>
                             <div>
                                 <input type="email" className='register_input_style' placeholder="Email" onChange={this.onInputChange.bind(this, 'email')}/>
